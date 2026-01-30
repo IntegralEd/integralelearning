@@ -1,0 +1,27 @@
+{
+  "name": "integralelearning",
+  "version": "1.0.0",
+  "description": "Integral eLearning Website - Marketing microsite for instructional design and eLearning development services",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:server",
+    "dev:server": "live-server src --port=3000 --open=/ --watch=src",
+    "build": "npm-run-all clean copy:*",
+    "clean": "rm -rf dist && mkdir dist",
+    "copy:html": "cp src/index.html dist/",
+    "copy:css": "mkdir -p dist/css && cp src/css/styles.css dist/css/",
+    "copy:js": "mkdir -p dist/js && cp -r src/js/* dist/js/",
+    "copy:images": "mkdir -p dist/images && cp -r src/images/* dist/images/ 2>/dev/null || true",
+    "copy:favicon": "cp src/favicon.ico dist/ 2>/dev/null || true"
+  },
+  "keywords": [
+    "elearning",
+    "instructional-design",
+    "articulate-storyline"
+  ],
+  "author": "Integral Ed Services",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5"
+  }
+}
