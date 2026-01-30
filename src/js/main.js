@@ -5,27 +5,26 @@ import { config } from './config.js';
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initPortfolioForm();
-    initChatbotEmbed();
     initScrollAnimations();
 });
 
 // ========== NAVIGATION ==========
 function initNavigation() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navLinkItems = document.querySelectorAll('.nav-link');
     const navbar = document.getElementById('navbar');
 
     // Mobile menu toggle
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
         });
     }
 
     // Close mobile menu when clicking a link
-    navLinks.forEach(link => {
+    navLinkItems.forEach(link => {
         link.addEventListener('click', (e) => {
             // Only handle internal anchor links
             if (link.getAttribute('href').startsWith('#')) {
@@ -35,8 +34,8 @@ function initNavigation() {
 
                 if (targetSection) {
                     // Close mobile menu
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    navToggle.classList.remove('active');
 
                     // Smooth scroll to section
                     const navHeight = navbar.offsetHeight;
@@ -150,7 +149,7 @@ function initPortfolioForm() {
     });
 
     function showSuccess() {
-        successMessage.style.display = 'flex';
+        successMessage.style.display = 'block';
         setTimeout(() => {
             successMessage.style.display = 'none';
         }, 8000);
@@ -158,7 +157,7 @@ function initPortfolioForm() {
 
     function showError(message) {
         errorMessageText.textContent = message;
-        errorMessage.style.display = 'flex';
+        errorMessage.style.display = 'block';
         setTimeout(() => {
             errorMessage.style.display = 'none';
         }, 8000);
@@ -168,35 +167,6 @@ function initPortfolioForm() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
-}
-
-// ========== CHATBOT EMBED ==========
-function initChatbotEmbed() {
-    const chatbotContainer = document.getElementById('chatbotContainer');
-
-    if (!chatbotContainer) return;
-
-    // Check if chatbot embed URL is configured
-    if (config.chatbotEmbedUrl && config.chatbotEmbedUrl !== '') {
-        // Clear placeholder
-        chatbotContainer.innerHTML = '';
-
-        // Check if it's an iframe URL or script embed
-        if (config.chatbotEmbedUrl.startsWith('<')) {
-            // HTML/Script embed
-            chatbotContainer.innerHTML = config.chatbotEmbedUrl;
-        } else {
-            // Assume it's an iframe URL
-            const iframe = document.createElement('iframe');
-            iframe.src = config.chatbotEmbedUrl;
-            iframe.style.width = '100%';
-            iframe.style.height = '500px';
-            iframe.style.border = 'none';
-            iframe.style.borderRadius = 'var(--border-radius)';
-            chatbotContainer.appendChild(iframe);
-        }
-    }
-    // Otherwise, keep the placeholder that's in the HTML
 }
 
 // ========== SCROLL ANIMATIONS ==========
@@ -217,7 +187,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Observe all cards
-    const cards = document.querySelectorAll('.service-card, .approach-card, .work-sample');
+    const cards = document.querySelectorAll('.process-card');
     cards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -230,5 +200,4 @@ function initScrollAnimations() {
 
 // Log configuration status (for debugging)
 console.log('IntegralELearning.com initialized');
-console.log('Chatbot configured:', !!config.chatbotEmbedUrl);
 console.log('Webhook configured:', !!config.portfolioWebhookUrl);

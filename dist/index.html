@@ -21,11 +21,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -33,349 +28,334 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#home" class="logo">Integral<span class="logo-accent">eLearning</span></a>
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo">Integral<span style="font-weight: 300;">eLearning</span></a>
 
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#approach" class="nav-link">Approach</a></li>
-                    <li><a href="#work" class="nav-link">Work</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="https://www.integral-ed.com/" class="nav-link" target="_blank">About</a></li>
-                    <li><a href="https://www.integral-ed.com/contact" class="nav-link nav-link-cta"
-                            target="_blank">Contact</a></li>
-                </ul>
-            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#approach" class="nav-link">Approach</a></li>
+                <li><a href="https://www.integral-ed.com/" class="nav-link" target="_blank">About</a></li>
+                <li><a href="https://www.integral-ed.com/contact" class="nav-link" target="_blank">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Expert instructional design for meaningful learning</h1>
+                <h1>Expert instructional design for meaningful learning</h1>
                 <p class="hero-subtitle">We help education organizations create engaging, effective online learning
                     experiences with Articulate Storyline, Rise, and custom media design.</p>
-                <div class="hero-ctas">
-                    <a href="#portfolio" class="btn btn-primary">Request a portfolio</a>
-                    <a href="https://www.integral-ed.com/contact" class="btn btn-secondary" target="_blank">Talk with
-                        us</a>
+                <div class="hero-buttons">
+                    <a href="https://www.integral-ed.com/contact" class="btn btn-primary" target="blank">Contact us</a>
+                    <a href="#services" class="btn btn-secondary">See our services</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services-section" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-intro">We provide comprehensive eLearning development and instructional design services
-                tailored to education organizations.</p>
+    <!-- Full-width image -->
+    <div style="width: 100%; margin: 0; padding: 0;">
+        <img src="images/stock laptop zoom.avif" alt="" style="width: 100%; height: auto; display: block;">
+    </div>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Instructional Design</h3>
-                    <p class="service-description">Research-based learning design for online and blended environments
-                        that prioritizes learner engagement and authentic outcomes.</p>
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
+            <p class="text-center text-secondary" style="max-width: 800px; margin: 0 auto var(--spacing-xl);">
+                We provide comprehensive eLearning development and instructional design services tailored to education
+                organizations.
+            </p>
+
+            <div class="process-cards">
+                <div class="process-card">
+                    <svg class="outcome-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M60 100 L80 80 L100 100 L140 60" stroke="var(--primary)" stroke-width="12"
+                            stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        <rect x="40" y="40" width="120" height="120" rx="8" stroke="var(--primary)" stroke-width="8"
+                            fill="none" />
+                    </svg>
+                    <h3 class="card-title">Instructional Design</h3>
+                    <p class="card-description">Research-based learning design for online and blended environments that
+                        prioritizes learner engagement and authentic outcomes.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Articulate Storyline Development</h3>
-                    <p class="service-description">Advanced Storyline courses with branching scenarios, interactive
+                <div class="process-card">
+                    <svg class="outcome-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="50" width="120" height="100" rx="8" stroke="var(--primary)" stroke-width="8"
+                            fill="none" />
+                        <path d="M40 80 L160 80" stroke="var(--primary)" stroke-width="8" />
+                        <circle cx="80" cy="65" r="8" fill="var(--primary)" />
+                        <circle cx="100" cy="65" r="8" fill="var(--primary)" />
+                        <circle cx="120" cy="65" r="8" fill="var(--primary)" />
+                    </svg>
+                    <h3 class="card-title">Articulate Storyline Development</h3>
+                    <p class="card-description">Advanced Storyline courses with branching scenarios, interactive
                         simulations, and custom interactions that go beyond templates.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                            <line x1="12" y1="18" x2="12" y2="18"></line>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Articulate Rise Development</h3>
-                    <p class="service-description">Mobile-first, responsive Rise courses for rapid deployment and
+                <div class="process-card">
+                    <svg class="outcome-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="60" y="40" width="80" height="120" rx="8" stroke="var(--primary)" stroke-width="8"
+                            fill="none" />
+                        <path d="M75 60 L125 60" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M75 80 L125 80" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M75 100 L125 100" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                    </svg>
+                    <h3 class="card-title">Articulate Rise Development</h3>
+                    <p class="card-description">Mobile-first, responsive Rise courses for rapid deployment and
                         consistent learner experiences across devices.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                            <line x1="7" y1="2" x2="7" y2="22"></line>
-                            <line x1="17" y1="2" x2="17" y2="22"></line>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <line x1="2" y1="7" x2="7" y2="7"></line>
-                            <line x1="2" y1="17" x2="7" y2="17"></line>
-                            <line x1="17" y1="17" x2="22" y2="17"></line>
-                            <line x1="17" y1="7" x2="22" y2="7"></line>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Media Design & Instructional Video</h3>
-                    <p class="service-description">Custom graphics, animations, and instructional videos designed to
+                <div class="process-card">
+                    <svg class="outcome-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="60" width="120" height="80" rx="8" stroke="var(--primary)" stroke-width="8"
+                            fill="none" />
+                        <circle cx="100" cy="100" r="20" fill="var(--primary)" opacity="0.3" />
+                        <path d="M90 100 L100 110 L110 90" stroke="var(--primary)" stroke-width="6"
+                            stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    </svg>
+                    <h3 class="card-title">Media Design & Instructional Video</h3>
+                    <p class="card-description">Custom graphics, animations, and instructional videos designed to
                         clarify complex concepts and maintain learner attention.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Chatbot-Enabled Practice</h3>
-                    <p class="service-description">AI-powered conversation practice and role-play scenarios that provide
+                <div class="process-card">
+                    <svg class="outcome-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M60 130 Q60 110 80 110 L120 110 Q140 110 140 130 L140 140 Q140 150 130 150 L70 150 Q60 150 60 140 Z"
+                            fill="var(--primary)" opacity="0.2" />
+                        <path d="M60 130 Q60 110 80 110 L120 110 Q140 110 140 130" stroke="var(--primary)"
+                            stroke-width="8" fill="none" />
+                        <path d="M80 85 Q80 70 95 70 L105 70 Q120 70 120 85 L120 110" stroke="var(--primary)"
+                            stroke-width="6" fill="none" />
+                        <circle cx="90" cy="90" r="4" fill="var(--primary)" />
+                        <circle cx="110" cy="90" r="4" fill="var(--primary)" />
+                    </svg>
+                    <h3 class="card-title">Chatbot-Enabled Practice</h3>
+                    <p class="card-description">AI-powered conversation practice and role-play scenarios that provide
                         safe, repeatable practice opportunities for complex skills.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">LMS Administration & Support</h3>
-                    <p class="service-description">Ongoing support for course catalog management, user administration,
-                        and platform optimization to keep your learning ecosystem running smoothly.</p>
+                <div class="process-card">
+                    <svg class="outcome-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="50" width="100" height="100" rx="8" stroke="var(--primary)" stroke-width="8"
+                            fill="var(--primary)" opacity="0.1" />
+                        <path d="M70 80 L130 80" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M70 100 L110 100" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M70 120 L130 120" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                    </svg>
+                    <h3 class="card-title">LMS Administration & Support</h3>
+                    <p class="card-description">Ongoing support for course catalog management, user administration, and
+                        platform optimization to keep your learning ecosystem running smoothly.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Full-width image -->
+    <div style="width: 100%; margin: 0; padding: 0;">
+        <img src="images/stock happy learner.avif" alt="" style="width: 100%; height: auto; display: block;">
+    </div>
 
     <!-- Approach Section -->
-    <section class="section approach-section" id="approach">
+    <section class="section section-alt" id="approach">
         <div class="container">
-            <h2 class="section-title">Our Approach</h2>
-            <p class="section-intro">A proven five-step process that ensures your learning solutions are instructionally
-                sound, technically excellent, and aligned with your goals.</p>
+            <h2 class="text-center">How We Work</h2>
+            <p class="text-center text-secondary" style="max-width: 800px; margin: 0 auto var(--spacing-xl);">
+                A rigorous, learner-centered process that balances instructional research with the practical realities
+                of your organization and learners.
+            </p>
 
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <div class="approach-number">1</div>
-                    <div class="approach-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="M21 21l-4.35-4.35"></path>
-                        </svg>
-                    </div>
-                    <h3 class="approach-title">Discovery</h3>
-                    <p class="approach-description">We learn about your learners, goals, constraints, and existing
-                        materials through stakeholder interviews and needs analysis.</p>
+            <div class="process-cards">
+                <div class="process-card">
+                    <div class="card-number">1</div>
+                    <svg class="card-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="80" r="30" stroke="var(--primary)" stroke-width="8" fill="none" />
+                        <path d="M60 130 Q60 110 80 110 L120 110 Q140 110 140 130 L140 160 L60 160 Z"
+                            fill="var(--primary)" opacity="0.2" />
+                        <path d="M60 130 Q60 110 80 110 L120 110 Q140 110 140 130" stroke="var(--primary)"
+                            stroke-width="8" fill="none" />
+                        <circle cx="50" cy="60" r="8" fill="var(--primary)" opacity="0.4" />
+                        <circle cx="150" cy="60" r="8" fill="var(--primary)" opacity="0.4" />
+                        <circle cx="40" cy="120" r="8" fill="var(--primary)" opacity="0.4" />
+                        <circle cx="160" cy="120" r="8" fill="var(--primary)" opacity="0.4" />
+                    </svg>
+                    <h3 class="card-title">Listen and Learn</h3>
+                    <p class="card-description">
+                        We begin by understanding learner context, goals, constraints, and success criteria through
+                        interviews with stakeholders and subject matter experts. When relevant, we engage with national
+                        experts and review existing materials, research, and instructional context to ground our work in
+                        what actually works.
+                    </p>
                 </div>
 
-                <div class="approach-card">
-                    <div class="approach-number">2</div>
-                    <div class="approach-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 20h9"></path>
-                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="approach-title">Learning Design</h3>
-                    <p class="approach-description">We create instructional blueprints that define learning objectives,
-                        assessment strategies, and interaction patterns before production begins.</p>
+                <div class="process-card">
+                    <div class="card-number">2</div>
+                    <svg class="card-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="50" width="120" height="100" rx="8" stroke="var(--primary)" stroke-width="8"
+                            fill="none" />
+                        <path d="M40 80 L160 80" stroke="var(--primary)" stroke-width="8" />
+                        <circle cx="80" cy="65" r="8" fill="var(--primary)" />
+                        <circle cx="100" cy="65" r="8" fill="var(--primary)" />
+                        <circle cx="120" cy="65" r="8" fill="var(--primary)" />
+                        <path d="M60 100 L100 130 L140 95" stroke="var(--primary)" stroke-width="6"
+                            stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6" />
+                        <rect x="50" y="105" width="30" height="6" rx="3" fill="var(--primary)" opacity="0.3" />
+                        <rect x="50" y="120" width="45" height="6" rx="3" fill="var(--primary)" opacity="0.3" />
+                        <circle cx="130" cy="110" r="12" stroke="var(--primary)" stroke-width="4" fill="var(--primary)"
+                            opacity="0.2" />
+                    </svg>
+                    <h3 class="card-title">Case Studies and Characters</h3>
+                    <p class="card-description">
+                        We design realistic case studies and learn-along characters grounded in authentic learner
+                        contexts. These scenarios reflect the real decisions, challenges, and trade-offs learners face,
+                        establishing narrative structure before we move into detailed interaction design.
+                    </p>
                 </div>
 
-                <div class="approach-card">
-                    <div class="approach-number">3</div>
-                    <div class="approach-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="approach-title">Development</h3>
-                    <p class="approach-description">We build your courses using Storyline, Rise, or custom tools, with
-                        attention to accessibility, performance, and visual design.</p>
+                <div class="process-card">
+                    <div class="card-number">3</div>
+                    <svg class="card-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 40 L130 80 L100 80 L100 120 L130 120 L100 160 L70 120 L100 120 L100 80 L70 80 Z"
+                            fill="var(--primary)" opacity="0.2" />
+                        <path d="M100 40 L130 80 M100 80 L100 120 M130 120 L100 160 M100 120 L70 120 M100 80 L70 80"
+                            stroke="var(--primary)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="50" cy="50" r="6" fill="var(--primary)" />
+                        <circle cx="150" cy="50" r="6" fill="var(--primary)" />
+                        <circle cx="50" cy="150" r="6" fill="var(--primary)" />
+                        <circle cx="150" cy="150" r="6" fill="var(--primary)" />
+                    </svg>
+                    <h3 class="card-title">Learning Design</h3>
+                    <p class="card-description">
+                        We create instructional blueprints that define learning objectives, assessment strategies, and
+                        interaction patterns. This design phase ensures alignment between what learners need to do and
+                        how we'll support them before production begins.
+                    </p>
                 </div>
 
-                <div class="approach-card">
-                    <div class="approach-number">4</div>
-                    <div class="approach-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="approach-title">Review & Iteration</h3>
-                    <p class="approach-description">We incorporate your feedback through structured review cycles,
-                        refining content and interactions until they meet your standards.</p>
+                <div class="process-card">
+                    <div class="card-number">4</div>
+                    <svg class="card-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="50" width="100" height="100" rx="8" stroke="var(--primary)" stroke-width="8"
+                            fill="var(--primary)" opacity="0.1" />
+                        <path d="M70 80 L130 80" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M70 100 L110 100" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M70 120 L130 120" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <circle cx="120" cy="100" r="15" fill="var(--primary)" opacity="0.3" />
+                        <path d="M115 100 L118 103 L125 96" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <h3 class="card-title">Development</h3>
+                    <p class="card-description">
+                        We build courses using Storyline, Rise, or custom tools, with careful attention to
+                        accessibility, performance, and visual design. Development follows the approved design, with
+                        regular check-ins to ensure we're on track.
+                    </p>
                 </div>
 
-                <div class="approach-card">
-                    <div class="approach-number">5</div>
-                    <div class="approach-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="approach-title">Launch & Ongoing Support</h3>
-                    <p class="approach-description">We deploy your courses to your LMS and provide ongoing support for
-                        updates, maintenance, and continuous improvement.</p>
+                <div class="process-card">
+                    <div class="card-number">5</div>
+                    <svg class="card-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="60" stroke="var(--primary)" stroke-width="8" fill="none" />
+                        <path d="M100 100 L100 60" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M100 100 L130 115" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                        <path d="M85 50 Q100 45 115 50" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"
+                            fill="none" />
+                        <path d="M130 90 L145 85" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" />
+                        <path d="M140 115 L150 120" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" />
+                    </svg>
+                    <h3 class="card-title">Review and Iteration</h3>
+                    <p class="card-description">
+                        We incorporate your feedback through structured review cycles, refining content, interactions,
+                        and media until they meet your standards. This collaborative process ensures the final product
+                        aligns with your vision and learner needs.
+                    </p>
+                </div>
+
+                <div class="process-card">
+                    <div class="card-number">6</div>
+                    <svg class="card-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="70" r="35" stroke="var(--primary)" stroke-width="8" fill="var(--primary)"
+                            opacity="0.1" />
+                        <path d="M100 85 L100 110" stroke="var(--primary)" stroke-width="8" stroke-linecap="round" />
+                        <path d="M80 110 Q100 125 120 110" stroke="var(--primary)" stroke-width="8"
+                            stroke-linecap="round" fill="none" />
+                        <path d="M70 150 L70 120 Q70 110 80 110 L120 110 Q130 110 130 120 L130 150"
+                            stroke="var(--primary)" stroke-width="8" fill="none" />
+                        <circle cx="85" cy="65" r="5" fill="var(--primary)" />
+                        <circle cx="115" cy="65" r="5" fill="var(--primary)" />
+                        <path d="M50 160 L150 160" stroke="var(--primary)" stroke-width="6" stroke-linecap="round" />
+                    </svg>
+                    <h3 class="card-title">Launch and Ongoing Support</h3>
+                    <p class="card-description">
+                        We deploy your courses to your LMS, provide documentation and training for your team, and remain
+                        available for updates, maintenance, and continuous improvement as your program evolves.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Work Samples Section -->
-    <section class="section work-section" id="work">
-        <div class="container">
-            <h2 class="section-title">Work Samples</h2>
-            <p class="section-intro">Examples of our instructional design and development work across various domains
-                and platforms.</p>
-
-            <div class="work-grid">
-                <div class="work-sample">
-                    <div class="work-image">
-                        <img src="images/GLA Mockup with Logo.avif" alt="Articulate Storyline course interface">
-                    </div>
-                    <div class="work-content">
-                        <h3 class="work-title">Interactive Leadership Training</h3>
-                        <p class="work-description">Custom Storyline course with scenario-based learning for developing
-                            leadership and management skills in education contexts.</p>
-                        <div class="work-skills">
-                            <span class="skill-tag">Articulate Storyline</span>
-                            <span class="skill-tag">Scenario-Based Learning</span>
-                            <span class="skill-tag">Leadership Development</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-sample">
-                    <div class="work-image">
-                        <img src="images/NMSI Mockup with Logo.avif" alt="Mobile-responsive course interface">
-                    </div>
-                    <div class="work-content">
-                        <h3 class="work-title">Professional Development Platform</h3>
-                        <p class="work-description">Comprehensive training modules for educators with mobile-responsive
-                            design and integrated assessment tools.</p>
-                        <div class="work-skills">
-                            <span class="skill-tag">Articulate Rise</span>
-                            <span class="skill-tag">Mobile-Responsive</span>
-                            <span class="skill-tag">Teacher Training</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-sample">
-                    <div class="work-image">
-                        <img src="images/imentor.avif" alt="Digital learning platform interface">
-                    </div>
-                    <div class="work-content">
-                        <h3 class="work-title">Youth Mentorship Platform</h3>
-                        <p class="work-description">Custom eLearning modules designed to support mentors and mentees
-                            with engaging content and interactive resources.</p>
-                        <div class="work-skills">
-                            <span class="skill-tag">Custom Development</span>
-                            <span class="skill-tag">Mentorship Support</span>
-                            <span class="skill-tag">Interactive Media</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Chatbot Section -->
-    <section class="section chatbot-section" id="chatbot">
-        <div class="container">
-            <div class="chatbot-content">
-                <h2 class="section-title">Try our learning assistant</h2>
-                <p class="section-intro">Experience how AI-powered chatbots can create safe practice environments for
-                    complex conversations and skill development.</p>
-
-                <div class="chatbot-embed-container" id="chatbotContainer">
-                    <div class="chatbot-placeholder">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                        <p>Chatbot demo will appear here when configured.</p>
-                        <p class="placeholder-note">Update <code>chatbotEmbedUrl</code> in
-                            <code>/src/js/config.js</code> to enable.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Full-width image -->
+    <div style="width: 100%; margin: 0; padding: 0;">
+        <img src="images/stock symbols overlay computer.avif" alt="" style="width: 100%; height: auto; display: block;">
+    </div>
 
     <!-- Portfolio Request Section -->
-    <section class="section portfolio-section" id="portfolio">
+    <section class="section" id="portfolio" style="background: var(--bg-secondary); padding: var(--spacing-3xl) 0;">
         <div class="container">
-            <div class="portfolio-content">
-                <h2 class="section-title">Request a portfolio</h2>
-                <p class="section-intro">See more examples of our work and learn how we can help your organization
-                    create effective learning experiences.</p>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="margin-bottom: var(--spacing-md);">Request a Portfolio</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--spacing-xl); font-size: 1.125rem;">
+                    See examples of our work and learn how we can help your organization create effective learning
+                    experiences.
+                </p>
 
-                <form class="portfolio-form" id="portfolioForm">
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" class="form-input"
-                            placeholder="your.email@organization.edu" required aria-required="true">
+                <form id="portfolioForm" style="text-align: left;">
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <label for="email"
+                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
+                            Email Address <span style="color: #dc2626;">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@organization.edu"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); transition: border-color var(--transition-fast);">
                     </div>
 
-                    <div class="form-group">
-                        <label for="projectDescription" class="form-label">Tell us about your project needs
-                            (optional)</label>
-                        <textarea id="projectDescription" name="projectDescription" class="form-textarea" rows="4"
-                            placeholder="What type of learning experiences are you looking to create? What challenges are you trying to solve?"></textarea>
+                    <div style="margin-bottom: var(--spacing-lg);">
+                        <label for="projectDescription"
+                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
+                            Tell us about your project needs (optional)
+                        </label>
+                        <textarea id="projectDescription" name="projectDescription" rows="4"
+                            placeholder="What type of learning experiences are you looking to create? What challenges are you trying to solve?"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); resize: vertical; transition: border-color var(--transition-fast);"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-large">Send Request</button>
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; padding: 1rem 2rem; font-size: 1.0625rem;">
+                        Send Request
+                    </button>
 
-                    <div class="form-message success" id="successMessage" role="alert" style="display: none;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        <span>Thank you! We'll send you our portfolio shortly.</span>
+                    <div id="successMessage"
+                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #d1fae5; border: 1px solid #10b981; border-radius: var(--radius-md); color: #065f46;">
+                        <strong>Thank you!</strong> Check your inbox for a link to our portfolio.
                     </div>
 
-                    <div class="form-message error" id="errorMessage" role="alert" style="display: none;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="15" y1="9" x2="9" y2="15"></line>
-                            <line x1="9" y1="9" x2="15" y2="15"></line>
-                        </svg>
-                        <span id="errorMessageText">Something went wrong. Please try again.</span>
+                    <div id="errorMessage"
+                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #fee2e2; border: 1px solid #dc2626; border-radius: var(--radius-md); color: #991b1b;">
+                        <strong>Error:</strong> <span id="errorMessageText">Something went wrong. Please try
+                            again.</span>
                     </div>
                 </form>
             </div>
@@ -386,13 +366,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-brand">
-                    <strong>Integral eLearning</strong> is a division of
-                    <a href="https://www.integral-ed.com/" target="_blank">Integral Ed Services</a>
-                </p>
-                <p class="footer-tagline">An educator-led learning design firm based in Austin, TX</p>
-                <p class="footer-since">Serving education organizations since 2011</p>
-                <p class="footer-copyright">&copy; 2026 Integral Ed Services. All rights reserved.</p>
+                <p>Integral eLearning is a division of <a href="https://www.integral-ed.com/" target="_blank">Integral
+                        Ed Services</a>. An educator-led learning design firm based in Austin, TX. Serving education
+                    organizations since 2011.</p>
             </div>
         </div>
     </footer>
