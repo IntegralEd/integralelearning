@@ -6,52 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initPortfolioForm();
     initScrollAnimations();
-    initChatbotWidget();
 });
 
 // ... (existing code) ...
 
-// ========== CHATBOT WIDGET ==========
-function initChatbotWidget() {
-    setTimeout(() => {
-        (function () {
-            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-                window.chatbase = (...args) => {
-                    if (!window.chatbase.q) {
-                        window.chatbase.q = []
-                    }
-                    window.chatbase.q.push(args)
-                };
-                window.chatbase = new Proxy(window.chatbase, {
-                    get(target, prop) {
-                        if (prop === "q") {
-                            return target.q
-                        }
-                        return (...args) => target(prop, ...args)
-                    }
-                })
-            }
-            const onLoad = function () {
-                const script = document.createElement("script");
-                script.src = "https://www.chatbase.co/embed.min.js";
-                script.id = "Yb5-ZOPsnSt9Ju6r3P7C7";
-                script.domain = "www.chatbase.co";
-                document.body.appendChild(script)
-            };
-            if (document.readyState === "complete") {
-                onLoad()
-            } else {
-                window.addEventListener("load", onLoad)
-            }
-        })();
-    }, 10000); // 10 second delay
-}
-
-// ========== UTILITY FUNCTIONS ==========
-
-// Log configuration status (for debugging)
-console.log('IntegralELearning.com initialized');
-console.log('Webhook configured:', !!config.portfolioWebhookUrl);
 function initNavigation() {
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');

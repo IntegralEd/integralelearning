@@ -1,0 +1,11 @@
+/**
+ * IntegralELearning.com - Site-Specific Styles
+ *
+ * This file contains site-specific overrides and customizations.
+ * The base theme is provided by vendor/integralthemes/theme/theme.css
+ *
+ * Override CSS variables here:
+ * :root {
+ *   --primary: #custom-color;
+ * }
+ */

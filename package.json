@@ -3,15 +3,9 @@
   "version": "1.0.0",
   "description": "Integral eLearning Website - Marketing microsite for instructional design and eLearning development services",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:server",
-    "dev:server": "live-server src --port=3000 --open=/ --watch=src",
-    "build": "npm-run-all clean copy:*",
-    "clean": "rm -rf dist && mkdir dist",
-    "copy:html": "cp src/index.html dist/",
-    "copy:css": "mkdir -p dist/css && cp src/css/styles.css dist/css/",
-    "copy:js": "mkdir -p dist/js && cp -r src/js/* dist/js/",
-    "copy:images": "mkdir -p dist/images && cp -r src/images/* dist/images/ 2>/dev/null || true",
-    "copy:favicon": "cp src/favicon.ico dist/ 2>/dev/null || true"
+    "dev": "live-server src --port=3000 --open=/ --watch=src",
+    "build": "node build.js",
+    "preview": "live-server dist --port=8080 --open=/"
   },
   "keywords": [
     "elearning",
