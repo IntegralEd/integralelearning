@@ -55,7 +55,7 @@
 
 .card {
   background: var(--bg-primary);
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-sm);
@@ -75,8 +75,8 @@
 }
 
 .card-description {
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
+  color: #000000;
+  font-size: 1rem;
   line-height: 1.6;
   margin: 0;
 }
@@ -261,7 +261,7 @@
 
 .service-card {
   background: var(--bg-primary);
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   position: relative;
@@ -290,10 +290,10 @@
 }
 
 .service-card p {
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-align: left;
   margin-top: var(--spacing-sm);
-  color: var(--text-secondary);
+  color: #000000;
 }
 
 .service-list {
@@ -305,12 +305,12 @@
   padding: var(--spacing-sm) 0;
   padding-left: var(--spacing-lg);
   position: relative;
-  color: var(--text-secondary);
+  color: #000000;
   line-height: 1.7;
 }
 
 .service-list li::before {
-  content: '•';
+  content: '●';
   position: absolute;
   left: 0;
   color: var(--primary);
@@ -324,7 +324,7 @@
 }
 
 .service-card .service-list li {
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding: 0.25rem 0;
   padding-left: var(--spacing-md);
 }
@@ -346,7 +346,7 @@
 
 .process-card {
   background: var(--bg-primary);
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   position: relative;
@@ -369,7 +369,7 @@
 
 .process-outcome {
   background: var(--primary-light-bg);
-  border: 2px solid var(--primary);
+  border: 4px solid var(--primary);
   border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   margin-top: var(--spacing-xl);
@@ -402,7 +402,7 @@
 
 .faq-item {
   background: var(--bg-primary);
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   margin-bottom: var(--spacing-md);
@@ -471,6 +471,35 @@
 }
 
 /* ============================================
+   CTA PLUM CONTAINER
+   ============================================ */
+
+.cta-plum {
+  background: #ebebeb;
+  color: #000000;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cta-plum h2 {
+  color: #000000;
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-text {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: #000000;
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 
@@ -510,7 +539,7 @@
   justify-content: center;
   min-height: 300px;
   background: var(--bg-tertiary);
-  border: 2px dashed var(--border-medium);
+  border: 4px dashed var(--border-medium);
   border-radius: var(--radius-md);
   color: var(--text-tertiary);
   font-family: var(--font-primary);
@@ -558,6 +587,11 @@
   /* Hero Mobile */
   .hero {
     min-height: 70vh;
+    padding-top: 60px;
+  }
+
+  .hero-content {
+    padding: var(--spacing-md);
   }
 
   .hero-buttons {
@@ -573,7 +607,94 @@
   }
 
   /* Cards Mobile */
+  .service-cards,
   .process-cards {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .card,
+  .service-card,
+  .process-card {
+    padding: var(--spacing-md);
+  }
+
+  /* Container Mobile Padding */
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Content Sections Mobile */
+  .service-content,
+  .about-content,
+  .contact-content {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Images and Icons Mobile */
+  .service-icon,
+  .process-icon,
+  .card-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  /* Trust Strip Mobile */
+  .trust-strip {
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  /* FAQ Mobile */
+  .faq-item {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Small Mobile Devices (phones in portrait) */
+@media (max-width: 480px) {
+  /* Tighter spacing for small screens */
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+
+  /* Hero adjustments */
+  .hero {
+    min-height: 60vh;
+    padding-top: 70px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Button sizing */
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+
+  /* Card spacing */
+  .service-cards,
+  .process-cards {
+    gap: var(--spacing-sm);
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  /* Navbar */
+  .nav-logo {
+    font-size: 1.125rem;
   }
 }

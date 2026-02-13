@@ -41,34 +41,47 @@ h6 {
   line-height: 1.3;
   margin-bottom: var(--spacing-md);
   color: var(--text-primary);
+  text-wrap: balance;
 }
 
 h1 {
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 h3 {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 h4 {
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 600;
+  text-align: left;
 }
 
 p {
-  color: var(--text-secondary);
+  color: #000000;
+  font-size: 16px;
   margin-bottom: var(--spacing-sm);
   max-width: 70ch;
+  text-wrap: pretty;
+}
+
+/* List Items */
+li {
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 
 /* Links */

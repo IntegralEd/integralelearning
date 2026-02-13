@@ -9,3 +9,26 @@
  *   --primary: #custom-color;
  * }
  */
+
+/* Process Outcome Box - Purple styled section */
+.process-outcome {
+  background: var(--primary-light-bg);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  text-align: center;
+}
+
+.process-outcome h4 {
+  color: var(--primary-dark);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.process-outcome p {
+  color: var(--text-primary);
+  margin: 0 auto;
+  font-weight: 400;
+}
