@@ -301,4 +301,72 @@
 
     <!-- Full-width image -->
     <div style="width: 100%; margin: 0; padding: 0;">
-        <img src="images/stock symbols overlay computer.avif"
+        <img src="images/stock symbols overlay computer.avif" alt="" style="width: 100%; height: auto; display: block;">
+    </div>
+
+    <!-- Portfolio Request Section -->
+    <section class="section" id="portfolio" style="background: var(--bg-secondary); padding: var(--spacing-3xl) 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="margin-bottom: var(--spacing-md);">Request a Portfolio</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--spacing-xl); font-size: 1.125rem;">
+                    See examples of our work and learn how we can help your organization create effective learning
+                    experiences.
+                </p>
+
+                <form id="portfolioForm" style="text-align: left;">
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <label for="email"
+                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
+                            Email Address <span style="color: #dc2626;">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@organization.edu"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); transition: border-color var(--transition-fast);">
+                    </div>
+
+                    <div style="margin-bottom: var(--spacing-lg);">
+                        <label for="projectDescription"
+                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
+                            Tell us about your project needs (optional)
+                        </label>
+                        <textarea id="projectDescription" name="projectDescription" rows="4"
+                            placeholder="What type of learning experiences are you looking to create? What challenges are you trying to solve?"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); resize: vertical; transition: border-color var(--transition-fast);"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; padding: 1rem 2rem; font-size: 1.0625rem;">
+                        Send Request
+                    </button>
+
+                    <div id="successMessage"
+                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #d1fae5; border: 1px solid #10b981; border-radius: var(--radius-md); color: #065f46;">
+                        <strong>Thank you!</strong> Check your inbox for a link to our portfolio.
+                    </div>
+
+                    <div id="errorMessage"
+                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #fee2e2; border: 1px solid #dc2626; border-radius: var(--radius-md); color: #991b1b;">
+                        <strong>Error:</strong> <span id="errorMessageText">Something went wrong. Please try
+                            again.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Integral eLearning is a division of <a href="https://www.integral-ed.com/" target="_blank">Integral
+                        Ed Services</a>. An educator-led learning design firm based in Austin, TX. Serving education
+                    organizations since 2011.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

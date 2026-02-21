@@ -301,4 +301,186 @@
 
     <!-- Full-width image -->
     <div style="width: 100%; margin: 0; padding: 0;">
-        <img src="images/stock symbols overlay computer.avif"
+        <img src="images/stock symbols overlay computer.avif" alt="" style="width: 100%; height: auto; display: block;">
+    </div>
+
+    <!-- Portfolio Request Section -->
+    <section class="section" id="portfolio" style="background: var(--bg-secondary); padding: var(--spacing-3xl) 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="margin-bottom: var(--spacing-md);">Request a Portfolio</h2>
+                <p style="color: var(--text-secondary); margin-bottom: var(--spacing-xl); font-size: 1.125rem;">
+                    See examples of our work and learn how we can help your organization create effective learning
+                    experiences.
+                </p>
+
+                <form id="portfolioForm" style="text-align: left;">
+                    <div style="margin-bottom: var(--spacing-md);">
+                        <label for="email"
+                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
+                            Email Address <span style="color: #dc2626;">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@organization.edu"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); transition: border-color var(--transition-fast);">
+                    </div>
+
+                    <div style="margin-bottom: var(--spacing-lg);">
+                        <label for="projectDescription"
+                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
+                            Tell us about your project needs (optional)
+                        </label>
+                        <textarea id="projectDescription" name="projectDescription" rows="4"
+                            placeholder="What type of learning experiences are you looking to create? What challenges are you trying to solve?"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); resize: vertical; transition: border-color var(--transition-fast);"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; padding: 1rem 2rem; font-size: 1.0625rem;">
+                        Send Request
+                    </button>
+
+                    <div id="successMessage"
+                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #d1fae5; border: 1px solid #10b981; border-radius: var(--radius-md); color: #065f46;">
+                        <strong>Thank you!</strong> Check your inbox for a link to our portfolio.
+                    </div>
+
+                    <div id="errorMessage"
+                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #fee2e2; border: 1px solid #dc2626; border-radius: var(--radius-md); color: #991b1b;">
+                        <strong>Error:</strong> <span id="errorMessageText">Something went wrong. Please try
+                            again.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Integral eLearning is a division of <a href="https://www.integral-ed.com/" target="_blank">Integral
+                        Ed Services</a>. An educator-led learning design firm based in Austin, TX. Serving education
+                    organizations since 2011.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/main.js"></script>
+<!--
+  Universal Integral Ed Chat Widget (Chatbase)
+
+  This widget provides customer support and inquiry handling across all
+  Integral Ed microsites using a shared Chatbase instance.
+
+  Features:
+  - Loads after 10-second delay to avoid impacting page load performance
+  - Appears bottom-right (Chatbase default position)
+  - Shared Chatbase ID across all sites for unified conversations
+  - Automatically captures URL and UTM parameters as context
+  - Context sent once per session (invisible to user)
+  - No per-site configuration needed
+
+  Usage:
+  Microsites should inject this file into the <body> of HTML pages at build time.
+  The widget is identical across all sites.
+
+  Technical details:
+  - Chatbase ID: Yb5-ZOPsnSt9Ju6r3P7C7
+  - Domain: www.chatbase.co
+  - Load delay: 10 seconds (10000ms)
+  - Position: Bottom-right (default)
+  - Context format: INTEGRAL_CONTEXT:{url, path, utm_*}
+-->
+
+<script>
+/*
+  Integral Ed universal Chatbase widget
+  - loads after 10 seconds
+  - sends a one-time context payload (URL + UTM) as the first user message
+  - relies on Chatbase agent instructions to treat it as context and not reply to it
+*/
+(function () {
+  const CHATBASE_ID = "Yb5-ZOPsnSt9Ju6r3P7C7";
+  const DELAY_MS = 10000;
+  const CONTEXT_SENT_KEY = "integral_chatbase_context_sent_v1";
+
+  function getUtm(searchParams, key) {
+    const v = searchParams.get(key);
+    return v && v.trim() ? v.trim() : null;
+  }
+
+  function buildContextPayload() {
+    const sp = new URLSearchParams(window.location.search || "");
+    const payload = {
+      _meta: "context",
+      url: window.location.href,
+      path: window.location.pathname || "/",
+      utm_source: getUtm(sp, "utm_source"),
+      utm_medium: getUtm(sp, "utm_medium"),
+      utm_campaign: getUtm(sp, "utm_campaign"),
+      utm_term: getUtm(sp, "utm_term"),
+      utm_content: getUtm(sp, "utm_content")
+    };
+
+    // Remove null keys to keep it short
+    Object.keys(payload).forEach((k) => payload[k] === null && delete payload[k]);
+
+    return payload;
+  }
+
+  function waitForChatbase(timeoutMs = 8000, intervalMs = 200) {
+    return new Promise((resolve, reject) => {
+      const start = Date.now();
+      const timer = setInterval(() => {
+        try {
+          // We consider chatbase "ready enough" if it is callable
+          if (typeof window.chatbase === "function") {
+            clearInterval(timer);
+            resolve();
+            return;
+          }
+        } catch (e) {}
+        if (Date.now() - start > timeoutMs) {
+          clearInterval(timer);
+          reject(new Error("Timed out waiting for Chatbase"));
+        }
+      }, intervalMs);
+    });
+  }
+
+  function sendContextOnce() {
+    try {
+      if (sessionStorage.getItem(CONTEXT_SENT_KEY) === "1") return;
+      sessionStorage.setItem(CONTEXT_SENT_KEY, "1");
+    } catch (e) {
+      // If sessionStorage is blocked, proceed without it (worst case: context may send more than once)
+    }
+
+    const payload = buildContextPayload();
+    const message = "INTEGRAL_CONTEXT:" + JSON.stringify(payload);
+
+    try {
+      // Most robust: send a string message
+      window.chatbase("sendMessage", message);
+    } catch (e) {
+      // Silent fail
+    }
+  }
+
+  function loadChatbaseEmbed() {
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id=CHATBASE_ID;script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  }
+
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      loadChatbaseEmbed();
+      waitForChatbase().then(sendContextOnce).catch(function () {});
+    }, DELAY_MS);
+  });
+})();
+</script>
+
+</body>
+
+</html>
