@@ -9,3 +9,34 @@
  *   --primary: #custom-color;
  * }
  */
+
+/* ============================================
+   TIMELINE CONNECTOR LINE FIX
+   Replaces fixed-height connector from vendor theme
+   with a dynamic line that spans the full row height.
+   ============================================ */
+
+/* Disable the fixed-height line on the marker */
+.timeline-item:not(:last-child) .timeline-marker::after {
+  display: none;
+}
+
+/* Dynamic connector on the item itself — stretches to meet next circle */
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 80px;              /* bottom edge of the 80px circle */
+  left: 40px;             /* center of the 80px circle column */
+  transform: translateX(-50%);
+  width: 4px;
+  bottom: calc(-1 * var(--spacing-xl));  /* extends into the margin gap */
+  background: var(--primary);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .timeline-item:not(:last-child)::after {
+    top: 60px;   /* bottom edge of the 60px mobile circle */
+    left: 30px;  /* center of the 60px mobile circle column */
+  }
+}
