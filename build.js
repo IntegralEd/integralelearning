@@ -117,6 +117,20 @@ if (fs.existsSync(srcJsDir)) {
   });
 }
 
+// Copy assets (icons, etc.)
+console.log('\n📁 Copying assets...');
+const assetsDir = path.join(__dirname, 'src', 'assets');
+if (fs.existsSync(assetsDir)) {
+  const destAssetsDir = path.join(distDir, 'assets');
+  if (!fs.existsSync(destAssetsDir)) {
+    fs.mkdirSync(destAssetsDir, { recursive: true });
+  }
+  copyRecursive(assetsDir, destAssetsDir);
+  console.log('  ✓ Copied assets directory');
+} else {
+  console.log('  ℹ No assets directory found');
+}
+
 // Copy images
 console.log('\n🖼️  Copying images...');
 const imagesDir = path.join(__dirname, 'src', 'images');
