@@ -86,6 +86,14 @@
     pointer-events: all;
 }
 
+/* Vendor sets .popout-close { position: absolute } globally — cancel it
+   so the button sits in the flex row as a normal flex child */
+.popout-actions .popout-close {
+    position: relative;
+    top: auto;
+    right: auto;
+}
+
 /* Both buttons share the same pill style */
 .popout-actions button {
     background: rgba(0, 0, 0, 0.55);
