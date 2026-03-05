@@ -2,6 +2,7 @@
   "name": "integralelearning",
   "version": "1.0.0",
   "description": "Integral eLearning Website - Marketing microsite for instructional design and eLearning development services",
+  "siteSlug": "elearning",
   "scripts": {
     "dev": "live-server src --port=3000 --open=/ --watch=src",
     "build": "node build.js",
