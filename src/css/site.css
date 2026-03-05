@@ -63,6 +63,13 @@
     }
 }
 
+/* ─── Services Section — larger card icons ──────────────────────────────── */
+
+#services .outcome-icon {
+    width: 6rem;
+    height: 6rem;
+}
+
 /* ─── Examples Section ──────────────────────────────────────────────────── */
 
 .examples-grid {
