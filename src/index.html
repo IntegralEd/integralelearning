@@ -355,7 +355,13 @@
 
     <!-- Storyline Modal 1 -->
     <div id="storyline-modal-1" class="popout-frame popout-storyline" role="dialog" aria-modal="true" aria-label="Value Prop Chatbot — Storyline Module">
-        <button class="popout-close" onclick="closeStorylineModal('storyline-modal-1')" aria-label="Close">&#10005;</button>
+        <div class="popout-actions">
+            <button class="popout-fullscreen" onclick="toggleModalFullscreen('storyline-modal-1')" aria-label="Fullscreen">
+                <span class="icon-expand">&#x26F6;</span>
+                <span class="icon-compress">&#x26F6;</span>
+            </button>
+            <button class="popout-close" onclick="closeStorylineModal('storyline-modal-1')" aria-label="Close">&#10005;</button>
+        </div>
         <div class="popout-inner">
             <iframe data-storyline-src="https://integral-elearning.space/demo/value_prop_chatbot/story.html" src="about:blank" allowfullscreen title="Value Prop Chatbot — Storyline Module"></iframe>
         </div>
@@ -363,7 +369,13 @@
 
     <!-- Rise Modal 1 -->
     <div id="rise-modal-1" class="popout-frame popout-storyline" role="dialog" aria-modal="true" aria-label="Responsive Accessible PL — Rise Module">
-        <button class="popout-close" onclick="closeStorylineModal('rise-modal-1')" aria-label="Close">&#10005;</button>
+        <div class="popout-actions">
+            <button class="popout-fullscreen" onclick="toggleModalFullscreen('rise-modal-1')" aria-label="Fullscreen">
+                <span class="icon-expand">&#x26F6;</span>
+                <span class="icon-compress">&#x26F6;</span>
+            </button>
+            <button class="popout-close" onclick="closeStorylineModal('rise-modal-1')" aria-label="Close">&#10005;</button>
+        </div>
         <div class="popout-inner">
             <iframe data-storyline-src="https://integral-elearning.space/demo/rise_math/content/index.html#/lessons/9sqNPE0A3PzOH5_70rcqzOJ9Fi_GjcB4" src="about:blank" allowfullscreen title="Responsive Accessible PL — Rise Module"></iframe>
         </div>
@@ -371,7 +383,13 @@
 
     <!-- Learning Game Modal 1 -->
     <div id="game-modal-1" class="popout-frame popout-storyline" role="dialog" aria-modal="true" aria-label="Smoothie Challenge — Learning Game">
-        <button class="popout-close" onclick="closeStorylineModal('game-modal-1')" aria-label="Close">&#10005;</button>
+        <div class="popout-actions">
+            <button class="popout-fullscreen" onclick="toggleModalFullscreen('game-modal-1')" aria-label="Fullscreen">
+                <span class="icon-expand">&#x26F6;</span>
+                <span class="icon-compress">&#x26F6;</span>
+            </button>
+            <button class="popout-close" onclick="closeStorylineModal('game-modal-1')" aria-label="Close">&#10005;</button>
+        </div>
         <div class="popout-inner">
             <iframe data-storyline-src="https://integral-elearning.space/demo/smoothie_challenge/story.html" src="about:blank" allowfullscreen title="Smoothie Challenge — Learning Game"></iframe>
         </div>
@@ -460,7 +478,29 @@
         if (iframe) iframe.src = 'about:blank';
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        if (document.fullscreenElement) document.exitFullscreen();
     }
+
+    function toggleModalFullscreen(id) {
+        var modal = document.getElementById(id);
+        if (!modal) return;
+        var inner = modal.querySelector('.popout-inner');
+        var btn   = modal.querySelector('.popout-fullscreen');
+        if (!document.fullscreenElement) {
+            inner.requestFullscreen().then(function() {
+                if (btn) btn.classList.add('is-fullscreen');
+            }).catch(function() {});
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    // Sync fullscreen button state when user exits via Escape
+    document.addEventListener('fullscreenchange', function() {
+        document.querySelectorAll('.popout-fullscreen').forEach(function(btn) {
+            btn.classList.toggle('is-fullscreen', !!document.fullscreenElement);
+        });
+    });
     </script>
 
     <!-- JavaScript -->
