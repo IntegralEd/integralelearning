@@ -82,7 +82,7 @@
     border-color: #fff;
 }
 
-/* Clickable sample thumbnail (matches integralmediadesign pattern) */
+/* Clickable sample thumbnail */
 .sample-thumb {
     display: block;
     position: relative;
@@ -90,16 +90,20 @@
     margin: 0;
     padding: 0;
     border: none;
-    background: #e8e0ed;
+    background: #d4c8dc;
     cursor: pointer;
     border-radius: 0 0 12px 12px;
     overflow: hidden;
+    aspect-ratio: 16 / 9;
 }
 
 .sample-thumb img {
-    display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    border-radius: 0 0 12px 12px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     transition: filter 0.2s ease;
 }
 
@@ -109,7 +113,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0 0 12px 12px;
     transition: background 0.2s ease;
 }
 

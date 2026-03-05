@@ -318,7 +318,7 @@
                         <p>This Storyline module features an embedded AI chatbot that guides cross-sector leaders in refining their organization's value proposition within place-based partnerships.</p>
                     </div>
                     <button class="sample-thumb" onclick="openStorylineModal('storyline-modal-1')" aria-label="View Value Prop Chatbot sample">
-                        <img src="images/ValuePropThumbnail.png" alt="Value Prop Chatbot — Storyline module thumbnail">
+                        <img src="images/thumbnail-value-prop.png" alt="Value Prop Chatbot — Storyline module thumbnail">
                         <div class="sample-thumb-overlay"><span>&#9654; Launch Sample</span></div>
                     </button>
                 </div>
@@ -331,21 +331,21 @@
                         <p>Our design team used Articulate Rise to create an eLearning module that employs embedded PDF graphics and accessible PDF worksheets designed to address efficacy and develop a culture of math leadership.</p>
                     </div>
                     <button class="sample-thumb" onclick="openStorylineModal('rise-modal-1')" aria-label="View Responsive Accessible PL sample">
-                        <img src="images/EL Education School Leader Every Person is. a Math Person PL Mockup.png" alt="EL Education — Every Person is a Math Person Rise course thumbnail">
+                        <img src="images/thumbnail-rise-math.png" alt="EL Education — Every Person is a Math Person Rise course thumbnail">
                         <div class="sample-thumb-overlay"><span>&#9654; Launch Sample</span></div>
                     </button>
                 </div>
 
-                <!-- 3. Rise Course / PDF -->
+                <!-- 3. Learning Game -->
                 <div class="example-card">
                     <div class="example-card-body">
-                        <div class="example-type-tag">Articulate Rise</div>
-                        <h3>Mobile-First Rise Course</h3>
-                        <p>A responsive Rise course built for self-paced onboarding, combining accordion lessons, knowledge checks, and embedded media on any device.</p>
+                        <div class="example-type-tag">Learning Game</div>
+                        <h3>Learning Games</h3>
+                        <p>The "Smoothie Challenge" is an interactive game designed and developed by Integral Ed. Participants select ingredients to make healthy smoothies that meet specific criteria — showcasing our ability to create engaging learning experiences for all ages.</p>
                     </div>
-                    <button class="sample-thumb" onclick="PdfGallery.open('pdf-modal-1')" aria-label="View Rise course sample">
-                        <img src="images/placeholder-rise.png" alt="Rise course sample thumbnail" onerror="this.style.background='#e8e0ed';this.removeAttribute('src')">
-                        <div class="sample-thumb-overlay"><span>View Sample</span></div>
+                    <button class="sample-thumb" onclick="openStorylineModal('game-modal-1')" aria-label="Play Smoothie Challenge learning game">
+                        <img src="images/thumbnail-smoothie.png" alt="Smoothie Challenge — interactive learning game thumbnail">
+                        <div class="sample-thumb-overlay"><span>&#9654; Play Game</span></div>
                     </button>
                 </div>
 
@@ -369,20 +369,11 @@
         </div>
     </div>
 
-    <!-- PDF / Rise Modal 1 -->
-    <div id="pdf-modal-1" class="popout-frame" role="dialog" aria-modal="true" aria-label="Rise Course Sample" data-pdf-src="assets/samples/rise-sample.pdf">
+    <!-- Learning Game Modal 1 -->
+    <div id="game-modal-1" class="popout-frame popout-storyline" role="dialog" aria-modal="true" aria-label="Smoothie Challenge — Learning Game">
+        <button class="popout-close" onclick="closeStorylineModal('game-modal-1')" aria-label="Close">&#10005;</button>
         <div class="popout-inner">
-            <button class="popout-close" onclick="PdfGallery.close('pdf-modal-1')" aria-label="Close">&#10005;</button>
-            <div class="pdf-stage" id="pdfStage1">
-                <div class="pdf-canvas-wrap" id="pdfCanvasWrap1a"><canvas id="pdfCanvas1a"></canvas></div>
-                <div class="pdf-canvas-wrap" id="pdfCanvasWrap1b"><canvas id="pdfCanvas1b"></canvas></div>
-            </div>
-            <div class="pdf-controls">
-                <button class="pdf-nav-btn" id="pdfPrev1" onclick="PdfGallery.prev('pdf-modal-1')" aria-label="Previous page" disabled>&#8592;</button>
-                <span class="pdf-page-info" id="pdfPageInfo1">— / —</span>
-                <button class="pdf-nav-btn" id="pdfNext1" onclick="PdfGallery.next('pdf-modal-1')" aria-label="Next page" disabled>&#8594;</button>
-                <button class="pdf-zoom-btn" id="pdfZoom1" onclick="PdfGallery.toggleZoom('pdf-modal-1')" aria-label="Expand to full width">&#x26F6;</button>
-            </div>
+            <iframe data-storyline-src="https://integral-elearning.space/demo/smoothie_challenge/story.html" src="about:blank" allowfullscreen title="Smoothie Challenge — Learning Game"></iframe>
         </div>
     </div>
 
