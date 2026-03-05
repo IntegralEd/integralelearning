@@ -26,6 +26,9 @@
     <!-- Shared Theme -->
     <link rel="stylesheet" href="/vendor/integralthemes/theme/theme.css">
 
+    <!-- Popout Frame Component -->
+    <link rel="stylesheet" href="/vendor/integralthemes/components/popout-frame.css">
+
     <!-- Site Overrides -->
     <link rel="stylesheet" href="/css/site.css">
 </head>
@@ -46,6 +49,7 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#approach" class="nav-link">Approach</a></li>
+                <li><a href="#examples" class="nav-link">Examples</a></li>
                 <li><a href="https://www.integral-ed.com/" class="nav-link" target="_blank">About</a></li>
                 <li><a href="https://www.integral-ed.com/contact" class="nav-link" target="_blank">Contact</a></li>
             </ul>
@@ -296,6 +300,92 @@
     </section>
 
 
+    <!-- Examples Section -->
+    <section class="section" id="examples">
+        <div class="container">
+            <h2 class="text-center">Examples of Our Work</h2>
+            <p class="text-center text-secondary" style="max-width: 800px; margin: 0 auto var(--spacing-xl);">
+                A sample of the learning experiences we design and develop for education organizations.
+            </p>
+
+            <div class="examples-grid">
+
+                <!-- 1. Storyline Course -->
+                <div class="example-card">
+                    <div class="example-card-body">
+                        <div class="example-type-tag">Articulate Storyline</div>
+                        <h3>Interactive Scenario Course</h3>
+                        <p>A branching scenario course built in Storyline with custom characters, decision points, and feedback layers designed for new teacher onboarding.</p>
+                    </div>
+                    <button class="sample-thumb" onclick="openStorylineModal('storyline-modal-1')" aria-label="View Storyline course sample">
+                        <img src="images/placeholder-storyline.png" alt="Storyline course sample thumbnail" onerror="this.style.background='#e8e0ed';this.removeAttribute('src')">
+                        <div class="sample-thumb-overlay"><span>&#9654; Launch Sample</span></div>
+                    </button>
+                </div>
+
+                <!-- 2. Instructional Video -->
+                <div class="example-card">
+                    <div class="example-card-body">
+                        <div class="example-type-tag">Instructional Video</div>
+                        <h3>Explainer &amp; Training Video</h3>
+                        <p>Short-form instructional video combining screen capture, motion graphics, and narration to walk learners through a complex workflow.</p>
+                    </div>
+                    <button class="sample-thumb video-thumb" onclick="openVideoModal('video-modal-1', 'https://www.youtube.com/embed/placeholder')" aria-label="Play instructional video sample">
+                        <img src="images/placeholder-video.png" alt="Instructional video sample thumbnail" onerror="this.style.background='#e8e0ed';this.removeAttribute('src')">
+                        <div class="sample-thumb-overlay"><span>&#9654; Play</span></div>
+                    </button>
+                </div>
+
+                <!-- 3. Rise Course / PDF -->
+                <div class="example-card">
+                    <div class="example-card-body">
+                        <div class="example-type-tag">Articulate Rise</div>
+                        <h3>Mobile-First Rise Course</h3>
+                        <p>A responsive Rise course built for self-paced onboarding, combining accordion lessons, knowledge checks, and embedded media on any device.</p>
+                    </div>
+                    <button class="sample-thumb" onclick="PdfGallery.open('pdf-modal-1')" aria-label="View Rise course sample">
+                        <img src="images/placeholder-rise.png" alt="Rise course sample thumbnail" onerror="this.style.background='#e8e0ed';this.removeAttribute('src')">
+                        <div class="sample-thumb-overlay"><span>View Sample</span></div>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Storyline Modal 1 -->
+    <div id="storyline-modal-1" class="popout-frame popout-storyline" role="dialog" aria-modal="true" aria-label="Interactive Scenario Course">
+        <div class="popout-inner">
+            <button class="popout-close" onclick="closeStorylineModal('storyline-modal-1')" aria-label="Close">&#10005;</button>
+            <iframe data-storyline-src="about:blank" src="about:blank" allowfullscreen title="Storyline Course Sample"></iframe>
+        </div>
+    </div>
+
+    <!-- Video Modal 1 -->
+    <div id="video-modal-1" class="popout-frame popout-video" role="dialog" aria-modal="true" aria-label="Instructional Video Sample">
+        <div class="popout-inner">
+            <button class="popout-close" onclick="closeVideoModal('video-modal-1')" aria-label="Close">&#10005;</button>
+            <iframe data-video-src="about:blank" src="about:blank" allowfullscreen title="Instructional Video Sample"></iframe>
+        </div>
+    </div>
+
+    <!-- PDF / Rise Modal 1 -->
+    <div id="pdf-modal-1" class="popout-frame" role="dialog" aria-modal="true" aria-label="Rise Course Sample" data-pdf-src="assets/samples/rise-sample.pdf">
+        <div class="popout-inner">
+            <button class="popout-close" onclick="PdfGallery.close('pdf-modal-1')" aria-label="Close">&#10005;</button>
+            <div class="pdf-stage" id="pdfStage1">
+                <div class="pdf-canvas-wrap" id="pdfCanvasWrap1a"><canvas id="pdfCanvas1a"></canvas></div>
+                <div class="pdf-canvas-wrap" id="pdfCanvasWrap1b"><canvas id="pdfCanvas1b"></canvas></div>
+            </div>
+            <div class="pdf-controls">
+                <button class="pdf-nav-btn" id="pdfPrev1" onclick="PdfGallery.prev('pdf-modal-1')" aria-label="Previous page" disabled>&#8592;</button>
+                <span class="pdf-page-info" id="pdfPageInfo1">— / —</span>
+                <button class="pdf-nav-btn" id="pdfNext1" onclick="PdfGallery.next('pdf-modal-1')" aria-label="Next page" disabled>&#8594;</button>
+                <button class="pdf-zoom-btn" id="pdfZoom1" onclick="PdfGallery.toggleZoom('pdf-modal-1')" aria-label="Expand to full width">&#x26F6;</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Portfolio Request Section -->
     <section class="section" id="portfolio">
         <div class="container">
@@ -356,6 +446,31 @@
             </div>
         </div>
     </footer>
+
+    <!-- Popout Frame Component -->
+    <script src="/vendor/integralthemes/components/popout-frame.js"></script>
+
+    <!-- Storyline modal helpers (open/close with src swap) -->
+    <script>
+    function openStorylineModal(id) {
+        var modal = document.getElementById(id);
+        if (!modal) return;
+        var iframe = modal.querySelector('iframe');
+        if (iframe && iframe.dataset.storylineSrc && iframe.dataset.storylineSrc !== 'about:blank') {
+            iframe.src = iframe.dataset.storylineSrc;
+        }
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeStorylineModal(id) {
+        var modal = document.getElementById(id);
+        if (!modal) return;
+        var iframe = modal.querySelector('iframe');
+        if (iframe) iframe.src = 'about:blank';
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    </script>
 
     <!-- JavaScript -->
     <script type="module" src="js/main.js"></script>

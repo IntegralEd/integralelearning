@@ -9,3 +9,115 @@
  *   --primary: #custom-color;
  * }
  */
+
+/* ─── Examples Section ──────────────────────────────────────────────────── */
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg, 2rem);
+}
+
+@media (max-width: 900px) {
+    .examples-grid { grid-template-columns: 1fr; }
+}
+
+.example-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border-light, rgba(75,58,82,0.12));
+    box-shadow: 0 4px 16px rgba(75,58,82,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.example-card-body {
+    padding: 1.5rem 1.5rem 1rem;
+    flex: 1;
+}
+
+.example-type-tag {
+    display: inline-block;
+    background: var(--primary, #600b68);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 0.25rem 0.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.example-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary, #1a1a2e);
+    margin: 0 0 0.5rem;
+}
+
+.example-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #555);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Clickable sample thumbnail (shared with integralmediadesign pattern) */
+.sample-thumb {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: var(--border-light, #e8e0ed);
+    cursor: pointer;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.sample-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.2s ease;
+}
+
+/* Placeholder when image is missing */
+.sample-thumb:not(:has(img[src])) {
+    background: linear-gradient(135deg, #e8e0ed 0%, #d4c8dc 100%);
+}
+
+.sample-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.sample-thumb-overlay span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+}
+
+.sample-thumb:hover img { filter: brightness(0.75); }
+.sample-thumb:hover .sample-thumb-overlay span { opacity: 1; }
+
+.video-thumb .sample-thumb-overlay span {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+}
