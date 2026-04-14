@@ -1,0 +1,217 @@
+Integral eLearning — Site Copy
+Last updated: 2026-04-13
+Instructions: Edit copy in each section below. Section headers (in ALL CAPS with === borders) are markers only — they will not appear on the site. Return this file when ready to apply changes.
+
+================================================================================
+[META]
+================================================================================
+
+Page title:
+Integral eLearning - Expert Instructional Design & eLearning Development
+
+Meta description:
+Integral eLearning provides expert instructional design and eLearning development services, specializing in Articulate Storyline, Rise, and engaging media design for education organizations.
+
+Meta keywords:
+instructional design, eLearning, Articulate Storyline, Articulate Rise, instructional video, online learning, blended learning
+
+OG title:
+Integral eLearning - Expert Instructional Design & eLearning Development
+
+OG description:
+We help education organizations create engaging, effective online learning experiences with Articulate Storyline, Rise, and custom media design.
+
+
+================================================================================
+[NAV]
+================================================================================
+
+Logo text: IntegraleLearning
+  (Note: "Integral" is bold, "eLearning" is light weight)
+
+Nav links (left to right):
+  Home
+  What We Do  → #services
+  Approach    → #approach
+  Examples    → #examples
+  About       → https://www.integral-ed.com/ (opens in new tab)
+  Contact     → https://www.integral-ed.com/contact/ (opens in new tab)
+
+
+================================================================================
+[HERO]
+================================================================================
+
+Headline:
+Expert eLearning design for meaningful impact
+
+Subtitle:
+We help organizations create engaging, effective online learning experiences.
+
+Button 1 (primary): Contact us  → https://www.integral-ed.com/contact/
+Button 2 (secondary): See our services  → #services
+
+
+================================================================================
+[INTRO BLOCK]
+================================================================================
+
+Heading:
+Engaging. Affirming. Accessible.
+
+Body:
+We develop custom eLearning courses that engage learners with real-world challenges and authentic learning experiences. Our branching scenarios, interactive simulations, and tailored activities are designed specifically for your content and audience using the Articulate Storyline authoring tool. We deliver SCORM-compliant courses ready for seamless LMS integration, equip your team with documentation and training, and provide ongoing support for updates, maintenance, and continuous improvement as your needs evolve.
+
+
+================================================================================
+[SERVICES]
+================================================================================
+
+Section heading: Our Services
+
+Section subheading:
+We provide comprehensive eLearning development and instructional design services tailored to your organization.
+
+--- Card 1 ---
+Title: Instructional Design
+Description: Research-based learning design for online and blended environments that prioritizes learner engagement and authentic outcomes.
+
+--- Card 2 ---
+Title: Custom eLearning Development
+Description: We develop custom eLearning courses that engage learners with real-world challenges and authentic learning experiences. Our branching scenarios, interactive simulations, and tailored activities are designed specifically for your content and audience using the Articulate Storyline authoring tool.
+
+--- Card 3 ---
+Title: Fast-to-Launch, Adaptive eLearning Development
+Description: Responsive eLearning courses that reach learners anywhere, on any device, with rapid deployment and consistent experiences using the Articulate Rise authoring tool.
+
+--- Card 4 ---
+Title: Media Design & Instructional Video
+Description: Custom graphics, animations, and instructional videos designed to clarify complex concepts and maintain learner attention.
+
+--- Card 5 ---
+Title: Chatbot-Enabled Practice
+Description: AI-powered conversation practice and role-play scenarios that provide safe, repeatable practice opportunities for complex skills.
+
+--- Card 6 ---
+Title: LMS Administration & Support
+Description: Ongoing support for course catalog management, user administration, and platform optimization to keep your learning ecosystem running smoothly.
+
+
+================================================================================
+[APPROACH / HOW WE WORK]
+================================================================================
+
+Section heading: How We Work
+
+Section subheading:
+A rigorous, learner-centered process that balances instructional research with the practical realities of your organization and learners.
+
+--- Step 1 ---
+Title: Listen and Learn
+Body: We begin by understanding learner context, goals, constraints, and success criteria through interviews with stakeholders and subject matter experts. When relevant, we engage with national experts and review existing materials, research, and instructional context to ground our work in best practices informed by learning theory.
+
+--- Step 2 ---
+Title: Case Studies and Characters
+Body: We design realistic case studies and learn-along characters grounded in authentic learner contexts. These scenarios reflect the real decisions, challenges, and trade-offs learners face, establishing narrative structure before we move into detailed interaction design.
+
+--- Step 3 ---
+Title: Storyboarding
+Body: We create instructional storyboards that outline interactions, assessments, and the learner's journey. This phase ensures alignment between objectives and activities, helping stakeholders and instructional designers identify potential gaps or challenges before development begins.
+
+--- Step 4 ---
+Title: Development
+Body: We build courses with meticulous attention to visual design, user experience, and accessibility. Through thoughtfully crafted scenarios and interactions, we create engaging learning experiences that drive engagement and retention.
+
+--- Step 5 ---
+Title: Review and Iteration
+Body: Through structured review cycles, we refine content, interactions, and media based on your feedback. This collaborative process ensures the final product aligns with your vision and the needs of your learners.
+
+--- Step 6 ---
+Title: Launch and Ongoing Support
+Body: We deliver SCORM-compliant courses ready for seamless LMS integration, equip your team with documentation and training, and provide ongoing support for updates, maintenance, and continuous improvement as your needs evolve.
+
+
+================================================================================
+[EXAMPLES]
+================================================================================
+
+Section heading: Examples of Our Work
+
+Section subheading:
+A sample of the learning experiences we design and develop for education organizations.
+
+--- Example 1 ---
+Type tag: eLearning with Chatbot
+Title: Value Proposition Chatbot
+Description: This Storyline module features an embedded AI chatbot that guides cross-sector leaders in refining their organization's value proposition within place-based partnerships.
+Thumbnail: images/thumbnail-value-prop.png
+
+--- Example 2 ---
+Type tag: Articulate Rise
+Title: Responsive, Accessible PL
+Description: Our design team used Articulate Rise to create an eLearning module that employs embedded PDF graphics and accessible PDF worksheets designed to address efficacy and develop a culture of math leadership.
+Thumbnail: images/thumbnail-rise-math.png
+
+--- Example 3 ---
+Type tag: Learning Game
+Title: Learning Games
+Description: The "Smoothie Challenge" is an interactive game designed and developed by Integral Ed. Participants select ingredients to make healthy smoothies that meet specific criteria — showcasing our ability to create engaging learning experiences for all ages.
+Thumbnail: images/thumbnail-smoothie.png
+
+
+================================================================================
+[PORTFOLIO REQUEST FORM]
+================================================================================
+
+Section heading: Request a Portfolio
+
+Section body:
+See examples of our work and learn how we can help your organization create effective learning experiences.
+
+Email label: Email Address
+Email placeholder: your.email@organization.edu
+
+Project description label: Tell us about your project needs (optional)
+Project description placeholder: What type of learning experiences are you looking to create? What challenges are you trying to solve?
+
+Submit button: Send Request
+
+Success message: Thank you! Check your inbox for a link to our portfolio.
+Error message prefix: Error:
+Error message fallback: Something went wrong. Please try again.
+
+
+================================================================================
+[FOOTER]
+================================================================================
+
+Brand column heading: eLearning & Blended Learning
+
+Tagline:
+eLearning & Blended Learning is a division of Integral Ed Services. An educator led learning design firm based in Austin, TX. Serving Education Organizations since 2011.
+  (Note: "Integral Ed Services" links to https://www.integral-ed.com/)
+
+--- Pages column ---
+Heading: Pages
+Links:
+  Home           → #home
+  What We Do     → #services
+  Approach       → #approach
+  Examples       → #examples
+  Request a Portfolio → #portfolio
+
+--- Service Areas column ---
+Heading: Service Areas
+Links:
+  eLearning & Blended Learning   → https://www.integralelearning.com/
+  Platforms & LMS                → https://www.integralplatforms.com/
+  Technical Assistance           → https://www.integralcapacity.com/
+  Career Connected Learning      → https://www.integralcareerpathways.com/
+  Growth Strategy                → https://edugrowthstrategy.com/
+  Media & Communications         → https://www.integralmediadesign.com/
+
+--- Get in Touch column ---
+Heading: Get in Touch
+Button: Talk With Our Team → https://www.integral-ed.com/contact/
+
+Copyright: © [year] Integral Ed Services. All rights reserved.
