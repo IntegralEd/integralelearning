@@ -139,7 +139,8 @@
     'integralplatforms.com',        'www.integralplatforms.com',
     'integralelearning.com',        'www.integralelearning.com',
     'integralmediadesign.com',      'www.integralmediadesign.com',
-    'mathbalance.com',              'www.mathbalance.com'
+    'mathbalance.com',              'www.mathbalance.com',
+    'career-ikigai.org',            'www.career-ikigai.org'
   ];
 
   gtag('js', new Date());
@@ -291,8 +292,7 @@
                         <circle cx="110" cy="90" r="4" fill="var(--primary)" />
                     </svg>
                     <h3 class="card-title">Chatbot-Enabled Practice</h3>
-                    <p class="card-description">AI-powered conversation practice and role-play scenarios that provide
-                        safe, repeatable practice opportunities for complex skills.</p>
+                    <p class="card-description">AI-powered conversation-based learning experiences that guide users through structured reflection, scenario-based practice, and personalized outputs that can be shared with advisors or used in real-world decision-making.</p>
                 </div>
 
                 <div class="process-card">
@@ -415,20 +415,7 @@
 
             <div class="examples-grid">
 
-                <!-- 1. Storyline Course -->
-                <div class="example-card">
-                    <div class="example-card-body">
-                        <div class="example-type-tag">eLearning with Chatbot</div>
-                        <h3>Value Proposition Chatbot</h3>
-                        <p>This Storyline module features an embedded AI chatbot that guides cross-sector leaders in refining their organization's value proposition within place-based partnerships.</p>
-                    </div>
-                    <button class="sample-thumb" onclick="openStorylineModal('storyline-modal-1')" aria-label="View Value Prop Chatbot sample">
-                        <img src="images/thumbnail-value-prop.png" alt="Value Prop Chatbot — Storyline module thumbnail">
-                        <div class="sample-thumb-overlay"><span>&#9654; Launch Sample</span></div>
-                    </button>
-                </div>
-
-                <!-- 2. Rise Course -->
+                <!-- 1. Rise Course -->
                 <div class="example-card">
                     <div class="example-card-body">
                         <div class="example-type-tag">Articulate Rise</div>
@@ -441,7 +428,33 @@
                     </button>
                 </div>
 
-                <!-- 3. Learning Game -->
+                <!-- 2. Storyline Course -->
+                <div class="example-card">
+                    <div class="example-card-body">
+                        <div class="example-type-tag">eLearning with Chatbot</div>
+                        <h3>Value Proposition Chatbot</h3>
+                        <p>This Storyline module features an embedded AI chatbot that guides cross-sector leaders in refining their organization's value proposition within place-based partnerships.</p>
+                    </div>
+                    <button class="sample-thumb" onclick="openStorylineModal('storyline-modal-1')" aria-label="View Value Prop Chatbot sample">
+                        <img src="images/thumbnail-value-prop.png" alt="Value Prop Chatbot — Storyline module thumbnail">
+                        <div class="sample-thumb-overlay"><span>&#9654; Launch Sample</span></div>
+                    </button>
+                </div>
+
+                <!-- 3. Career Ikigai -->
+                <div class="example-card">
+                    <div class="example-card-body">
+                        <div class="example-type-tag">Chat-Based Learning</div>
+                        <h3>Career Ikigai — Personalized Pathway Tool</h3>
+                        <p>Career Ikigai is a chat-based learning experience that guides users through a structured interview to surface interests, strengths, and goals. The system synthesizes responses into personalized pathways, actionable next steps, and a formatted slide output that can be edited and shared with advisors or mentors. Designed for use in counseling, advising, and workforce programs, it can connect to localized job market data and support cohort-level insights through shared outputs and dashboards.</p>
+                    </div>
+                    <button class="sample-thumb" onclick="openStorylineModal('ikigai-modal-1')" aria-label="Launch Career Ikigai demo">
+                        <img src="images/thumbnail-ikigai.png" alt="Career Ikigai — chat-based career pathway tool thumbnail">
+                        <div class="sample-thumb-overlay"><span>&#9654; Launch Demo</span></div>
+                    </button>
+                </div>
+
+                <!-- 4. Learning Game -->
                 <div class="example-card">
                     <div class="example-card-body">
                         <div class="example-type-tag">Learning Game</div>
@@ -486,6 +499,20 @@
         </div>
     </div>
 
+    <!-- Career Ikigai Modal -->
+    <div id="ikigai-modal-1" class="popout-frame popout-storyline" role="dialog" aria-modal="true" aria-label="Career Ikigai — Personalized Pathway Tool">
+        <div class="popout-inner">
+            <div class="popout-actions">
+                <button class="popout-fullscreen" onclick="toggleModalFullscreen('ikigai-modal-1')" aria-label="Enter fullscreen">
+                    <svg class="icon-expand" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6V1h5M10 1h5v5M15 10v5h-5M6 15H1v-5"/></svg>
+                    <svg class="icon-compress" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1v5H1M15 6h-5V1M10 15v-5h5M1 10h5v5"/></svg>
+                </button>
+                <button class="popout-close" onclick="closeStorylineModal('ikigai-modal-1')" aria-label="Close">&#10005;</button>
+            </div>
+            <iframe data-storyline-src="https://career-ikigai.org/" src="about:blank" allowfullscreen title="Career Ikigai — Personalized Pathway Tool"></iframe>
+        </div>
+    </div>
+
     <!-- Learning Game Modal 1 -->
     <div id="game-modal-1" class="popout-frame popout-storyline" role="dialog" aria-modal="true" aria-label="Smoothie Challenge — Learning Game">
         <div class="popout-inner">
@@ -500,88 +527,33 @@
         </div>
     </div>
 
-    <!-- Portfolio Request Section -->
+    <!-- Contact CTA Section -->
     <section class="section" id="portfolio">
         <div class="container">
             <div class="cta-plum">
-                <h2>Request a Portfolio</h2>
+                <h2>Ready to get started?</h2>
                 <p class="cta-text">
-                    See examples of our work and learn how we can help your organization create effective learning
-                    experiences.
+                    Tell us about your project and we'll share examples of our work relevant to your needs.
                 </p>
-
-                <form id="portfolioForm" style="text-align: left;">
-                    <div style="margin-bottom: var(--spacing-md);">
-                        <label for="email"
-                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
-                            Email Address <span style="color: #dc2626;">*</span>
-                        </label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@organization.edu"
-                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); transition: border-color var(--transition-fast);">
-                    </div>
-
-                    <div style="margin-bottom: var(--spacing-lg);">
-                        <label for="projectDescription"
-                            style="display: block; margin-bottom: var(--spacing-xs); font-weight: 500; color: var(--text-primary);">
-                            Tell us about your project needs (optional)
-                        </label>
-                        <textarea id="projectDescription" name="projectDescription" rows="4"
-                            placeholder="What type of learning experiences are you looking to create? What challenges are you trying to solve?"
-                            style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--border-medium); border-radius: var(--radius-md); font-size: 1rem; font-family: var(--font-primary); resize: vertical; transition: border-color var(--transition-fast);"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary"
-                        style="width: 100%; justify-content: center; padding: 1rem 2rem; font-size: 1.0625rem;">
-                        Send Request
-                    </button>
-
-                    <div id="successMessage"
-                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #d1fae5; border: 1px solid #10b981; border-radius: var(--radius-md); color: #065f46;">
-                        <strong>Thank you!</strong> Check your inbox for a link to our portfolio.
-                    </div>
-
-                    <div id="errorMessage"
-                        style="display: none; margin-top: var(--spacing-md); padding: var(--spacing-md); background: #fee2e2; border: 1px solid #dc2626; border-radius: var(--radius-md); color: #991b1b;">
-                        <strong>Error:</strong> <span id="errorMessageText">Something went wrong. Please try
-                            again.</span>
-                    </div>
-                </form>
+                <a href="https://www.integral-ed.com/contact/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Talk with our team</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer (injected from vendor/integralthemes/components/footer.html at build time) -->
-    <!--
-  Shared footer template — Integral Ed microsite network
-  ======================================================
-
-  Build tokens replaced by each site's build.js at compile time:
-    eLearning &amp; Blended Learning   → pkg.footer.siteName   (e.g. "eLearning &amp; Blended Learning")
-              <li><a href="#home">Home</a></li>
-          <li><a href="#services">What We Do</a></li>
-          <li><a href="#approach">Approach</a></li>
-          <li><a href="#examples">Examples</a></li>
-          <li><a href="#portfolio">Request a Portfolio</a></li>  → <li> elements built from pkg.footer.pageLinks array
-
-  Everything else (tagline body, Service Areas, Get in Touch, copyright)
-  is shared across all sites and lives here as the single source of truth.
--->
-
-<footer class="footer" role="contentinfo">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
 
-      <!-- ── Brand: injected per site ── -->
       <div class="footer-brand">
         <p class="footer-logo">eLearning &amp; Blended Learning</p>
-        <p class="footer-tagline">eLearning &amp; Blended Learning is a division of <a href="https://www.integral-ed.com/" class="footer-parent-link" target="_blank" rel="noopener noreferrer">Integral Ed Services</a>, an educator-led learning and media design firm for mission-driven organizations. Adding technical and strategic capacity to schools, nonprofits, and workforce organizations since 2011.</p>
+        <p class="footer-tagline">eLearning &amp; Blended Learning is a division of <a href="https://www.integral-ed.com/" class="footer-parent-link" target="_blank" rel="noopener noreferrer">Integral Ed Services</a>. An educator led learning design firm based in Austin, TX. Serving Education Organizations since 2011.</p>
       </div>
 
-      <!-- ── Pages: injected per site ── -->
       <nav class="footer-nav" aria-label="Footer navigation">
         <h3 class="footer-nav-heading">Pages</h3>
         <ul role="list">
-                    <li><a href="#home">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#services">What We Do</a></li>
           <li><a href="#approach">Approach</a></li>
           <li><a href="#examples">Examples</a></li>
@@ -589,7 +561,6 @@
         </ul>
       </nav>
 
-      <!-- ── Service Areas: identical across all sites — do not change ── -->
       <nav class="footer-nav" aria-label="Service area microsites">
         <h3 class="footer-nav-heading">Service Areas</h3>
         <ul role="list">
@@ -602,7 +573,6 @@
         </ul>
       </nav>
 
-      <!-- ── CTA: identical across all sites — do not change ── -->
       <div class="footer-contact">
         <h3 class="footer-nav-heading">Get in Touch</h3>
         <a href="https://www.integral-ed.com/contact/" class="btn btn-primary footer-contact-btn" target="_blank" rel="noopener noreferrer">Talk With Our Team</a>
@@ -613,7 +583,6 @@
   </div>
 </footer>
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
-
 
     <!-- Popout Frame Component -->
     <script src="/vendor/integralthemes/components/popout-frame.js"></script>
