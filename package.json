@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "description": "Integral eLearning Website - Marketing microsite for instructional design and eLearning development services",
   "siteSlug": "elearning",
+  "footer": {
+    "siteName": "eLearning &amp; Blended Learning",
+    "pageLinks": [
+      { "href": "#home",      "label": "Home" },
+      { "href": "#services",  "label": "What We Do" },
+      { "href": "#approach",  "label": "Approach" },
+      { "href": "#examples",  "label": "Examples" },
+      { "href": "#portfolio", "label": "Request a Portfolio" }
+    ]
+  },
   "scripts": {
     "dev": "live-server src --port=3000 --open=/ --watch=src",
     "build": "node build.js",

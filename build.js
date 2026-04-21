@@ -73,6 +73,23 @@ if (fs.existsSync(widgetPath)) {
   console.log('⚠ Chat widget not found, pages will be built without it\n');
 }
 
+// Build footer HTML from shared template + site-specific config
+const footerTemplatePath = path.join(__dirname, 'vendor', 'integralthemes', 'components', 'footer.html');
+let footerHtml = '';
+if (fs.existsSync(footerTemplatePath) && pkg.footer) {
+  const footerTemplate = fs.readFileSync(footerTemplatePath, 'utf8');
+  const siteName = pkg.footer.siteName || '';
+  const pageLinksHtml = (pkg.footer.pageLinks || [])
+    .map(({ href, label }) => `          <li><a href="${href}">${label}</a></li>`)
+    .join('\n');
+  footerHtml = footerTemplate
+    .replace(/\{\{FOOTER_SITE_NAME\}\}/g, siteName)
+    .replace(/\{\{FOOTER_PAGE_LINKS\}\}/g, pageLinksHtml);
+  console.log('✓ Built footer from shared template\n');
+} else {
+  console.log('⚠ Footer template or config not found, pages will be built without injected footer\n');
+}
+
 // Copy HTML files and inject widget
 console.log('📄 Copying HTML files...');
 const htmlFiles = ['index.html'];
@@ -88,12 +105,17 @@ htmlFiles.forEach(file => {
       htmlContent = htmlContent.replace('</head>', `${siteNameScript}\n${analyticsHtml}\n</head>`);
     }
 
+    // Inject footer from shared template (replaces <!-- FOOTER_INJECT --> comment)
+    if (footerHtml) {
+      htmlContent = htmlContent.replace('<!-- FOOTER_INJECT -->', footerHtml);
+    }
+
     // Inject widget before </body> tag if widget exists
     if (widgetHtml) {
       htmlContent = htmlContent.replace('</body>', `${widgetHtml}\n</body>`);
     }
 
-    const tags = [analyticsHtml ? 'analytics' : '', widgetHtml ? 'widget' : ''].filter(Boolean);
+    const tags = [analyticsHtml ? 'analytics' : '', footerHtml ? 'footer' : '', widgetHtml ? 'widget' : ''].filter(Boolean);
     fs.writeFileSync(destPath, htmlContent, 'utf8');
     console.log(`  ✓ ${file}${tags.length ? ` (${tags.join(', ')})` : ''}`);
   } else {

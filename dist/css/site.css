@@ -9,3 +9,248 @@
  *   --primary: #custom-color;
  * }
  */
+
+/* ─── Photo Background Section ─────────────────────────────────────────── */
+
+.photo-background-section {
+    --bg-photo: none;
+    background-color: var(--primary-dark);
+    background-image: var(--bg-photo);
+    background-size: cover;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.photo-background-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(74, 8, 82, 1.0) 0%,
+        rgba(74, 8, 82, 0.85) 45%,
+        rgba(74, 8, 82, 0.3) 100%
+    );
+    z-index: 0;
+}
+
+.photo-background-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.photo-background-section .content {
+    max-width: 600px;
+}
+
+.photo-background-section h2,
+.photo-background-section p {
+    color: #fff;
+    text-align: left;
+    max-width: none;
+}
+
+.photo-background-section h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+
+@media (max-width: 768px) {
+    .photo-background-section .content {
+        max-width: 100%;
+    }
+}
+
+/* ─── Services Section — larger card icons ──────────────────────────────── */
+
+#services .outcome-icon {
+    width: 6rem;
+    height: 6rem;
+}
+
+/* ─── Examples Section ──────────────────────────────────────────────────── */
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg, 2rem);
+}
+
+@media (max-width: 900px) {
+    .examples-grid { grid-template-columns: 1fr; }
+}
+
+.example-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border-light, rgba(75,58,82,0.12));
+    box-shadow: 0 4px 16px rgba(75,58,82,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.example-card-body {
+    padding: 1.5rem 1.5rem 1rem;
+    flex: 1;
+}
+
+.example-type-tag {
+    display: inline-block;
+    background: var(--primary, #600b68);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 0.25rem 0.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.example-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary, #1a1a2e);
+    margin: 0 0 0.5rem;
+}
+
+.example-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #555);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ─── Storyline / Rise / Game modal overrides ───────────────────────────── */
+
+/* Wider 16:9 — gives the Storyline playbar room to breathe */
+.popout-storyline .popout-inner {
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+}
+
+/* Action bar — locked inside .popout-inner so it survives requestFullscreen()
+   Only the inner element is fullscreened; children remain visible above iframe */
+.popout-actions {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    pointer-events: all;
+}
+
+/* Vendor sets .popout-close { position: absolute } globally — cancel it
+   so the button sits in the flex row as a normal flex child */
+.popout-actions .popout-close {
+    position: relative;
+    top: auto;
+    right: auto;
+}
+
+/* Both buttons share the same pill style */
+.popout-actions button {
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.popout-actions button:hover {
+    background: rgba(0, 0, 0, 0.82);
+    border-color: #fff;
+    transform: scale(1.08);
+}
+
+/* Entrance pulse — fires each time modal opens (.active toggled on) */
+.popout-frame.active .popout-actions .popout-fullscreen {
+    animation: btn-entrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s both;
+}
+.popout-frame.active .popout-actions .popout-close {
+    animation: btn-entrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.18s both;
+}
+
+@keyframes btn-entrance {
+    0%   { opacity: 0; transform: scale(0.4);
+           box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6); }
+    55%  { opacity: 1; transform: scale(1.12); }
+    75%  { transform: scale(0.96);
+           box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+    100% { transform: scale(1);
+           box-shadow: 0 0 0 0  rgba(255, 255, 255, 0); }
+}
+
+/* Fullscreen icon swap: expand shown by default, compress shown when active */
+.popout-fullscreen .icon-expand   { display: flex; }
+.popout-fullscreen .icon-compress { display: none;  }
+.popout-fullscreen.is-fullscreen .icon-expand   { display: none;  }
+.popout-fullscreen.is-fullscreen .icon-compress { display: flex;  }
+
+/* Clickable sample thumbnail */
+.sample-thumb {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #d4c8dc;
+    cursor: pointer;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.sample-thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.2s ease;
+}
+
+.sample-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.sample-thumb-overlay span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+}
+
+.sample-thumb:hover img { filter: brightness(0.75); }
+.sample-thumb:hover .sample-thumb-overlay span { opacity: 1; }
+
+.video-thumb .sample-thumb-overlay span {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+}
