@@ -89,7 +89,7 @@ Title: Media Design & Instructional Video
 Description: Custom graphics, animations, and instructional videos designed to clarify complex concepts and maintain learner attention.
 
 --- Card 5 ---
-Title: Chatbot-Enabled Practice
+Title: AI-Facilitated eLearning
 Description: AI-powered conversation practice and role-play scenarios that provide safe, repeatable practice opportunities for complex skills.
 
 --- Card 6 ---
@@ -141,9 +141,9 @@ Section subheading:
 A sample of the learning experiences we design and develop for education organizations.
 
 --- Example 1 ---
-Type tag: eLearning with Chatbot
-Title: Value Proposition Chatbot
-Description: This Storyline module features an embedded AI chatbot that guides cross-sector leaders in refining their organization's value proposition within place-based partnerships.
+Type tag: AI-Facilitated eLearning
+Title: Value Proposition AI Coach
+Description: This Storyline module features an embedded AI coach that guides cross-sector leaders in refining their organization's value proposition within place-based partnerships.
 Thumbnail: images/thumbnail-value-prop.png
 
 --- Example 2 ---
