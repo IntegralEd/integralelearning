@@ -231,11 +231,18 @@
 
   showStep('q1');
 
-  /* ── Checklist CTA (stubbed until the PDF exists) ───────── */
+  /* ── Checklist CTA ──────────────────────────────────────── */
   var checklistBtn = root.querySelector('.avp-cta-primary');
   if (checklistBtn) {
     checklistBtn.addEventListener('click', function () {
+      // checklist_click kept for metric continuity with the pre-PDF stub;
+      // file_download follows GA4's recommended-event shape.
       track('checklist_click', {});
+      track('file_download', {
+        file_name: 'platform-decision-checklist.pdf',
+        file_extension: 'pdf',
+        link_url: checklistBtn.getAttribute('href')
+      });
     });
   }
 })();
