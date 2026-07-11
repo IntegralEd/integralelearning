@@ -245,4 +245,65 @@
       });
     });
   }
+
+  /* ── Reveal-on-scroll (anniversary pattern) ─────────────── */
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = root.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || reduceMotion) {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  } else {
+    var revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-visible');
+          revealIO.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    revealEls.forEach(function (el) { revealIO.observe(el); });
+  }
+
+  /* ── Scroll-spy left rail (anniversary pattern) ─────────── */
+  var railLinks = Array.prototype.slice.call(
+    document.querySelectorAll('.avp-rail-nav a'));
+  if (railLinks.length && 'IntersectionObserver' in window) {
+    var spySections = railLinks.map(function (a) {
+      return document.getElementById(a.getAttribute('href').slice(1));
+    }).filter(Boolean);
+
+    var setActive = function (id) {
+      railLinks.forEach(function (a) {
+        a.parentElement.classList.toggle(
+          'active', a.getAttribute('href') === '#' + id);
+      });
+    };
+    var spyIO = new IntersectionObserver(function (entries) {
+      var vis = entries.filter(function (e) { return e.isIntersecting; });
+      if (vis.length) {
+        vis.sort(function (a, b) {
+          return a.boundingClientRect.top - b.boundingClientRect.top;
+        });
+        setActive(vis[0].target.id);
+      }
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    spySections.forEach(function (s) { spyIO.observe(s); });
+  }
+
+  /* ── Mobile rail: collapse the section nav into a menu ──── */
+  var rail = document.getElementById('avp-rail');
+  var railToggle = document.getElementById('avp-rail-toggle');
+  if (rail && railToggle) {
+    var setRailOpen = function (open) {
+      rail.classList.toggle('is-open', open);
+      railToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    railToggle.addEventListener('click', function () {
+      setRailOpen(!rail.classList.contains('is-open'));
+    });
+    // Close the panel after choosing a section
+    railLinks.forEach(function (a) {
+      a.addEventListener('click', function () { setRailOpen(false); });
+    });
+  }
 })();

@@ -23,13 +23,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/vendor/integralthemes/assets/brand/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/vendor/integralthemes/assets/brand/apple-touch-icon.png">
 
-    <!-- Fonts (page-specific: Lexend + Lato) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Shared Theme (provides the injected network footer's styling) -->
+    <!-- Shared Theme -->
     <link rel="stylesheet" href="/vendor/integralthemes/theme/theme.css">
 
     <!-- Site Overrides -->
@@ -120,439 +114,540 @@
 </head>
 
 <body>
-<div class="avp is-home">
+    <!-- Navigation (site standard) -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">Integral<span style="font-weight: 300;">eLearning</span></a>
 
-    <!-- ── Header ─────────────────────────────────────────── -->
-    <header class="avp-header">
-        <a href="/" class="avp-wordmark">Integral<span>eLearning</span></a>
-        <a href="https://www.integral-ed.com/contact/" class="avp-pill">Talk with our team</a>
-    </header>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    <!-- ── Hero ───────────────────────────────────────────── -->
-    <section class="avp-hero">
-        <div class="avp-eyebrow">An Organization's Introduction to eLearning and Platform Selection</div>
-        <h1 class="avp-h1">Do you need an LMS?<br>Maybe one day, but you probably don't need to decide now.</h1>
-        <p class="avp-lede">If you're on the fence, odds are good you're not a school system or <abbr
-                title="institution of higher education">IHE</abbr>, and you may not need one at all.</p>
-
-        <div class="avp-context">
-            <p>Starting around 2020, when pandemic closures sent many professional learning organizations into
-                asynchronous delivery, platforms built for schools felt necessary for any nonprofit trying to reach
-                external audiences or internal staff. It turns out those platforms are often:</p>
-            <ul>
-                <li><strong>Expensive:</strong> per-seat pricing adds up quickly and makes "cost of ownership" a tricky
-                    variable.</li>
-                <li><strong>Not a great fit:</strong> enterprise LMS focus on capturing grades and credit requirements
-                    while integrating with a district or university's student information. Nonprofits rarely need or
-                    care.</li>
-                <li><strong>Compliance driven:</strong> built around requirements for learners, not flexibly engaging
-                    professionals or volunteers.</li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#services" class="nav-link">What We Do</a></li>
+                <li><a href="/#examples" class="nav-link">Examples</a></li>
+                <li><a href="https://www.integral-ed.com/" class="nav-link" target="_blank">About</a></li>
+                <li><a href="https://www.integral-ed.com/contact/" class="nav-link" target="_blank">Contact</a></li>
             </ul>
-            <p>Our team has supported over a dozen nonprofits delivering professional development internally and
-                externally, and we've learned to ask a few questions we'll share with you below. When you're ready, we
-                offer a <a href="https://integralplatforms.com">platform selection service</a>. But we think it's best
-                to start by delivering some learning modules to your intended audience.</p>
         </div>
+    </nav>
 
-        <!-- Myth flip-card carousel -->
-        <div class="avp-myths">
-            <div class="avp-myths-label">Common myths</div>
-            <div class="avp-myths-hint">Tap the card to flip it. 🦄 myth on the front, ✓ what's actually true on the
-                back.</div>
-            <div class="avp-carousel" role="group" aria-roledescription="carousel" aria-label="Common myths">
-                <button type="button" class="avp-arrow" data-myth-prev aria-label="Previous myth">‹</button>
-                <div class="avp-myth-card" data-myth-card role="button" tabindex="0"
-                    aria-label="Myth shown. Activate to reveal what is actually true.">
-                    <div class="avp-myth-face avp-myth-front" aria-hidden="false">
-                        <div class="avp-myth-emoji">🦄</div>
-                        <div class="avp-face-label">Myth</div>
-                        <div class="avp-myth-text" data-myth-text></div>
-                        <div class="avp-face-hint">tap to flip</div>
-                    </div>
-                    <div class="avp-myth-face avp-myth-back" aria-hidden="true">
-                        <div class="avp-myth-check">✓</div>
-                        <div class="avp-face-label">Actually</div>
-                        <div class="avp-myth-fact" data-myth-fact></div>
-                        <div class="avp-face-hint">tap to flip back</div>
+<div class="avp is-home">
+    <div class="avp-layout">
+
+        <!-- ── Sticky left rail (scroll-spy section nav) ─────────── -->
+        <aside class="avp-rail" id="avp-rail" aria-label="Page sections">
+            <div class="avp-rail-inner">
+                <div class="avp-rail-top">
+                    <a href="#top" class="avp-rail-brand" aria-label="Do you need an LMS? Back to top">
+                        <span class="avp-rail-big">LMS?</span>
+                        <span class="avp-rail-sub">AUTHORING TOOLS VS PLATFORMS</span>
+                    </a>
+                    <button type="button" class="avp-rail-toggle" id="avp-rail-toggle" aria-expanded="false"
+                        aria-controls="avp-rail-panel" aria-label="Open sections menu">
+                        <span class="avp-rail-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+                        <span class="avp-rail-toggle-lbl">Sections</span>
+                    </button>
+                </div>
+
+                <div class="avp-rail-panel" id="avp-rail-panel">
+                    <nav aria-label="Sections">
+                        <ol class="avp-rail-nav">
+                            <li><a href="#myths"><span class="num">01</span><span class="lbl">Common myths</span></a></li>
+                            <li><a href="#connect"><span class="num">02</span><span class="lbl">How the pieces connect</span></a></li>
+                            <li><a href="#lock-in"><span class="num">03</span><span class="lbl">The lock-in trap</span></a></li>
+                            <li><a href="#formats"><span class="num">04</span><span class="lbl">Universal formats first</span></a></li>
+                            <li><a href="#decision-tree"><span class="num">05</span><span class="lbl">Self-assessment</span></a></li>
+                            <li><a href="#checklist"><span class="num">06</span><span class="lbl">Take it with you</span></a></li>
+                        </ol>
+                    </nav>
+                    <div class="avp-rail-cta">
+                        <a href="https://www.integral-ed.com/contact/" target="_blank" rel="noopener noreferrer">Talk
+                            with our team &rarr;</a>
                     </div>
                 </div>
-                <button type="button" class="avp-arrow" data-myth-next aria-label="Next myth">›</button>
             </div>
-            <div class="avp-dots" data-myth-dots></div>
-            <div class="avp-counter" data-myth-counter></div>
-            <div class="avp-sr-only" data-myth-live aria-live="polite"></div>
-        </div>
+        </aside>
 
-        <!-- Self-assessment jump -->
-        <p class="avp-jump-text">Confused by any of these terms? Read on. Already know them and want to jump to a
-            self-assessment?</p>
-        <div class="avp-jump-btn-wrap"><a href="#decision-tree" class="avp-jump-btn">Take the self-assessment ↓</a></div>
+        <!-- ── Main content column ───────────────────────────────── -->
+        <main class="avp-main">
 
-        <div class="avp-analogy-intro">There's a lot to learn about eLearning: the technical jargon, and your particular
-            audience of learners. Here are two ways to think about the alphabet soup. If you're more familiar with homes
-            or with music, explore either metaphor as you learn the lay of the eLearning landscape.</div>
-        <div class="avp-pickers">
-            <div class="avp-picker avp-picker--home" data-set-analogy="home" role="button" tabindex="0"
-                aria-pressed="true">
-                <div class="avp-picker-emoji">🏠</div>
-                <div class="avp-picker-title">Explain it as a home</div>
-                <div class="avp-picker-sub">Furniture, building codes, mortgages, and the neighborhood.</div>
+            <!-- Hero (dark brand band, staged title reveal) -->
+            <section class="avp-hero" id="top">
+                <div class="avp-hero-bgfx" aria-hidden="true">
+                    <div class="avp-blob avp-blob--plum"></div>
+                    <div class="avp-blob avp-blob--magenta"></div>
+                    <div class="avp-blob avp-blob--teal"></div>
+                </div>
+                <div class="avp-hero-content">
+                    <p class="avp-eyebrow">An Organization's Introduction to eLearning and Platform Selection</p>
+                    <h1 class="avp-h1">
+                        <span class="avp-h1-l1">Do you need an LMS?</span>
+                        <span class="avp-h1-l2">Maybe one day,</span>
+                        <span class="avp-h1-l3">but you probably don't need to decide now.</span>
+                    </h1>
+                    <p class="avp-lede">If you're on the fence, odds are good you're not a school system or <abbr
+                            title="institution of higher education">IHE</abbr>, and you may not need one at all.</p>
+                </div>
+                <a href="#myths" class="avp-scroll-cue" aria-label="Scroll to content">↓</a>
+            </section>
+
+            <!-- Intro: context, myths, pickers -->
+            <section class="avp-intro">
+                <div class="avp-intro-inner">
+                    <span class="avp-kicker reveal">01 · Common myths</span>
+                    <div class="avp-context reveal">
+                        <p>Starting around 2020, when pandemic closures sent many professional learning organizations
+                            into asynchronous delivery, platforms built for schools felt necessary for any nonprofit
+                            trying to reach external audiences or internal staff. It turns out those platforms are
+                            often:</p>
+                        <ul>
+                            <li><strong>Expensive:</strong> per-seat pricing adds up quickly and makes "cost of
+                                ownership" a tricky variable.</li>
+                            <li><strong>Not a great fit:</strong> enterprise LMS focus on capturing grades and credit
+                                requirements while integrating with a district or university's student information.
+                                Nonprofits rarely need or care.</li>
+                            <li><strong>Compliance driven:</strong> built around requirements for learners, not
+                                flexibly engaging professionals or volunteers.</li>
+                        </ul>
+                        <p>Our team has supported over a dozen nonprofits delivering professional development
+                            internally and externally, and we've learned to ask a few questions we'll share with you
+                            below. When you're ready, we offer a <a href="https://integralplatforms.com">platform
+                                selection service</a>. But we think it's best to start by delivering some learning
+                            modules to your intended audience.</p>
+                    </div>
+
+                    <!-- Myth flip-card carousel -->
+                    <div class="avp-myths reveal" id="myths">
+                        <div class="avp-myths-label">Common myths</div>
+                        <div class="avp-myths-hint">Tap the card to flip it. 🦄 myth on the front, ✓ what's actually
+                            true on the back.</div>
+                        <div class="avp-carousel" role="group" aria-roledescription="carousel"
+                            aria-label="Common myths">
+                            <button type="button" class="avp-arrow" data-myth-prev aria-label="Previous myth">‹</button>
+                            <div class="avp-myth-card" data-myth-card role="button" tabindex="0"
+                                aria-label="Myth shown. Activate to reveal what is actually true.">
+                                <div class="avp-myth-face avp-myth-front" aria-hidden="false">
+                                    <div class="avp-myth-emoji">🦄</div>
+                                    <div class="avp-face-label">Myth</div>
+                                    <div class="avp-myth-text" data-myth-text></div>
+                                    <div class="avp-face-hint">tap to flip</div>
+                                </div>
+                                <div class="avp-myth-face avp-myth-back" aria-hidden="true">
+                                    <div class="avp-myth-check">✓</div>
+                                    <div class="avp-face-label">Actually</div>
+                                    <div class="avp-myth-fact" data-myth-fact></div>
+                                    <div class="avp-face-hint">tap to flip back</div>
+                                </div>
+                            </div>
+                            <button type="button" class="avp-arrow" data-myth-next aria-label="Next myth">›</button>
+                        </div>
+                        <div class="avp-dots" data-myth-dots></div>
+                        <div class="avp-counter" data-myth-counter></div>
+                        <div class="avp-sr-only" data-myth-live aria-live="polite"></div>
+                    </div>
+
+                    <!-- Self-assessment jump -->
+                    <p class="avp-jump-text">Confused by any of these terms? Read on. Already know them and want to
+                        jump to a self-assessment?</p>
+                    <div class="avp-jump-btn-wrap"><a href="#decision-tree" class="avp-jump-btn">Take the
+                            self-assessment ↓</a></div>
+
+                    <div class="avp-analogy-intro">There's a lot to learn about eLearning: the technical jargon, and
+                        your particular audience of learners. Here are two ways to think about the alphabet soup. If
+                        you're more familiar with homes or with music, explore either metaphor as you learn the lay of
+                        the eLearning landscape.</div>
+                    <div class="avp-pickers">
+                        <div class="avp-picker avp-picker--home" data-set-analogy="home" role="button" tabindex="0"
+                            aria-pressed="true">
+                            <div class="avp-picker-emoji">🏠</div>
+                            <div class="avp-picker-title">Explain it as a home</div>
+                            <div class="avp-picker-sub">Furniture, building codes, mortgages, and the neighborhood.
+                            </div>
+                        </div>
+                        <div class="avp-picker avp-picker--music" data-set-analogy="music" role="button" tabindex="0"
+                            aria-pressed="false">
+                            <div class="avp-picker-emoji">🎵</div>
+                            <div class="avp-picker-title">Explain it as music</div>
+                            <div class="avp-picker-sub">Tracks, albums, MP3s, studios, and streaming services.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sticky analogy toggle -->
+            <div class="avp-toggle-bar">
+                <span>Story:</span>
+                <button type="button" class="avp-toggle avp-toggle--home" data-set-analogy="home"
+                    aria-pressed="true">🏠 Home</button>
+                <button type="button" class="avp-toggle avp-toggle--music" data-set-analogy="music"
+                    aria-pressed="false">🎵 Music</button>
             </div>
-            <div class="avp-picker avp-picker--music" data-set-analogy="music" role="button" tabindex="0"
-                aria-pressed="false">
-                <div class="avp-picker-emoji">🎵</div>
-                <div class="avp-picker-title">Explain it as music</div>
-                <div class="avp-picker-sub">Tracks, albums, MP3s, studios, and streaming services.</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ── Sticky analogy toggle ──────────────────────────── -->
-    <div class="avp-toggle-bar">
-        <span>Story:</span>
-        <button type="button" class="avp-toggle avp-toggle--home" data-set-analogy="home"
-            aria-pressed="true">🏠 Home</button>
-        <button type="button" class="avp-toggle avp-toggle--music" data-set-analogy="music"
-            aria-pressed="false">🎵 Music</button>
+            <!-- How the pieces connect -->
+            <section class="avp-flow" id="connect">
+                <div class="avp-section-head reveal">
+                    <span class="avp-kicker">02 · The landscape</span>
+                    <h2 class="avp-flow-h2">How the pieces connect</h2>
+                    <p class="avp-flow-sub">Expertise goes in. Universal formats come out. Platforms come last, and
+                        audiences connect through them. Flip any card between 🏠 and 🎵.</p>
+                </div>
+
+                <!-- Stage 1: Expertise -->
+                <div class="avp-stage avp-stage--single reveal">
+                    <div class="avp-stage-head">
+                        <div class="avp-badge">1</div>
+                        <div class="avp-stage-title">Expertise <small>(the input)</small></div>
+                    </div>
+                    <div class="avp-stage-body">Every learning program starts with what your organization already
+                        knows: the experts, practitioners, and leaders who hold the content.</div>
+                    <div class="avp-chips">
+                        <span class="avp-chip">SMEs</span><span class="avp-chip">staff</span><span
+                            class="avp-chip">partners</span><span class="avp-chip">academics</span><span
+                            class="avp-chip">practitioners</span><span class="avp-chip">experts in the field</span>
+                    </div>
+                    <div class="avp-strips">
+                        <div class="avp-strip avp-strip--home" data-flip-analogy="music"
+                            title="Tap to flip to the music version">
+                            <span>🏠 How you live: what you need from a room, a piece of furniture, a home. You bring
+                                that knowledge; the builders bring the craft.</span>
+                            <button type="button" class="avp-strip-flip" title="Flip to the music version"
+                                aria-label="Flip to the music version">⟳ 🎵</button>
+                        </div>
+                        <div class="avp-strip avp-strip--music" data-flip-analogy="home"
+                            title="Tap to flip to the home version">
+                            <span>🎵 The musicians. No catalog or streaming deal matters without the talent. Your
+                                experts are the band.</span>
+                            <button type="button" class="avp-strip-flip" title="Flip to the home version"
+                                aria-label="Flip to the home version">⟳ 🏠</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="avp-connector">
+                    <div class="avp-connector-line"></div>
+                    <div class="avp-connector-label">feeds</div>
+                    <div class="avp-connector-line"></div>
+                    <div class="avp-connector-glyph">▼</div>
+                </div>
+
+                <!-- Stages 2 & 3: Authoring tools → Assets -->
+                <div class="avp-pair reveal">
+                    <div class="avp-stage">
+                        <div class="avp-stage-head">
+                            <div class="avp-badge">2</div>
+                            <div class="avp-stage-title">Authoring tools</div>
+                        </div>
+                        <div class="avp-stage-body">The software where assets get made. You don't live in them; you
+                            build in them.</div>
+                        <div class="avp-chips">
+                            <span class="avp-chip">Articulate Storyline</span><span class="avp-chip">Rise</span><span
+                                class="avp-chip">Adobe Creative Suite</span><span
+                                class="avp-chip">Illustrator</span><span class="avp-chip">Premiere</span>
+                        </div>
+                        <div class="avp-strips avp-strips--push">
+                            <div class="avp-strip avp-strip--home" data-flip-analogy="music"
+                                title="Tap to flip to the music version">
+                                <span>🏠 The workshop. Nobody confuses the workshop with the home.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the music version"
+                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                            </div>
+                            <div class="avp-strip avp-strip--music" data-flip-analogy="home"
+                                title="Tap to flip to the home version">
+                                <span>🎵 The recording studio. It doesn't decide where your music is heard.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the home version"
+                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avp-mid">
+                        <div class="avp-mid-label">produce</div>
+                        <div class="avp-mid-glyph">→</div>
+                    </div>
+                    <div class="avp-stage">
+                        <div class="avp-stage-head">
+                            <div class="avp-badge">3</div>
+                            <div class="avp-stage-title">Learning assets</div>
+                        </div>
+                        <div class="avp-stage-body">The materials themselves: what you actually own, and the part worth
+                            investing in first.</div>
+                        <div class="avp-chips">
+                            <span class="avp-chip">modules</span><span class="avp-chip">videos</span><span
+                                class="avp-chip">guides</span><span class="avp-chip">checklists</span><span
+                                class="avp-chip">websites</span><span class="avp-chip">apps</span>
+                        </div>
+                        <div class="avp-strips avp-strips--push">
+                            <div class="avp-strip avp-strip--home" data-flip-analogy="music"
+                                title="Tap to flip to the music version">
+                                <span>🏠 Modular furniture snaps together into different rooms and moves from house to
+                                    house.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the music version"
+                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                            </div>
+                            <div class="avp-strip avp-strip--music" data-flip-analogy="home"
+                                title="Tap to flip to the home version">
+                                <span>🎵 Tracks &amp; albums. Modules are tracks, courses are albums. Live workshops
+                                    are concerts, async is streaming. Different versions for different
+                                    audiences.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the home version"
+                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="avp-connector">
+                    <div class="avp-connector-line"></div>
+                    <div class="avp-connector-label">yield</div>
+                    <div class="avp-connector-line"></div>
+                    <div class="avp-connector-glyph">▼</div>
+                </div>
+
+                <!-- Stage 4: Universal formats -->
+                <div class="avp-stage avp-stage--single avp-stage--alt reveal">
+                    <div class="avp-stage-head">
+                        <div class="avp-badge">4</div>
+                        <div class="avp-stage-title">Universal formats <small>(the output that travels)</small></div>
+                    </div>
+                    <div class="avp-stage-body">File types that keep your assets portable across any platform. We
+                        recommend clients build in these first.</div>
+                    <div class="avp-chips">
+                        <span class="avp-chip avp-chip--format">PDF</span><span
+                            class="avp-chip avp-chip--format">HTML</span><span
+                            class="avp-chip avp-chip--format">SCORM</span><span
+                            class="avp-chip avp-chip--format">Google Drive</span><span
+                            class="avp-chip avp-chip--format">Microsoft Office</span>
+                    </div>
+                    <div class="avp-strips">
+                        <div class="avp-strip avp-strip--home" data-flip-analogy="music"
+                            title="Tap to flip to the music version">
+                            <span>🏠 Building codes: standard door widths, outlet amperage, stair heights. Built to
+                                standard, it fits any house you'll ever own.</span>
+                            <button type="button" class="avp-strip-flip" title="Flip to the music version"
+                                aria-label="Flip to the music version">⟳ 🎵</button>
+                        </div>
+                        <div class="avp-strip avp-strip--music" data-flip-analogy="home"
+                            title="Tap to flip to the home version">
+                            <span>🎵 The MP3: one file that plays on any device, any service, forever. SCORM is the MP3
+                                of eLearning.</span>
+                            <button type="button" class="avp-strip-flip" title="Flip to the home version"
+                                aria-label="Flip to the home version">⟳ 🏠</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="avp-connector">
+                    <div class="avp-connector-line"></div>
+                    <div class="avp-connector-label">which play in / on</div>
+                    <div class="avp-connector-line"></div>
+                    <div class="avp-connector-glyph">▼</div>
+                </div>
+
+                <!-- Stages 5 & 6: Platforms ↔ Audience -->
+                <div class="avp-pair reveal">
+                    <div class="avp-stage">
+                        <div class="avp-stage-head">
+                            <div class="avp-badge">5</div>
+                            <div class="avp-stage-title">Platforms</div>
+                        </div>
+                        <div class="avp-stage-body">Where learners access learning: an LMS, a knowledge hub, or your
+                            own website. The biggest commitment, and usually the most deferrable one.</div>
+                        <div class="avp-chips">
+                            <span class="avp-chip avp-chip--warn">per-learner pricing</span><span
+                                class="avp-chip avp-chip--warn">long license terms</span><span
+                                class="avp-chip avp-chip--warn">costly integrations</span>
+                        </div>
+                        <div class="avp-strips avp-strips--push">
+                            <div class="avp-strip avp-strip--home" data-flip-analogy="music"
+                                title="Tap to flip to the music version">
+                                <span>🏠 The house. Committing early is signing a mortgage before you know your family
+                                    size. And built-ins don't move.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the music version"
+                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                            </div>
+                            <div class="avp-strip avp-strip--music" data-flip-analogy="home"
+                                title="Tap to flip to the home version">
+                                <span>🎵 The streaming service. Apple Music vs Spotify vs CDs vs your own site, each
+                                    with its own pricing and commission model. You may want to be on all of
+                                    them.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the home version"
+                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avp-mid">
+                        <div class="avp-mid-label">connect</div>
+                        <div class="avp-mid-glyph">⇄</div>
+                    </div>
+                    <div class="avp-stage avp-stage--alt">
+                        <div class="avp-stage-head">
+                            <div class="avp-badge">6</div>
+                            <div class="avp-stage-title">Your audience</div>
+                        </div>
+                        <div class="avp-stage-body">The learners you reach <em>through</em> the platform. And it runs
+                            both ways: learners add information, and courses personalize around them. Learn how they
+                            engage before you commit to where.</div>
+                        <div class="avp-chips">
+                            <span class="avp-chip">who are they?</span><span class="avp-chip">desktop or
+                                mobile?</span><span class="avp-chip">when &amp; how?</span>
+                        </div>
+                        <div class="avp-strips avp-strips--push">
+                            <div class="avp-strip avp-strip--home" data-flip-analogy="music"
+                                title="Tap to flip to the music version">
+                                <span>🏠 The neighborhood: the community, habitat, and infrastructure the house
+                                    connects to. That's what you're really choosing.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the music version"
+                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                            </div>
+                            <div class="avp-strip avp-strip--music" data-flip-analogy="home"
+                                title="Tap to flip to the home version">
+                                <span>🎵 The fanbase. You find them where they already listen, and your first releases
+                                    teach you who they really are.</span>
+                                <button type="button" class="avp-strip-flip" title="Flip to the home version"
+                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lock-in trap band (dark brand) -->
+            <section class="avp-lockin" id="lock-in">
+                <div class="avp-hero-bgfx avp-hero-bgfx--soft" aria-hidden="true">
+                    <div class="avp-blob avp-blob--plum"></div>
+                    <div class="avp-blob avp-blob--teal"></div>
+                </div>
+                <div class="avp-lockin-inner reveal">
+                    <span class="avp-kicker avp-kicker--onDark">03 · The trap</span>
+                    <h2>The lock-in trap</h2>
+                    <p>Don't lock into a platform until you know how your audience will use it. Platforms often charge
+                        per learner, bind you to multi-year licenses, and require costly integration with your other
+                        systems. A pilot answers the questions a contract can't:</p>
+                    <div class="avp-qchips">
+                        <span class="avp-qchip">What's the market?</span>
+                        <span class="avp-qchip">Desktop or mobile?</span>
+                        <span class="avp-qchip">Who's the customer?</span>
+                        <span class="avp-qchip">When &amp; how do they use it?</span>
+                    </div>
+                    <p class="avp-lockin-closer">Skip the lock-in: get learning assets in front of your audience as a
+                        trial, test, or pilot, and learn.</p>
+                </div>
+            </section>
+
+            <!-- Client story placeholder -->
+            <section class="avp-story">
+                <div class="avp-story-card reveal">
+                    <div class="avp-story-label">Client story · placeholder</div>
+                    <p class="avp-story-quote">"A short quote from a client who piloted portable modules first, learned
+                        how their audience actually used them, and then chose a platform with confidence."</p>
+                    <div class="avp-story-attr">Name · Role · Organization</div>
+                </div>
+            </section>
+
+            <!-- Build in universal formats first -->
+            <section class="avp-formats" id="formats">
+                <div class="avp-section-head avp-section-head--center reveal">
+                    <span class="avp-kicker">04 · Build portable</span>
+                    <h2>Build in universal formats first</h2>
+                    <p class="avp-formats-intro">Assets built this way snap together like Lego, into different courses
+                        for different audiences, and move from platform to platform when you finally choose (or build)
+                        your home.</p>
+                </div>
+                <div class="avp-format-tiles reveal">
+                    <div class="avp-format-tile">PDF</div>
+                    <div class="avp-format-tile">HTML</div>
+                    <div class="avp-format-tile">SCORM</div>
+                    <div class="avp-format-tile">Google Drive</div>
+                    <div class="avp-format-tile">Microsoft Office</div>
+                </div>
+                <div class="avp-arrows-down" aria-hidden="true">↓ &nbsp; ↓ &nbsp; ↓</div>
+                <div class="avp-dest-cards reveal">
+                    <div class="avp-dest">
+                        <div class="avp-dest-title">An LMS</div>
+                        <div class="avp-dest-sub">when tracking matters</div>
+                    </div>
+                    <div class="avp-dest">
+                        <div class="avp-dest-title">A knowledge hub</div>
+                        <div class="avp-dest-sub">when reference matters</div>
+                    </div>
+                    <div class="avp-dest">
+                        <div class="avp-dest-title">Your website</div>
+                        <div class="avp-dest-sub">when reach matters</div>
+                    </div>
+                </div>
+                <p class="avp-formats-foot">The same assets work in all three. That's the point.</p>
+            </section>
+
+            <!-- Decision tree / self-assessment -->
+            <section class="avp-decision" id="decision-tree">
+                <div class="avp-decision-inner">
+                    <div class="avp-section-head avp-section-head--center reveal">
+                        <span class="avp-kicker">05 · Self-assessment</span>
+                        <h2>So, do you need an LMS?</h2>
+                        <p class="avp-decision-sub">Two honest questions. Thirty seconds.</p>
+                    </div>
+                    <div class="avp-decision-card reveal" aria-live="polite">
+                        <div class="avp-step" data-step="q1">
+                            <div class="avp-step-label">QUESTION 1 OF 2</div>
+                            <div class="avp-step-q">Do you have a hard requirement today for tracking completions,
+                                certifications, or compliance reporting?</div>
+                            <div class="avp-step-actions">
+                                <button type="button" class="avp-btn-solid" data-goto-step="q2">Yes, we do</button>
+                                <button type="button" class="avp-btn-outline" data-goto-step="vB">No, or not
+                                    sure</button>
+                            </div>
+                        </div>
+                        <div class="avp-step" data-step="q2" hidden>
+                            <div class="avp-step-label">QUESTION 2 OF 2</div>
+                            <div class="avp-step-q">Do you already know your audience: their devices, their habits, and
+                                how many of them there are?</div>
+                            <div class="avp-step-actions">
+                                <button type="button" class="avp-btn-solid" data-goto-step="vA">Yes, clearly</button>
+                                <button type="button" class="avp-btn-outline" data-goto-step="vB">Not yet</button>
+                            </div>
+                        </div>
+                        <div class="avp-step avp-step--verdict" data-step="vA" hidden>
+                            <div class="avp-step-label avp-step-label--ok">YOU'RE READY</div>
+                            <div class="avp-step-q">Shop for an LMS, carefully.</div>
+                            <div class="avp-verdict-body">Negotiate short initial terms, confirm SCORM import
+                                <em>and</em> export, and keep every asset in universal formats so the platform serves
+                                you, not the other way around.</div>
+                            <a href="#decision-tree" class="avp-restart" data-goto-step="q1">Start over</a>
+                        </div>
+                        <div class="avp-step avp-step--verdict" data-step="vB" hidden>
+                            <div class="avp-step-label avp-step-label--ok">GOOD NEWS: YOU CAN WAIT</div>
+                            <div class="avp-step-q">Pilot first. Decide later.</div>
+                            <div class="avp-verdict-body">Launch a few learning modules in universal formats to gauge
+                                business requirements, adoption, and user behavior. Let real usage data, not a sales
+                                demo, pick your platform.</div>
+                            <a href="#decision-tree" class="avp-restart" data-goto-step="q1">Start over</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA (page's own, above the shared network footer) -->
+            <section class="avp-cta" id="checklist">
+                <div class="avp-section-head avp-section-head--center reveal">
+                    <span class="avp-kicker">06 · Take it with you</span>
+                    <h2>Take the decision with you</h2>
+                    <p class="avp-cta-intro">A one-page checklist covering the questions above: formats to require,
+                        contract terms to negotiate, and the pilot plan that answers the rest.</p>
+                </div>
+                <div class="avp-cta-btns reveal">
+                    <a href="/assets/platform-decision-checklist.pdf" download="Platform Decision Checklist.pdf"
+                        class="avp-cta-primary">Download the decision checklist</a>
+                    <a href="https://www.integral-ed.com/contact/" class="avp-cta-secondary">Talk with our team</a>
+                </div>
+                <p class="avp-fineprint">Integral eLearning is a division of Integral Ed Services, an educator-led
+                    learning and media design firm for mission-driven organizations.</p>
+            </section>
+
+        </main>
     </div>
-
-    <!-- ── How the pieces connect ─────────────────────────── -->
-    <section class="avp-flow">
-        <h2 class="avp-flow-h2">How the pieces connect</h2>
-        <p class="avp-flow-sub">Expertise goes in. Universal formats come out. Platforms come last, and audiences
-            connect through them. Flip any card between 🏠 and 🎵.</p>
-
-        <!-- Stage 1: Expertise -->
-        <div class="avp-stage avp-stage--single">
-            <div class="avp-stage-head">
-                <div class="avp-badge">1</div>
-                <div class="avp-stage-title">Expertise <small>(the input)</small></div>
-            </div>
-            <div class="avp-stage-body">Every learning program starts with what your organization already knows: the
-                experts, practitioners, and leaders who hold the content.</div>
-            <div class="avp-chips">
-                <span class="avp-chip">SMEs</span><span class="avp-chip">staff</span><span
-                    class="avp-chip">partners</span><span class="avp-chip">academics</span><span
-                    class="avp-chip">practitioners</span><span class="avp-chip">experts in the field</span>
-            </div>
-            <div class="avp-strips">
-                <div class="avp-strip avp-strip--home" data-flip-analogy="music"
-                    title="Tap to flip to the music version">
-                    <span>🏠 How you live: what you need from a room, a piece of furniture, a home. You bring that
-                        knowledge; the builders bring the craft.</span>
-                    <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                            aria-label="Flip to the music version">⟳ 🎵</button>
-                </div>
-                <div class="avp-strip avp-strip--music" data-flip-analogy="home"
-                    title="Tap to flip to the home version">
-                    <span>🎵 The musicians. No catalog or streaming deal matters without the talent. Your experts are
-                        the band.</span>
-                    <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                            aria-label="Flip to the home version">⟳ 🏠</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="avp-connector">
-            <div class="avp-connector-line"></div>
-            <div class="avp-connector-label">feeds</div>
-            <div class="avp-connector-line"></div>
-            <div class="avp-connector-glyph">▼</div>
-        </div>
-
-        <!-- Stages 2 & 3: Authoring tools → Assets -->
-        <div class="avp-pair">
-            <div class="avp-stage">
-                <div class="avp-stage-head">
-                    <div class="avp-badge">2</div>
-                    <div class="avp-stage-title">Authoring tools</div>
-                </div>
-                <div class="avp-stage-body">The software where assets get made. You don't live in them; you build in
-                    them.</div>
-                <div class="avp-chips">
-                    <span class="avp-chip">Articulate Storyline</span><span class="avp-chip">Rise</span><span
-                        class="avp-chip">Adobe Creative Suite</span><span class="avp-chip">Illustrator</span><span
-                        class="avp-chip">Premiere</span>
-                </div>
-                <div class="avp-strips avp-strips--push">
-                    <div class="avp-strip avp-strip--home" data-flip-analogy="music"
-                        title="Tap to flip to the music version">
-                        <span>🏠 The workshop. Nobody confuses the workshop with the home.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                            aria-label="Flip to the music version">⟳ 🎵</button>
-                    </div>
-                    <div class="avp-strip avp-strip--music" data-flip-analogy="home"
-                        title="Tap to flip to the home version">
-                        <span>🎵 The recording studio. It doesn't decide where your music is heard.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                            aria-label="Flip to the home version">⟳ 🏠</button>
-                    </div>
-                </div>
-            </div>
-            <div class="avp-mid">
-                <div class="avp-mid-label">produce</div>
-                <div class="avp-mid-glyph">→</div>
-            </div>
-            <div class="avp-stage">
-                <div class="avp-stage-head">
-                    <div class="avp-badge">3</div>
-                    <div class="avp-stage-title">Learning assets</div>
-                </div>
-                <div class="avp-stage-body">The materials themselves: what you actually own, and the part worth
-                    investing in first.</div>
-                <div class="avp-chips">
-                    <span class="avp-chip">modules</span><span class="avp-chip">videos</span><span
-                        class="avp-chip">guides</span><span class="avp-chip">checklists</span><span
-                        class="avp-chip">websites</span><span class="avp-chip">apps</span>
-                </div>
-                <div class="avp-strips avp-strips--push">
-                    <div class="avp-strip avp-strip--home" data-flip-analogy="music"
-                        title="Tap to flip to the music version">
-                        <span>🏠 Modular furniture snaps together into different rooms and moves from house to
-                            house.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                            aria-label="Flip to the music version">⟳ 🎵</button>
-                    </div>
-                    <div class="avp-strip avp-strip--music" data-flip-analogy="home"
-                        title="Tap to flip to the home version">
-                        <span>🎵 Tracks &amp; albums. Modules are tracks, courses are albums. Live workshops are
-                            concerts, async is streaming. Different versions for different audiences.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                            aria-label="Flip to the home version">⟳ 🏠</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="avp-connector">
-            <div class="avp-connector-line"></div>
-            <div class="avp-connector-label">yield</div>
-            <div class="avp-connector-line"></div>
-            <div class="avp-connector-glyph">▼</div>
-        </div>
-
-        <!-- Stage 4: Universal formats -->
-        <div class="avp-stage avp-stage--single avp-stage--green">
-            <div class="avp-stage-head">
-                <div class="avp-badge">4</div>
-                <div class="avp-stage-title">Universal formats <small>(the output that travels)</small></div>
-            </div>
-            <div class="avp-stage-body">File types that keep your assets portable across any platform. We recommend
-                clients build in these first.</div>
-            <div class="avp-chips">
-                <span class="avp-chip avp-chip--format">PDF</span><span
-                    class="avp-chip avp-chip--format">HTML</span><span
-                    class="avp-chip avp-chip--format">SCORM</span><span class="avp-chip avp-chip--format">Google
-                    Drive</span><span class="avp-chip avp-chip--format">Microsoft Office</span>
-            </div>
-            <div class="avp-strips">
-                <div class="avp-strip avp-strip--home" data-flip-analogy="music"
-                    title="Tap to flip to the music version">
-                    <span>🏠 Building codes: standard door widths, outlet amperage, stair heights. Built to standard, it
-                        fits any house you'll ever own.</span>
-                    <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                            aria-label="Flip to the music version">⟳ 🎵</button>
-                </div>
-                <div class="avp-strip avp-strip--music" data-flip-analogy="home"
-                    title="Tap to flip to the home version">
-                    <span>🎵 The MP3: one file that plays on any device, any service, forever. SCORM is the MP3 of
-                        eLearning.</span>
-                    <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                            aria-label="Flip to the home version">⟳ 🏠</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="avp-connector">
-            <div class="avp-connector-line"></div>
-            <div class="avp-connector-label">which play in / on</div>
-            <div class="avp-connector-line"></div>
-            <div class="avp-connector-glyph">▼</div>
-        </div>
-
-        <!-- Stages 5 & 6: Platforms ↔ Audience -->
-        <div class="avp-pair">
-            <div class="avp-stage">
-                <div class="avp-stage-head">
-                    <div class="avp-badge">5</div>
-                    <div class="avp-stage-title">Platforms</div>
-                </div>
-                <div class="avp-stage-body">Where learners access learning: an LMS, a knowledge hub, or your own
-                    website. The biggest commitment, and usually the most deferrable one.</div>
-                <div class="avp-chips">
-                    <span class="avp-chip avp-chip--warn">per-learner pricing</span><span
-                        class="avp-chip avp-chip--warn">long license terms</span><span
-                        class="avp-chip avp-chip--warn">costly integrations</span>
-                </div>
-                <div class="avp-strips avp-strips--push">
-                    <div class="avp-strip avp-strip--home" data-flip-analogy="music"
-                        title="Tap to flip to the music version">
-                        <span>🏠 The house. Committing early is signing a mortgage before you know your family size. And
-                            built-ins don't move.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                            aria-label="Flip to the music version">⟳ 🎵</button>
-                    </div>
-                    <div class="avp-strip avp-strip--music" data-flip-analogy="home"
-                        title="Tap to flip to the home version">
-                        <span>🎵 The streaming service. Apple Music vs Spotify vs CDs vs your own site, each with its own
-                            pricing and commission model. You may want to be on all of them.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                            aria-label="Flip to the home version">⟳ 🏠</button>
-                    </div>
-                </div>
-            </div>
-            <div class="avp-mid">
-                <div class="avp-mid-label">connect</div>
-                <div class="avp-mid-glyph">⇄</div>
-            </div>
-            <div class="avp-stage avp-stage--green">
-                <div class="avp-stage-head">
-                    <div class="avp-badge">6</div>
-                    <div class="avp-stage-title">Your audience</div>
-                </div>
-                <div class="avp-stage-body">The learners you reach <em>through</em> the platform. And it runs both ways:
-                    learners add information, and courses personalize around them. Learn how they engage before you
-                    commit to where.</div>
-                <div class="avp-chips">
-                    <span class="avp-chip">who are they?</span><span class="avp-chip">desktop or mobile?</span><span
-                        class="avp-chip">when &amp; how?</span>
-                </div>
-                <div class="avp-strips avp-strips--push">
-                    <div class="avp-strip avp-strip--home" data-flip-analogy="music"
-                        title="Tap to flip to the music version">
-                        <span>🏠 The neighborhood: the community, habitat, and infrastructure the house connects to.
-                            That's what you're really choosing.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                            aria-label="Flip to the music version">⟳ 🎵</button>
-                    </div>
-                    <div class="avp-strip avp-strip--music" data-flip-analogy="home"
-                        title="Tap to flip to the home version">
-                        <span>🎵 The fanbase. You find them where they already listen, and your first releases teach you
-                            who they really are.</span>
-                        <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                            aria-label="Flip to the home version">⟳ 🏠</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Lock-in trap band ──────────────────────────────── -->
-    <section class="avp-lockin">
-        <div class="avp-lockin-inner">
-            <h2>The lock-in trap</h2>
-            <p>Don't lock into a platform until you know how your audience will use it. Platforms often charge per
-                learner, bind you to multi-year licenses, and require costly integration with your other systems. A
-                pilot answers the questions a contract can't:</p>
-            <div class="avp-qchips">
-                <span class="avp-qchip">What's the market?</span>
-                <span class="avp-qchip">Desktop or mobile?</span>
-                <span class="avp-qchip">Who's the customer?</span>
-                <span class="avp-qchip">When &amp; how do they use it?</span>
-            </div>
-            <p class="avp-lockin-closer">Skip the lock-in: get learning assets in front of your audience as a trial,
-                test, or pilot, and learn.</p>
-        </div>
-    </section>
-
-    <!-- ── Client story placeholder ───────────────────────── -->
-    <section class="avp-story">
-        <div class="avp-story-card">
-            <div class="avp-story-label">Client story · placeholder</div>
-            <p class="avp-story-quote">"A short quote from a client who piloted portable modules first, learned how
-                their audience actually used them, and then chose a platform with confidence."</p>
-            <div class="avp-story-attr">Name · Role · Organization</div>
-        </div>
-    </section>
-
-    <!-- ── Build in universal formats first ───────────────── -->
-    <section class="avp-formats">
-        <h2>Build in universal formats first</h2>
-        <p class="avp-formats-intro">Assets built this way snap together like Lego, into different courses for different
-            audiences, and move from platform to platform when you finally choose (or build) your home.</p>
-        <div class="avp-format-tiles">
-            <div class="avp-format-tile">PDF</div>
-            <div class="avp-format-tile">HTML</div>
-            <div class="avp-format-tile">SCORM</div>
-            <div class="avp-format-tile">Google Drive</div>
-            <div class="avp-format-tile">Microsoft Office</div>
-        </div>
-        <div class="avp-arrows-down">↓ &nbsp; ↓ &nbsp; ↓</div>
-        <div class="avp-dest-cards">
-            <div class="avp-dest">
-                <div class="avp-dest-title">An LMS</div>
-                <div class="avp-dest-sub">when tracking matters</div>
-            </div>
-            <div class="avp-dest">
-                <div class="avp-dest-title">A knowledge hub</div>
-                <div class="avp-dest-sub">when reference matters</div>
-            </div>
-            <div class="avp-dest">
-                <div class="avp-dest-title">Your website</div>
-                <div class="avp-dest-sub">when reach matters</div>
-            </div>
-        </div>
-        <p class="avp-formats-foot">The same assets work in all three. That's the point.</p>
-    </section>
-
-    <!-- ── Decision tree / self-assessment ────────────────── -->
-    <section class="avp-decision" id="decision-tree">
-        <div class="avp-decision-inner">
-            <h2>So, do you need an LMS?</h2>
-            <p class="avp-decision-sub">Two honest questions. Thirty seconds.</p>
-            <div class="avp-decision-card" aria-live="polite">
-                <div class="avp-step" data-step="q1">
-                    <div class="avp-step-label">QUESTION 1 OF 2</div>
-                    <div class="avp-step-q">Do you have a hard requirement today for tracking completions,
-                        certifications, or compliance reporting?</div>
-                    <div class="avp-step-actions">
-                        <button type="button" class="avp-btn-solid" data-goto-step="q2">Yes, we do</button>
-                        <button type="button" class="avp-btn-outline" data-goto-step="vB">No, or not sure</button>
-                    </div>
-                </div>
-                <div class="avp-step" data-step="q2" hidden>
-                    <div class="avp-step-label">QUESTION 2 OF 2</div>
-                    <div class="avp-step-q">Do you already know your audience: their devices, their habits, and how many
-                        of them there are?</div>
-                    <div class="avp-step-actions">
-                        <button type="button" class="avp-btn-solid" data-goto-step="vA">Yes, clearly</button>
-                        <button type="button" class="avp-btn-outline" data-goto-step="vB">Not yet</button>
-                    </div>
-                </div>
-                <div class="avp-step avp-step--verdict" data-step="vA" hidden>
-                    <div class="avp-step-label avp-step-label--ok">YOU'RE READY</div>
-                    <div class="avp-step-q">Shop for an LMS, carefully.</div>
-                    <div class="avp-verdict-body">Negotiate short initial terms, confirm SCORM import <em>and</em>
-                        export, and keep every asset in universal formats so the platform serves you, not the other way
-                        around.</div>
-                    <a href="#decision-tree" class="avp-restart" data-goto-step="q1">Start over</a>
-                </div>
-                <div class="avp-step avp-step--verdict" data-step="vB" hidden>
-                    <div class="avp-step-label avp-step-label--ok">GOOD NEWS: YOU CAN WAIT</div>
-                    <div class="avp-step-q">Pilot first. Decide later.</div>
-                    <div class="avp-verdict-body">Launch a few learning modules in universal formats to gauge business
-                        requirements, adoption, and user behavior. Let real usage data, not a sales demo, pick your
-                        platform.</div>
-                    <a href="#decision-tree" class="avp-restart" data-goto-step="q1">Start over</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── CTA (page's own, above the shared network footer) ─ -->
-    <section class="avp-cta">
-        <h2>Take the decision with you</h2>
-        <p class="avp-cta-intro">A one-page checklist covering the questions above: formats to require, contract terms
-            to negotiate, and the pilot plan that answers the rest.</p>
-        <div class="avp-cta-btns">
-            <a href="/assets/platform-decision-checklist.pdf" download="Platform Decision Checklist.pdf"
-                class="avp-cta-primary">Download the decision checklist</a>
-            <a href="https://www.integral-ed.com/contact/" class="avp-cta-secondary">Talk with our team</a>
-        </div>
-        <p class="avp-fineprint">Integral eLearning is a division of Integral Ed Services, an educator-led learning and
-            media design firm for mission-driven organizations.</p>
-    </section>
-
 </div><!-- /.avp -->
 
 <!--
@@ -619,6 +714,7 @@
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
 
+<script src="/js/main.js"></script>
 <script src="/js/authoring-vs-platforms.js"></script>
 <!--
   Universal Integral Ed Chat Widget (Chatbase)
