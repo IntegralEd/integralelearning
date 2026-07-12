@@ -123,6 +123,42 @@ htmlFiles.forEach(file => {
   }
 });
 
+// Generate the team-review twin of the explainer page: identical content at
+// a different URL, plus an @integral-ed.com email gate and per-section
+// feedback pills (WorkBase Tickets form). Generated from the built page so
+// the review copy can never drift from the live one.
+console.log('\n📝 Generating team-review page...');
+const avpDistPath = path.join(distDir, 'authoring-vs-platforms.html');
+if (fs.existsSync(avpDistPath)) {
+  let review = fs.readFileSync(avpDistPath, 'utf8');
+
+  // Internal page: keep it out of search results (canonical already points
+  // at the live URL)
+  review = review.replace(
+    '<meta name="robots" content="index, follow">',
+    '<meta name="robots" content="noindex, nofollow">'
+  );
+  review = review.replace('<title>', '<title>Team review · ');
+
+  // The pills own the bottom-right corner; drop the chat widget here
+  if (widgetHtml) {
+    review = review.replace(`${widgetHtml}\n</body>`, '</body>');
+  }
+
+  // Gate + pills. The script loads in <head> so the lock class is applied
+  // before first paint.
+  review = review.replace(
+    '</head>',
+    '<link rel="stylesheet" href="/css/avp-teamreview.css">\n' +
+    '<script src="/js/avp-teamreview.js"></script>\n</head>'
+  );
+
+  fs.writeFileSync(path.join(distDir, 'authoring-vs-platforms-teamcomment.html'), review, 'utf8');
+  console.log('  ✓ authoring-vs-platforms-teamcomment.html (email gate + feedback pills)');
+} else {
+  console.log('  ⚠ authoring-vs-platforms.html not in dist; review page skipped');
+}
+
 // Copy CSS files
 console.log('\n🎨 Copying CSS files...');
 const cssDir = path.join(distDir, 'css');
