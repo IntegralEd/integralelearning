@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Do you need an LMS? Untangle authoring tools, universal formats, and platforms — and why most mission-driven organizations should pilot learning modules before committing to a platform.">
+        content="Do you need an LMS? A plain-English guide for nonprofits and L&D leaders: the difference between authoring tools and platforms, what SCORM actually is, how to avoid LMS lock-in, and a 30-second self-assessment.">
     <meta name="keywords"
-        content="LMS, authoring tools, SCORM, universal formats, eLearning platforms, instructional design, nonprofit learning">
+        content="do we need an LMS, nonprofit LMS, LMS alternatives, authoring tools vs LMS, what is SCORM, eLearning without an LMS, LMS lock-in, LMS cost of ownership, Articulate Storyline, universal formats, L&D platform selection">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Integral eLearning">
+    <link rel="canonical" href="https://integralelearning.com/authoring-vs-platforms.html">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Do You Need an LMS? — Authoring Tools vs. Platforms | Integral eLearning">
@@ -15,8 +18,144 @@
         content="Authoring tools make learning assets. Platforms host them. Build in universal formats first, pilot with your audience, and decide on a platform when you actually need one.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://integralelearning.com/authoring-vs-platforms.html">
+    <meta property="og:site_name" content="Integral eLearning">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://integralelearning.com/vendor/integralthemes/assets/brand/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Do You Need an LMS? — Authoring Tools vs. Platforms">
+    <meta name="twitter:description"
+        content="A plain-English guide for nonprofits and L&D leaders: authoring tools vs. platforms, SCORM, lock-in, and a 30-second self-assessment.">
+    <meta name="twitter:image" content="https://integralelearning.com/vendor/integralthemes/assets/brand/logo.png">
 
     <title>Do You Need an LMS? — Authoring Tools vs. Platforms | Integral eLearning</title>
+
+    <!-- Structured data: the questions nonprofit & L&D leaders ask when they
+         start this journey, answered with the page's own myth/fact copy. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://integralelearning.com/authoring-vs-platforms.html",
+          "url": "https://integralelearning.com/authoring-vs-platforms.html",
+          "name": "Do You Need an LMS? — Authoring Tools vs. Platforms",
+          "description": "An organization's introduction to eLearning and platform selection: authoring tools vs. universal formats vs. platforms, common myths, the lock-in trap, and a two-question self-assessment.",
+          "inLanguage": "en-US",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Nonprofit executive directors, heads of learning and development, and operations leaders"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Integral eLearning",
+            "url": "https://integralelearning.com",
+            "parentOrganization": {
+              "@type": "Organization",
+              "name": "Integral Ed Services",
+              "url": "https://www.integral-ed.com"
+            }
+          },
+          "significantLink": [
+            "https://integralelearning.com/assets/platform-decision-checklist.pdf",
+            "https://integralplatforms.com"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Integral eLearning", "item": "https://integralelearning.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Do You Need an LMS?", "item": "https://integralelearning.com/authoring-vs-platforms.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do we need an LMS to deliver online learning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can deliver most learning assets online, including eLearning modules, to a targeted group of learners without an enterprise LMS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a learning management system (LMS) the first step to hosting and delivering eLearning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "That's backwards. Publish, pilot, and learn about your business requirements before committing to a platform."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the difference between authoring tools and platforms?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Authoring tools make assets and modules of learning. Platforms host them. Authoring tools are the workshop or recording studio; platforms are the house or the streaming service your audience connects through."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need to host SCORM to deliver eLearning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SCORM is an industry-standard file type that works in most enterprise LMS, but you can pilot and publish eLearning without it. Web hosting and xAPI are options to explore depending on your requirements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need to pick a platform before we can start building content?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Content built in universal formats (PDF, HTML, SCORM, Google Drive, Microsoft Office) works on whatever platform you pick later. Start building now."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will a free LMS like Moodle or Google Classroom save our nonprofit money?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "\"Free\" platforms shift costs to admin time, hosting, and support, and they still shape your content around their structure."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is our organization too small for eLearning?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Small orgs benefit most from portable modules. A handful of PDFs, videos, and web modules can serve a whole network without any platform."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do we avoid LMS lock-in?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Don't lock into a platform until you know how your audience will use it. Platforms often charge per learner, bind you to multi-year licenses, and require costly integration with your other systems. Get learning assets in front of your audience as a trial, test, or pilot, and learn. Lock-in comes from where you build, not where you host."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "If we pick a platform now, is migrating later impossible?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If your assets are in universal formats, moving is a weekend, not a rebuild. Lock-in comes from where you build, not where you host."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When are we ready to shop for an LMS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When you have a hard requirement today for tracking completions, certifications, or compliance reporting, and you already know your audience: their devices, their habits, and how many of them there are. Then shop carefully: negotiate short initial terms, confirm SCORM import and export, and keep every asset in universal formats so the platform serves you, not the other way around."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/vendor/integralthemes/assets/brand/favicon-32x32.png">
