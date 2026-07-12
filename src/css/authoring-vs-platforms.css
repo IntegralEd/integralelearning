@@ -861,9 +861,9 @@ p.avp-lockin-closer {
 .avp-story .avp-section-head { margin-bottom: var(--spacing-lg); }
 .avp-clients {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--spacing-lg);
-  max-width: 900px;
+  max-width: 720px;
   margin: 0 auto;
 }
 .avp-client-card {
