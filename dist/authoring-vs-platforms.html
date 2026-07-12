@@ -366,13 +366,9 @@
                         <div class="avp-myths-label">Common myths</div>
                         <div class="avp-myths-hint">Tap the card to flip it: the myth on the front, what's actually
                             true on the back.</div>
-                        <div class="avp-carousel" role="group" aria-roledescription="carousel"
+                        <div class="avp-myth-split" role="group" aria-roledescription="carousel"
                             aria-label="Common myths">
-                            <button type="button" class="avp-arrow" data-myth-prev aria-label="Previous myth"><svg
-                                    width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg></button>
+                            <div class="avp-myth-stage">
                             <div class="avp-myth-card" data-myth-card role="button" tabindex="0"
                                 aria-label="Myth shown. Activate to reveal what is actually true.">
                                 <div class="avp-myth-face avp-myth-front" aria-hidden="false">
@@ -391,13 +387,97 @@
                                     <div class="avp-face-hint">tap to flip back</div>
                                 </div>
                             </div>
-                            <button type="button" class="avp-arrow" data-myth-next aria-label="Next myth"><svg
-                                    width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg></button>
-                        </div>
-                        <div class="avp-thumbs" data-myth-thumbs aria-label="All ten myths"></div>
+                            <div class="avp-myth-navrow">
+                                <button type="button" class="avp-arrow" data-myth-prev aria-label="Previous myth"><svg
+                                        width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></button>
+                                <button type="button" class="avp-myth-next" data-myth-next>Next myth<svg width="16"
+                                        height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></button>
+                            </div>
+                            </div><!-- /.avp-myth-stage -->
+
+                            <!-- All ten myths on screen; answers in the markup for SEO.
+                                 The carousel reads this list — it is the single source
+                                 of truth for the flip card. -->
+                            <ol class="avp-myth-list" data-myth-list>
+                                <li>
+                                    <button type="button" class="avp-myth-item">I need an LMS to deliver online
+                                        learning.</button>
+                                    <span class="avp-myth-item-f" hidden>You can deliver most learning assets online,
+                                        including eLearning modules, to a targeted group of learners without an
+                                        enterprise LMS.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">A learning management system (LMS) is
+                                        the first step to hosting and delivering eLearning.</button>
+                                    <span class="avp-myth-item-f" hidden>That's backwards. Publish, pilot, and learn
+                                        about your business requirements before committing to a platform.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">eLearning assets (modules and courses)
+                                        lock me into a platform.</button>
+                                    <span class="avp-myth-item-f" hidden>Building courses in an LMS is how you get
+                                        locked in. Build learning assets in universal file types with authoring tools,
+                                        not an LMS, and take them with you from platform to platform as you
+                                        grow.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">Platforms and authoring tools are the
+                                        same kind of decision.</button>
+                                    <span class="avp-myth-item-f" hidden>Authoring tools make assets and modules of
+                                        learning. Platforms host them. See the metaphors below to disentangle the
+                                        two.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">I need to host SCORM to deliver
+                                        eLearning.</button>
+                                    <span class="avp-myth-item-f" hidden>SCORM is an industry-standard file type that
+                                        works in most enterprise LMS, but you can pilot and publish eLearning without
+                                        it. Web hosting and xAPI are options to explore depending on your
+                                        requirements.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">We need to pick a platform before we
+                                        can start building content.</button>
+                                    <span class="avp-myth-item-f" hidden>Content built in universal formats works on
+                                        whatever platform you pick later. Start building now.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">An LMS will get our people to actually
+                                        do the training.</button>
+                                    <span class="avp-myth-item-f" hidden>Platforms don't create engagement; relevant,
+                                        well-designed learning does. Adoption is a design problem, not a hosting
+                                        problem.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">Free LMS options like Moodle or Google
+                                        Classroom will save us money.</button>
+                                    <span class="avp-myth-item-f" hidden>"Free" platforms shift costs to admin time,
+                                        hosting, and support, and they still shape your content around their
+                                        structure.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">We're too small for
+                                        eLearning.</button>
+                                    <span class="avp-myth-item-f" hidden>Small orgs benefit most from portable modules.
+                                        A handful of PDFs, videos, and web modules can serve a whole network without
+                                        any platform.</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="avp-myth-item">Once we pick a platform, migrating
+                                        later is impossible.</button>
+                                    <span class="avp-myth-item-f" hidden>If your assets are in universal formats,
+                                        moving is a weekend, not a rebuild. Lock-in comes from where you build, not
+                                        where you host.</span>
+                                </li>
+                            </ol>
+                        </div><!-- /.avp-myth-split -->
                         <div class="avp-sr-only" data-myth-live aria-live="polite"></div>
                     </div>
 
@@ -756,15 +836,35 @@
                 </div>
             </section>
 
-            <!-- Client story -->
+            <!-- Client stories (15th-anniversary card layout) -->
             <section class="avp-story">
-                <div class="avp-story-card reveal">
-                    <div class="avp-story-label">Client story</div>
-                    <p class="avp-story-quote">"I'm so glad we built a few modules of asynchronous learning before
-                        committing to an enterprise platform! We may still get one, but we'll be much more informed and
-                        connected to internal users and external learners because we had this first experience. Now we
-                        share some language and can point to examples when we talk about elearning."</p>
-                    <div class="avp-story-attr">Nonprofit Director of Program · client since 2021</div>
+                <div class="avp-section-head avp-section-head--center reveal">
+                    <span class="avp-kicker">Client stories</span>
+                </div>
+                <div class="avp-clients reveal">
+                    <figure class="avp-client-card avp-client--teal">
+                        <div class="avp-client-mark" aria-hidden="true">&ldquo;</div>
+                        <blockquote class="avp-client-quote">It was valuable to build our first modules of
+                            asynchronous learning with your team before committing to an enterprise LMS! When we did
+                            decide to get one, we were better informed when we spoke as a team and to funders. Your
+                            team did a great job of branding and deploying our portal.</blockquote>
+                        <figcaption class="avp-client-attribution"><strong>Nonprofit Director of Program</strong> ·
+                            client since 2021</figcaption>
+                    </figure>
+                    <figure class="avp-client-card avp-client--magenta">
+                        <div class="avp-client-mark" aria-hidden="true">&ldquo;</div>
+                        <blockquote class="avp-client-quote">Integral Ed has expertly designed and developed all of
+                            our asynchronous e-learning courses, significantly enhancing our capacity to serve
+                            educators flexibly and effectively. They worked kindly and effectively with our internal
+                            subject matter experts to ensure the content of the courses was accurate, clear, and
+                            compelling and would help users meet the objectives of each course. Their support was
+                            crucial as we selected and set up our online learning management system. They have been
+                            instrumental as we deployed online and blended courses through our sales catalog, enabling
+                            us to reach broader audiences with consistent, high-quality professional
+                            development.</blockquote>
+                        <figcaption class="avp-client-attribution"><strong>Dr. Lee Kappes</strong> · CEO, Danielson
+                            Group</figcaption>
+                    </figure>
                 </div>
             </section>
 

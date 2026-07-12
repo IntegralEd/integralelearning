@@ -339,10 +339,85 @@
   margin-bottom: 14px;
   text-align: center;
 }
-.avp-carousel {
+/* Featured card + all-ten list (list drops below the card on mobile) */
+.avp-myth-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: start;
+}
+.avp-myth-stage {
   display: flex;
-  align-items: stretch;
-  gap: 12px;
+  flex-direction: column;
+  position: sticky;
+  top: calc(var(--avp-nav-offset) + 64px);
+}
+.avp-myth-navrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.avp-myth-next {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-base);
+}
+.avp-myth-next:hover { background: var(--primary-dark); }
+.avp-myth-next svg { display: block; }
+
+.avp-myth-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  counter-reset: myth;
+}
+.avp-myth-list li { margin: 0; }
+.avp-myth-item {
+  counter-increment: myth;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: var(--bg-tertiary);
+  border: 1.5px solid var(--border-light);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  transition: border-color .2s, background .2s, color .2s;
+}
+.avp-myth-item::before {
+  content: counter(myth, decimal-leading-zero);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  color: var(--text-tertiary);
+  padding-top: 2px;
+  flex: none;
+}
+.avp-myth-item:hover { border-color: var(--primary); color: var(--text-primary); }
+.avp-myth-item.is-active {
+  background: var(--bg-accent);
+  border-left-color: var(--primary);
+  color: var(--text-primary);
+  font-weight: 600;
 }
 .avp-arrow {
   cursor: pointer;
@@ -430,40 +505,6 @@
   text-wrap: pretty;
 }
 .avp-face-hint { font-size: 12.5px; color: var(--text-tertiary); }
-
-/* All-ten myth thumbnails: the whole deck is visible; the focused one
-   zooms slightly and drives the featured flip card above. */
-.avp-thumbs {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  margin-top: 14px;
-}
-.avp-thumb {
-  cursor: pointer;
-  border: 1.5px solid var(--border-light);
-  background: var(--bg-tertiary);
-  border-radius: var(--radius-sm);
-  padding: 7px 9px;
-  font-size: 0.7rem;
-  line-height: 1.35;
-  color: var(--text-tertiary);
-  text-align: left;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 52px;
-  transition: border-color .2s, background .2s, color .2s, transform .2s;
-}
-.avp-thumb:hover { border-color: var(--primary); color: var(--text-secondary); }
-.avp-thumb.is-active {
-  border-color: var(--primary);
-  background: var(--bg-accent);
-  color: var(--text-primary);
-  font-weight: 600;
-  transform: scale(1.05);
-}
 
 /* ── Self-assessment jump ───────────────────────────────── */
 .avp-jump-text {
@@ -810,39 +851,84 @@ p.avp-lockin-closer {
   max-width: none;
 }
 
-/* ── Client story placeholder ───────────────────────────── */
+/* ── Client stories (15th-anniversary card layout) ──────── */
 .avp-story {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: var(--spacing-2xl) 28px 0;
   text-align: center;
 }
-.avp-story-card {
-  border: 2px solid var(--border-light);
-  border-left: 4px solid var(--accent-teal);
-  border-radius: var(--radius-md);
-  padding: 32px 28px;
+.avp-story .avp-section-head { margin-bottom: var(--spacing-lg); }
+.avp-clients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.avp-client-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 2rem 2rem 1.6rem;
   background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
   text-align: left;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
-.avp-story-label {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-magenta);
-  margin-bottom: 12px;
+.avp-client-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
-.avp-story-quote {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  line-height: 1.5;
+/* Top color band picks up the per-card accent */
+.avp-client-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--avp-client-c, var(--color-plum));
+}
+.avp-client--teal { --avp-client-c: var(--accent-teal); }
+.avp-client--magenta { --avp-client-c: var(--accent-magenta); }
+.avp-client-mark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.5rem;
+  line-height: 0.7;
+  color: var(--avp-client-c, var(--color-plum));
+  opacity: 0.28;
+  margin: 0.4rem 0 -0.6rem;
+  user-select: none;
+}
+.avp-client-quote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.55;
   color: var(--text-primary);
-  margin: 0 0 10px;
-  font-style: italic;
+  font-style: normal;
 }
-.avp-story-attr { font-size: 0.88rem; color: var(--text-tertiary); }
+.avp-client-attribution {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+.avp-client-attribution strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+@media (max-width: 820px) {
+  .avp-clients { grid-template-columns: 1fr; gap: var(--spacing-md); }
+  .avp-client-card { padding: 1.6rem 1.6rem 1.3rem; }
+  .avp-client-mark { font-size: 3.6rem; }
+}
 
 /* ── Build in universal formats first ───────────────────── */
 .avp-formats {
@@ -1080,14 +1166,9 @@ p.avp-lockin-closer {
   .avp-mid { flex-direction: row; padding: 4px 0; }
   .avp-mid-glyph { transform: rotate(90deg); }
   .avp-hero { min-height: 52vh; }
-  /* Thumbnail deck becomes a swipeable row */
-  .avp-thumbs {
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 4px;
-  }
-  .avp-thumb { flex: 0 0 132px; }
+  /* Featured card stacks above the full myth list */
+  .avp-myth-split { grid-template-columns: 1fr; }
+  .avp-myth-stage { position: static; }
 }
 
 @media (max-width: 480px) {
@@ -1113,6 +1194,7 @@ p.avp-lockin-closer {
     opacity: 1;
   }
   .avp-blob, .avp-scroll-cue { animation: none; }
-  .avp-thumb { transition: none; }
-  .avp-thumb.is-active { transform: none; }
+  .avp-myth-item { transition: none; }
+  .avp-client-card { transition: none; }
+  .avp-client-card:hover { transform: none; }
 }

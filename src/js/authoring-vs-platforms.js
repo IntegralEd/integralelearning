@@ -37,48 +37,25 @@
   }
 
   /* ── Myth carousel ──────────────────────────────────────── */
-  var MYTHS = [
-    {
-      m: 'I need an LMS to deliver online learning.',
-      f: 'You can deliver most learning assets online, including eLearning modules, to a targeted group of learners without an enterprise LMS.'
-    },
-    {
-      m: 'A learning management system (LMS) is the first step to hosting and delivering eLearning.',
-      f: "That's backwards. Publish, pilot, and learn about your business requirements before committing to a platform."
-    },
-    {
-      m: 'eLearning assets (modules and courses) lock me into a platform.',
-      f: 'Building courses in an LMS is how you get locked in. Build learning assets in universal file types with authoring tools, not an LMS, and take them with you from platform to platform as you grow.'
-    },
-    {
-      m: 'Platforms and authoring tools are the same kind of decision.',
-      f: 'Authoring tools make assets and modules of learning. Platforms host them. See the metaphors below to disentangle the two.'
-    },
-    {
-      m: 'I need to host SCORM to deliver eLearning.',
-      f: 'SCORM is an industry-standard file type that works in most enterprise LMS, but you can pilot and publish eLearning without it. Web hosting and xAPI are options to explore depending on your requirements.'
-    },
-    {
-      m: 'We need to pick a platform before we can start building content.',
-      f: 'Content built in universal formats works on whatever platform you pick later. Start building now.'
-    },
-    {
-      m: 'An LMS will get our people to actually do the training.',
-      f: "Platforms don't create engagement; relevant, well-designed learning does. Adoption is a design problem, not a hosting problem."
-    },
-    {
-      m: 'Free LMS options like Moodle or Google Classroom will save us money.',
-      f: '"Free" platforms shift costs to admin time, hosting, and support, and they still shape your content around their structure.'
-    },
-    {
-      m: "We're too small for eLearning.",
-      f: 'Small orgs benefit most from portable modules. A handful of PDFs, videos, and web modules can serve a whole network without any platform.'
-    },
-    {
-      m: 'Once we pick a platform, migrating later is impossible.',
-      f: 'If your assets are in universal formats, moving is a weekend, not a rebuild. Lock-in comes from where you build, not where you host.'
-    }
-  ];
+  // The myth/fact pairs live in the page markup (SEO-visible list next to
+  // the featured card); that list is the single source of truth here.
+  var mythListEl = root.querySelector('[data-myth-list]');
+  var MYTHS = [];
+  var mythItemBtns = [];
+  if (mythListEl) {
+    Array.prototype.forEach.call(mythListEl.querySelectorAll('li'), function (li) {
+      var btn = li.querySelector('.avp-myth-item');
+      var fact = li.querySelector('.avp-myth-item-f');
+      if (!btn) return;
+      var n = MYTHS.length;
+      MYTHS.push({
+        m: btn.textContent.replace(/\s+/g, ' ').trim(),
+        f: fact ? fact.textContent.replace(/\s+/g, ' ').trim() : ''
+      });
+      btn.addEventListener('click', function () { go(n); });
+      mythItemBtns.push(btn);
+    });
+  }
 
   var card = root.querySelector('[data-myth-card]');
   var frontFace = root.querySelector('.avp-myth-front');
@@ -86,28 +63,11 @@
   var textEl = root.querySelector('[data-myth-text]');
   var factEl = root.querySelector('[data-myth-fact]');
   var counterEl = root.querySelector('[data-myth-counter]');
-  var thumbsWrap = root.querySelector('[data-myth-thumbs]');
   var liveEl = root.querySelector('[data-myth-live]');
   var idx = 0;
 
   function announce(msg) {
     if (liveEl) liveEl.textContent = msg;
-  }
-
-  // Build the all-ten thumbnail grid; the focused one zooms and the
-  // featured card above flips.
-  var thumbs = [];
-  if (thumbsWrap) {
-    MYTHS.forEach(function (myth, n) {
-      var t = document.createElement('button');
-      t.type = 'button';
-      t.className = 'avp-thumb';
-      t.textContent = myth.m;
-      t.setAttribute('aria-label', 'Go to myth ' + (n + 1) + ': ' + myth.m);
-      t.addEventListener('click', function () { go(n); });
-      thumbsWrap.appendChild(t);
-      thumbs.push(t);
-    });
   }
 
   function isFlipped() {
@@ -129,12 +89,12 @@
     if (textEl) textEl.textContent = MYTHS[idx].m;
     if (factEl) factEl.textContent = MYTHS[idx].f;
     if (counterEl) counterEl.textContent = (idx + 1) + ' / ' + MYTHS.length;
-    for (var d = 0; d < thumbs.length; d++) {
-      thumbs[d].classList.toggle('is-active', d === idx);
+    for (var d = 0; d < mythItemBtns.length; d++) {
+      mythItemBtns[d].classList.toggle('is-active', d === idx);
       if (d === idx) {
-        thumbs[d].setAttribute('aria-current', 'true');
+        mythItemBtns[d].setAttribute('aria-current', 'true');
       } else {
-        thumbs[d].removeAttribute('aria-current');
+        mythItemBtns[d].removeAttribute('aria-current');
       }
     }
     syncFaces();
@@ -158,13 +118,13 @@
     track('myth_flip', { myth_index: idx + 1, face: flipped ? 'fact' : 'myth' });
   }
 
-  if (card) onActivate(card, flipCard);
+  if (card && MYTHS.length) onActivate(card, flipCard);
   var prevBtn = root.querySelector('[data-myth-prev]');
   var nextBtn = root.querySelector('[data-myth-next]');
   if (prevBtn) prevBtn.addEventListener('click', function () { go(idx - 1); });
   if (nextBtn) nextBtn.addEventListener('click', function () { go(idx + 1); });
 
-  renderMyth();
+  if (MYTHS.length) renderMyth();
 
   /* ── Analogy state (home / music) ───────────────────────── */
   var currentAnalogy = null;
