@@ -330,6 +330,8 @@
                     </h1>
                     <p class="avp-lede">If you're on the fence, odds are good you're not a school system or <abbr
                             title="institution of higher education">IHE</abbr>, and you may not need one at all.</p>
+                    <div class="avp-hero-cta"><a href="#decision-tree" class="avp-hero-btn">Take the 30-second
+                            self-assessment ↓</a></div>
                 </div>
                 <a href="#myths" class="avp-scroll-cue" aria-label="Scroll to content">↓</a>
             </section>
@@ -362,30 +364,40 @@
                     <!-- Myth flip-card carousel -->
                     <div class="avp-myths reveal" id="myths">
                         <div class="avp-myths-label">Common myths</div>
-                        <div class="avp-myths-hint">Tap the card to flip it. 🦄 myth on the front, ✓ what's actually
+                        <div class="avp-myths-hint">Tap the card to flip it: the myth on the front, what's actually
                             true on the back.</div>
                         <div class="avp-carousel" role="group" aria-roledescription="carousel"
                             aria-label="Common myths">
-                            <button type="button" class="avp-arrow" data-myth-prev aria-label="Previous myth">‹</button>
+                            <button type="button" class="avp-arrow" data-myth-prev aria-label="Previous myth"><svg
+                                    width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></button>
                             <div class="avp-myth-card" data-myth-card role="button" tabindex="0"
                                 aria-label="Myth shown. Activate to reveal what is actually true.">
                                 <div class="avp-myth-face avp-myth-front" aria-hidden="false">
-                                    <div class="avp-myth-emoji">🦄</div>
                                     <div class="avp-face-label">Myth</div>
                                     <div class="avp-myth-text" data-myth-text></div>
                                     <div class="avp-face-hint">tap to flip</div>
                                 </div>
                                 <div class="avp-myth-face avp-myth-back" aria-hidden="true">
-                                    <div class="avp-myth-check">✓</div>
+                                    <div class="avp-myth-check"><svg width="18" height="18" viewBox="0 0 24 24"
+                                            aria-hidden="true" focusable="false">
+                                            <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor"
+                                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg></div>
                                     <div class="avp-face-label">Actually</div>
                                     <div class="avp-myth-fact" data-myth-fact></div>
                                     <div class="avp-face-hint">tap to flip back</div>
                                 </div>
                             </div>
-                            <button type="button" class="avp-arrow" data-myth-next aria-label="Next myth">›</button>
+                            <button type="button" class="avp-arrow" data-myth-next aria-label="Next myth"><svg
+                                    width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></button>
                         </div>
-                        <div class="avp-dots" data-myth-dots></div>
-                        <div class="avp-counter" data-myth-counter></div>
+                        <div class="avp-thumbs" data-myth-thumbs aria-label="All ten myths"></div>
                         <div class="avp-sr-only" data-myth-live aria-live="polite"></div>
                     </div>
 
@@ -454,14 +466,26 @@
                             <span>🏠 How you live: what you need from a room, a piece of furniture, a home. You bring
                                 that knowledge; the builders bring the craft.</span>
                             <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                                aria-label="Flip to the music version">⟳ 🎵</button>
+                                aria-label="Flip to the music version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🎵</button>
                         </div>
                         <div class="avp-strip avp-strip--music" data-flip-analogy="home"
                             title="Tap to flip to the home version">
                             <span>🎵 The musicians. No catalog or streaming deal matters without the talent. Your
                                 experts are the band.</span>
                             <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                                aria-label="Flip to the home version">⟳ 🏠</button>
+                                aria-label="Flip to the home version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🏠</button>
                         </div>
                     </div>
                 </div>
@@ -492,13 +516,25 @@
                                 title="Tap to flip to the music version">
                                 <span>🏠 The workshop. Nobody confuses the workshop with the home.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                                    aria-label="Flip to the music version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🎵</button>
                             </div>
                             <div class="avp-strip avp-strip--music" data-flip-analogy="home"
                                 title="Tap to flip to the home version">
                                 <span>🎵 The recording studio. It doesn't decide where your music is heard.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                                    aria-label="Flip to the home version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🏠</button>
                             </div>
                         </div>
                     </div>
@@ -524,7 +560,13 @@
                                 <span>🏠 Modular furniture snaps together into different rooms and moves from house to
                                     house.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                                    aria-label="Flip to the music version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🎵</button>
                             </div>
                             <div class="avp-strip avp-strip--music" data-flip-analogy="home"
                                 title="Tap to flip to the home version">
@@ -532,7 +574,13 @@
                                     are concerts, async is streaming. Different versions for different
                                     audiences.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                                    aria-label="Flip to the home version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🏠</button>
                             </div>
                         </div>
                     </div>
@@ -566,14 +614,26 @@
                             <span>🏠 Building codes: standard door widths, outlet amperage, stair heights. Built to
                                 standard, it fits any house you'll ever own.</span>
                             <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                                aria-label="Flip to the music version">⟳ 🎵</button>
+                                aria-label="Flip to the music version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🎵</button>
                         </div>
                         <div class="avp-strip avp-strip--music" data-flip-analogy="home"
                             title="Tap to flip to the home version">
                             <span>🎵 The MP3: one file that plays on any device, any service, forever. SCORM is the MP3
                                 of eLearning.</span>
                             <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                                aria-label="Flip to the home version">⟳ 🏠</button>
+                                aria-label="Flip to the home version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🏠</button>
                         </div>
                     </div>
                 </div>
@@ -605,7 +665,13 @@
                                 <span>🏠 The house. Committing early is signing a mortgage before you know your family
                                     size. And built-ins don't move.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                                    aria-label="Flip to the music version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🎵</button>
                             </div>
                             <div class="avp-strip avp-strip--music" data-flip-analogy="home"
                                 title="Tap to flip to the home version">
@@ -613,7 +679,13 @@
                                     with its own pricing and commission model. You may want to be on all of
                                     them.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                                    aria-label="Flip to the home version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🏠</button>
                             </div>
                         </div>
                     </div>
@@ -629,24 +701,32 @@
                         <div class="avp-stage-body">The learners you reach <em>through</em> the platform. And it runs
                             both ways: learners add information, and courses personalize around them. Learn how they
                             engage before you commit to where.</div>
-                        <div class="avp-chips">
-                            <span class="avp-chip">who are they?</span><span class="avp-chip">desktop or
-                                mobile?</span><span class="avp-chip">when &amp; how?</span>
-                        </div>
                         <div class="avp-strips avp-strips--push">
                             <div class="avp-strip avp-strip--home" data-flip-analogy="music"
                                 title="Tap to flip to the music version">
                                 <span>🏠 The neighborhood: the community, habitat, and infrastructure the house
                                     connects to. That's what you're really choosing.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the music version"
-                                    aria-label="Flip to the music version">⟳ 🎵</button>
+                                    aria-label="Flip to the music version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🎵</button>
                             </div>
                             <div class="avp-strip avp-strip--music" data-flip-analogy="home"
                                 title="Tap to flip to the home version">
                                 <span>🎵 The fanbase. You find them where they already listen, and your first releases
                                     teach you who they really are.</span>
                                 <button type="button" class="avp-strip-flip" title="Flip to the home version"
-                                    aria-label="Flip to the home version">⟳ 🏠</button>
+                                    aria-label="Flip to the home version"><svg width="12" height="12"
+                                        viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M20.5 11A8.5 8.5 0 1 0 19 16.5" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M21 4v7h-7" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg> 🏠</button>
                             </div>
                         </div>
                     </div>
@@ -676,13 +756,15 @@
                 </div>
             </section>
 
-            <!-- Client story placeholder -->
+            <!-- Client story -->
             <section class="avp-story">
                 <div class="avp-story-card reveal">
-                    <div class="avp-story-label">Client story · placeholder</div>
-                    <p class="avp-story-quote">"A short quote from a client who piloted portable modules first, learned
-                        how their audience actually used them, and then chose a platform with confidence."</p>
-                    <div class="avp-story-attr">Name · Role · Organization</div>
+                    <div class="avp-story-label">Client story</div>
+                    <p class="avp-story-quote">"I'm so glad we built a few modules of asynchronous learning before
+                        committing to an enterprise platform! We may still get one, but we'll be much more informed and
+                        connected to internal users and external learners because we had this first experience. Now we
+                        share some language and can point to examples when we talk about elearning."</p>
+                    <div class="avp-story-attr">Nonprofit Director of Program · client since 2021</div>
                 </div>
             </section>
 
@@ -695,14 +777,6 @@
                         for different audiences, and move from platform to platform when you finally choose (or build)
                         your home.</p>
                 </div>
-                <div class="avp-format-tiles reveal">
-                    <div class="avp-format-tile">PDF</div>
-                    <div class="avp-format-tile">HTML</div>
-                    <div class="avp-format-tile">SCORM</div>
-                    <div class="avp-format-tile">Google Drive</div>
-                    <div class="avp-format-tile">Microsoft Office</div>
-                </div>
-                <div class="avp-arrows-down" aria-hidden="true">↓ &nbsp; ↓ &nbsp; ↓</div>
                 <div class="avp-dest-cards reveal">
                     <div class="avp-dest">
                         <div class="avp-dest-title">An LMS</div>

@@ -68,12 +68,13 @@
   border: 0;
 }
 
-/* Kickers (anniversary pattern) */
+/* Kickers (anniversary pattern) — the only place the letterspaced-mono
+   treatment is used; everything else gets regular type. */
 .avp-kicker {
   display: inline-block;
   font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-magenta);
 }
@@ -117,7 +118,10 @@
   gap: var(--spacing-lg);
   max-height: calc(100vh - var(--avp-nav-offset));
   overflow-y: auto;
+  /* no persistent second scrollbar next to the page's */
+  scrollbar-width: none;
 }
+.avp-rail-inner::-webkit-scrollbar { display: none; }
 .avp-rail-top { display: contents; }
 .avp-rail-toggle { display: none; }
 .avp-rail-panel { display: flex; flex-direction: column; gap: var(--spacing-lg); }
@@ -129,16 +133,17 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 0.9;
-  background: linear-gradient(120deg, var(--accent-magenta), var(--accent-yellow));
+  /* lighter pink start for contrast on the dark plum rail */
+  background: linear-gradient(120deg, #e06aad, var(--accent-yellow));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 .avp-rail-sub {
   display: block;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
   color: var(--avp-ink-dark-2);
   margin-top: 0.35rem;
 }
@@ -195,8 +200,8 @@
 .avp-hero-content { position: relative; z-index: 2; width: 100%; max-width: 980px; }
 .avp-eyebrow {
   font-family: var(--font-mono, monospace);
-  letter-spacing: 0.22em;
-  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
   text-transform: uppercase;
   color: var(--accent-yellow);
   margin: 0 0 1.2rem;
@@ -211,7 +216,8 @@
 }
 .avp-h1 span { display: block; }
 .avp-h1-l2 {
-  background: linear-gradient(120deg, var(--accent-magenta), var(--accent-yellow));
+  /* lighter pink start: --accent-magenta on dark plum is only ~3.3:1 */
+  background: linear-gradient(120deg, #e06aad 0%, var(--accent-yellow));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -219,19 +225,37 @@
 }
 .avp-h1-l3 { color: #e3d4ef; }
 
-/* Staged reveal: line 1 immediately, "Maybe one day," at 3s, "but…" at 4s */
-.avp-h1-l1 { animation: avp-fadeup 0.8s ease both; }
-.avp-h1-l2 { opacity: 0; animation: avp-fadeup 0.9s ease 3s forwards; }
-.avp-h1-l3 { opacity: 0; animation: avp-fadeup 0.9s ease 4s forwards; }
-.avp-lede-wrap { }
+/* Staged reveal, compressed to ~1.5s total: line 1 immediately,
+   "Maybe one day," at 0.45s, "but…" at 0.8s, lede + CTA at 1.05s */
+.avp-h1-l1 { animation: avp-fadeup 0.45s ease both; }
+.avp-h1-l2 { opacity: 0; animation: avp-fadeup 0.45s ease 0.45s forwards; }
+.avp-h1-l3 { opacity: 0; animation: avp-fadeup 0.45s ease 0.8s forwards; }
 .avp-lede {
   font-size: 1.15rem;
   color: var(--avp-ink-dark-2);
   max-width: 640px;
   margin: 0 auto;
   opacity: 0;
-  animation: avp-fadeup 0.9s ease 4.6s forwards;
+  animation: avp-fadeup 0.45s ease 1.05s forwards;
 }
+.avp-hero-cta {
+  margin-top: 1.6rem;
+  opacity: 0;
+  animation: avp-fadeup 0.45s ease 1.05s forwards;
+}
+.avp-hero-btn {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--accent-yellow);
+  color: var(--avp-plum-950);
+  border-radius: 999px;
+  padding: 0.85rem 1.9rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), filter var(--transition-base);
+}
+.avp-hero-btn:hover { color: var(--avp-plum-950); transform: translateY(-1px); filter: brightness(1.05); }
 @keyframes avp-fadeup {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: none; }
@@ -272,6 +296,7 @@
 .avp-intro-inner > .avp-kicker { margin-bottom: 1rem; }
 .avp-context {
   text-align: left;
+  max-width: 65ch;
   margin: 0 auto var(--spacing-lg);
   font-size: 1.06rem;
   line-height: 1.7;
@@ -302,8 +327,8 @@
 }
 .avp-myths-label {
   font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-magenta);
   margin-bottom: 12px;
@@ -329,9 +354,12 @@
   border: 1.5px solid var(--border-medium);
   background: #fff;
   color: var(--primary);
-  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: border-color var(--transition-fast);
 }
+.avp-arrow svg { display: block; }
 .avp-arrow:hover { border-color: var(--primary); }
 .avp-myth-card {
   cursor: pointer;
@@ -366,7 +394,6 @@
 }
 .avp-myth-card.is-flipped .avp-myth-front { transform: rotateY(180deg); }
 .avp-myth-card.is-flipped .avp-myth-back { transform: rotateY(0deg); }
-.avp-myth-emoji { font-size: 30px; }
 .avp-myth-check {
   width: 34px;
   height: 34px;
@@ -379,9 +406,9 @@
   justify-content: center;
 }
 .avp-face-label {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .avp-myth-front .avp-face-label { color: var(--accent-magenta); }
@@ -403,39 +430,39 @@
   text-wrap: pretty;
 }
 .avp-face-hint { font-size: 12.5px; color: var(--text-tertiary); }
-.avp-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0;
+
+/* All-ten myth thumbnails: the whole deck is visible; the focused one
+   zooms slightly and drives the featured flip card above. */
+.avp-thumbs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
   margin-top: 14px;
 }
-/* Dot buttons: 9px visual dot inside a larger touch target */
-.avp-dot {
+.avp-thumb {
   cursor: pointer;
-  width: 15px;
-  height: 24px;
-  border: none;
-  padding: 0;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.avp-dot::after {
-  content: '';
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--border-medium);
-  transition: background .2s;
-}
-.avp-dot.is-active::after { background: var(--primary); }
-.avp-counter {
-  text-align: center;
-  font-family: var(--font-mono, monospace);
-  font-size: 12.5px;
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  padding: 7px 9px;
+  font-size: 0.7rem;
+  line-height: 1.35;
   color: var(--text-tertiary);
-  margin-top: 8px;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 52px;
+  transition: border-color .2s, background .2s, color .2s, transform .2s;
+}
+.avp-thumb:hover { border-color: var(--primary); color: var(--text-secondary); }
+.avp-thumb.is-active {
+  border-color: var(--primary);
+  background: var(--bg-accent);
+  color: var(--text-primary);
+  font-weight: 600;
+  transform: scale(1.05);
 }
 
 /* ── Self-assessment jump ───────────────────────────────── */
@@ -545,8 +572,9 @@
 .avp-flow-sub {
   font-size: 1.06rem;
   color: var(--text-tertiary);
-  max-width: 640px;
+  max-width: 65ch;
   margin: 0 auto;
+  text-align: left;
 }
 .avp-stage {
   border: 2px solid var(--border-light);
@@ -634,9 +662,9 @@
   gap: 4px;
 }
 .avp-mid-label {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--accent-teal);
   text-transform: uppercase;
 }
@@ -659,9 +687,9 @@
   background: var(--accent-teal);
 }
 .avp-connector-label {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--accent-teal);
   text-transform: uppercase;
   padding: 3px 0;
@@ -718,13 +746,17 @@
 .avp-strip-flip {
   cursor: pointer;
   flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   border: 1px solid var(--border-medium);
   background: rgba(255, 255, 255, .85);
   border-radius: 999px;
   font-size: 12px;
-  padding: 2px 8px;
+  padding: 3px 9px;
   color: var(--primary);
 }
+.avp-strip-flip svg { display: block; }
 
 /* ── Lock-in trap band (dark brand) ─────────────────────── */
 .avp-lockin {
@@ -786,17 +818,20 @@ p.avp-lockin-closer {
   text-align: center;
 }
 .avp-story-card {
-  border: 2px dashed var(--border-medium);
+  border: 2px solid var(--border-light);
+  border-left: 4px solid var(--accent-teal);
   border-radius: var(--radius-md);
   padding: 32px 28px;
   background: var(--bg-primary);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
 }
 .avp-story-label {
   font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--accent-magenta);
   margin-bottom: 12px;
 }
 .avp-story-quote {
@@ -821,30 +856,9 @@ p.avp-lockin-closer {
   font-size: 1.06rem;
   line-height: 1.6;
   color: var(--text-tertiary);
-  max-width: 640px;
+  max-width: 65ch;
   margin: 0 auto;
-}
-.avp-format-tiles {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
-}
-.avp-format-tile {
-  border: 2px solid var(--accent-teal);
-  border-radius: var(--radius-sm);
-  padding: 14px 20px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #2b7a80;
-  background: var(--avp-home-tint);
-}
-.avp-arrows-down {
-  font-size: 22px;
-  color: var(--accent-teal);
-  margin-bottom: 24px;
+  text-align: left;
 }
 .avp-dest-cards {
   display: flex;
@@ -902,10 +916,10 @@ p.avp-lockin-closer {
 .avp-step[hidden] { display: none; }
 .avp-step--verdict { gap: 16px; }
 .avp-step-label {
-  font-family: var(--font-mono, monospace);
   font-size: 0.78rem;
+  font-weight: 700;
   color: var(--text-tertiary);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
 }
 .avp-step-label--ok { color: var(--accent-magenta); }
 .avp-step-q {
@@ -967,8 +981,9 @@ p.avp-lockin-closer {
   font-size: 1.06rem;
   color: var(--text-tertiary);
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 65ch;
   margin: 0 auto;
+  text-align: left;
 }
 .avp-cta-btns {
   display: flex;
@@ -1065,6 +1080,14 @@ p.avp-lockin-closer {
   .avp-mid { flex-direction: row; padding: 4px 0; }
   .avp-mid-glyph { transform: rotate(90deg); }
   .avp-hero { min-height: 52vh; }
+  /* Thumbnail deck becomes a swipeable row */
+  .avp-thumbs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+  .avp-thumb { flex: 0 0 132px; }
 }
 
 @media (max-width: 480px) {
@@ -1080,15 +1103,16 @@ p.avp-lockin-closer {
   html { scroll-behavior: auto; }
   .avp-myth-face,
   .avp-strip,
-  .avp-dot::after,
   .avp-picker,
   .avp .reveal {
     transition: none;
   }
   .avp .reveal { opacity: 1; transform: none; }
-  .avp-h1-l1, .avp-h1-l2, .avp-h1-l3, .avp-lede {
+  .avp-h1-l1, .avp-h1-l2, .avp-h1-l3, .avp-lede, .avp-hero-cta {
     animation: none;
     opacity: 1;
   }
   .avp-blob, .avp-scroll-cue { animation: none; }
+  .avp-thumb { transition: none; }
+  .avp-thumb.is-active { transform: none; }
 }

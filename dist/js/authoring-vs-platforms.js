@@ -86,7 +86,7 @@
   var textEl = root.querySelector('[data-myth-text]');
   var factEl = root.querySelector('[data-myth-fact]');
   var counterEl = root.querySelector('[data-myth-counter]');
-  var dotsWrap = root.querySelector('[data-myth-dots]');
+  var thumbsWrap = root.querySelector('[data-myth-thumbs]');
   var liveEl = root.querySelector('[data-myth-live]');
   var idx = 0;
 
@@ -94,23 +94,20 @@
     if (liveEl) liveEl.textContent = msg;
   }
 
-  // Build progress dots
-  var dots = [];
-  if (dotsWrap) {
-    for (var i = 0; i < MYTHS.length; i++) {
-      var dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'avp-dot';
-      dot.setAttribute('aria-label', 'Go to myth ' + (i + 1));
-      (function (n) {
-        dot.addEventListener('click', function (e) {
-          e.stopPropagation();
-          go(n);
-        });
-      })(i);
-      dotsWrap.appendChild(dot);
-      dots.push(dot);
-    }
+  // Build the all-ten thumbnail grid; the focused one zooms and the
+  // featured card above flips.
+  var thumbs = [];
+  if (thumbsWrap) {
+    MYTHS.forEach(function (myth, n) {
+      var t = document.createElement('button');
+      t.type = 'button';
+      t.className = 'avp-thumb';
+      t.textContent = myth.m;
+      t.setAttribute('aria-label', 'Go to myth ' + (n + 1) + ': ' + myth.m);
+      t.addEventListener('click', function () { go(n); });
+      thumbsWrap.appendChild(t);
+      thumbs.push(t);
+    });
   }
 
   function isFlipped() {
@@ -132,12 +129,12 @@
     if (textEl) textEl.textContent = MYTHS[idx].m;
     if (factEl) factEl.textContent = MYTHS[idx].f;
     if (counterEl) counterEl.textContent = (idx + 1) + ' / ' + MYTHS.length;
-    for (var d = 0; d < dots.length; d++) {
-      dots[d].classList.toggle('is-active', d === idx);
+    for (var d = 0; d < thumbs.length; d++) {
+      thumbs[d].classList.toggle('is-active', d === idx);
       if (d === idx) {
-        dots[d].setAttribute('aria-current', 'true');
+        thumbs[d].setAttribute('aria-current', 'true');
       } else {
-        dots[d].removeAttribute('aria-current');
+        thumbs[d].removeAttribute('aria-current');
       }
     }
     syncFaces();
