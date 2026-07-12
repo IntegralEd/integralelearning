@@ -146,12 +146,14 @@ if (fs.existsSync(avpDistPath)) {
   }
 
   // Gate + pills. The script loads in <head> so the lock class is applied
-  // before first paint.
-  review = review.replace(
-    '</head>',
+  // before first paint. Anchor on the LAST </head>: the injected analytics
+  // snippet's comment block contains a literal "</head>" in its docs, and
+  // replacing the first occurrence buries these tags inside that comment.
+  const headClose = review.lastIndexOf('</head>');
+  review = review.slice(0, headClose) +
     '<link rel="stylesheet" href="/css/avp-teamreview.css">\n' +
-    '<script src="/js/avp-teamreview.js"></script>\n</head>'
-  );
+    '<script src="/js/avp-teamreview.js"></script>\n' +
+    review.slice(headClose);
 
   fs.writeFileSync(path.join(distDir, 'authoring-vs-platforms-teamcomment.html'), review, 'utf8');
   console.log('  ✓ authoring-vs-platforms-teamcomment.html (email gate + feedback pills)');
