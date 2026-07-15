@@ -1,5 +1,5 @@
 /* =============================================================================
- * Authoring vs. Platforms — TEAM REVIEW page styles
+ * Authoring vs. Platforms: TEAM REVIEW page styles
  * (email gate + per-section feedback pills; loaded only on
  * /authoring-vs-platforms-teamcomment.html)
  * ============================================================================= */
@@ -124,7 +124,7 @@ html.avp-locked { overflow: hidden; }
   outline-offset: 3px;
   opacity: 1;
 }
-/* On the dark hero + lock-in bands, a plum pill vanishes — flip to yellow */
+/* On the dark hero + lock-in bands, a plum pill vanishes: flip to yellow */
 .avp-hero .avp-fb-sec,
 .avp-lockin .avp-fb-sec {
   background: var(--accent-yellow, #ffbc50);

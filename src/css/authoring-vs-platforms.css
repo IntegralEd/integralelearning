@@ -1,5 +1,5 @@
 /**
- * Authoring vs. Platforms explainer — page-scoped styles
+ * Authoring vs. Platforms explainer: page-scoped styles
  *
  * Brand-aligned restyle: Integral Ed tokens (plum / magenta / yellow / teal,
  * Helvetica) from vendor/integralthemes/theme/tokens.css, with layout and
@@ -33,7 +33,7 @@
   line-height: 1.6;
 }
 
-/* Element resets at :where() specificity — component classes always win */
+/* Element resets at :where() specificity: component classes always win */
 .avp :where(p, li) {
   color: var(--text-secondary);
   font-size: inherit;
@@ -68,7 +68,7 @@
   border: 0;
 }
 
-/* Kickers (anniversary pattern) — the only place the letterspaced-mono
+/* Kickers (anniversary pattern): the only place the letterspaced-mono
    treatment is used; everything else gets regular type. */
 .avp-kicker {
   display: inline-block;
@@ -291,6 +291,7 @@
 /* ── Intro section (context + myths + pickers) ──────────── */
 .avp-intro {
   padding: var(--spacing-2xl) clamp(1.5rem, 5vw, 5rem);
+  scroll-margin-top: calc(var(--avp-nav-offset) + 8px);
 }
 .avp-intro-inner { max-width: 820px; margin: 0 auto; text-align: center; }
 .avp-intro-inner > .avp-kicker { margin-bottom: 1rem; }
@@ -741,7 +742,7 @@
   line-height: 1;
 }
 
-/* Analogy strips — hidden strip also gets visibility:hidden so its inner
+/* Analogy strips: hidden strip also gets visibility:hidden so its inner
    flip button drops out of the tab order and accessibility tree */
 .avp-strips {
   display: grid;
@@ -751,7 +752,6 @@
 .avp-strips--push { margin-top: auto; }
 .avp-strip {
   grid-area: 1 / 1;
-  cursor: pointer;
   display: flex;
   gap: 10px;
   align-items: flex-start;
@@ -784,21 +784,6 @@
   pointer-events: none;
   visibility: hidden;
 }
-.avp-strip-flip {
-  cursor: pointer;
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  border: 1px solid var(--border-medium);
-  background: rgba(255, 255, 255, .85);
-  border-radius: 999px;
-  font-size: 12px;
-  padding: 3px 9px;
-  color: var(--primary);
-}
-.avp-strip-flip svg { display: block; }
-
 /* ── Lock-in trap band (dark brand) ─────────────────────── */
 .avp-lockin {
   position: relative;
@@ -1049,6 +1034,11 @@ p.avp-lockin-closer {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-secondary);
+}
+.avp-verdict-more {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-tertiary);
 }
 .avp-restart {
   font-size: 0.9rem;

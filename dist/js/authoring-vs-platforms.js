@@ -1,8 +1,8 @@
 /**
- * Authoring vs. Platforms explainer — interactions
+ * Authoring vs. Platforms explainer: interactions
  *
  * Vanilla-JS reimplementation of the prototype's Component logic:
- *   • Myth flip-card carousel (10 pairs) — mouse, touch, and keyboard
+ *   • Myth flip-card carousel (10 pairs): mouse, touch, and keyboard
  *   • Global analogy state (home / music) driving the sticky toggle,
  *     hero picker cards, and every stage's flip strips
  *   • Two-question self-assessment decision tree
@@ -17,7 +17,7 @@
   var root = document.querySelector('.avp');
   if (!root) return;
 
-  /* GA4 helper — the analytics snippet is injected at build time; no-op
+  /* GA4 helper: the analytics snippet is injected at build time; no-op
      when gtag is absent (e.g. `npm run dev` against src/). */
   function track(name, params) {
     if (typeof window.gtag === 'function') {
@@ -150,15 +150,6 @@
     });
   });
 
-  // Clicking a visible strip flips to the *other* analogy (click-to-flip).
-  // Keyboard users reach the same action via the strip's inner ⟳ button,
-  // whose activation click bubbles up to this handler.
-  root.querySelectorAll('[data-flip-analogy]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      setAnalogy(el.getAttribute('data-flip-analogy'));
-    });
-  });
-
   // Default analogy: 'home' (no analytics event for the initial state)
   setAnalogy('home', true);
 
@@ -188,20 +179,19 @@
 
   showStep('q1');
 
-  /* ── Checklist CTA ──────────────────────────────────────── */
-  var checklistBtn = root.querySelector('.avp-cta-primary');
-  if (checklistBtn) {
-    checklistBtn.addEventListener('click', function () {
+  /* ── Checklist downloads (CTA + verdict worksheet links) ── */
+  root.querySelectorAll('a[href$="platform-decision-checklist.pdf"]').forEach(function (link) {
+    link.addEventListener('click', function () {
       // checklist_click kept for metric continuity with the pre-PDF stub;
       // file_download follows GA4's recommended-event shape.
       track('checklist_click', {});
       track('file_download', {
         file_name: 'platform-decision-checklist.pdf',
         file_extension: 'pdf',
-        link_url: checklistBtn.getAttribute('href')
+        link_url: link.getAttribute('href')
       });
     });
-  }
+  });
 
   /* ── Reveal-on-scroll (anniversary pattern) ─────────────── */
   var reduceMotion = window.matchMedia &&
