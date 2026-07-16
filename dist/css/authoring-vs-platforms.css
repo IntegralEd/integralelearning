@@ -880,6 +880,51 @@ p.avp-lockin-closer {
 }
 .avp-client--teal { --avp-client-c: var(--accent-teal); }
 .avp-client--magenta { --avp-client-c: var(--accent-magenta); }
+.avp-client--yellow { --avp-client-c: var(--accent-yellow); }
+
+/* Rotating quotes: cards stack in one grid cell and cross-fade; the
+   hidden ones drop out of the tab order via visibility */
+.avp-quote-stage { display: grid; }
+.avp-quote-stage .avp-client-card {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s ease, visibility .35s;
+}
+.avp-quote-stage .avp-client-card.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.avp-quote-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+.avp-qdots { display: flex; }
+.avp-qdot {
+  cursor: pointer;
+  width: 15px;
+  height: 24px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avp-qdot::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border-medium);
+  transition: background .2s;
+}
+.avp-qdot.is-active::after { background: var(--primary); }
 .avp-client-mark {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 4.5rem;
@@ -1187,4 +1232,5 @@ p.avp-lockin-closer {
   .avp-myth-item { transition: none; }
   .avp-client-card { transition: none; }
   .avp-client-card:hover { transform: none; }
+  .avp-qdot::after { transition: none; }
 }

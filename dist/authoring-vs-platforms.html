@@ -664,8 +664,8 @@
                         </div>
                         <div class="avp-strips avp-strips--push">
                             <div class="avp-strip avp-strip--home">
-                                <span>🏠 The layout: committing to architectural plans or a set of built-in furniture
-                                    before you know who is living with you and how they use the space.</span>                            </div>
+                                <span>🏠 The floor plan. Walls and built-in furniture are hard to move. Learn who is
+                                    living with you and how they use the space before you commit.</span>                            </div>
                             <div class="avp-strip avp-strip--music">
                                 <span>🎵 The streaming service. Apple Music vs Spotify vs CDs vs your own site, each
                                     with its own pricing and commission model. You may want to be on all of
@@ -719,26 +719,59 @@
                 </div>
             </section>
 
-            <!-- Client story (15th-anniversary card layout) -->
+            <!-- Client stories (15th-anniversary card layout, rotating quotes) -->
             <section class="avp-story" id="stories">
                 <div class="avp-section-head avp-section-head--center reveal">
-                    <span class="avp-kicker">Client story</span>
+                    <span class="avp-kicker">Client stories</span>
                 </div>
                 <div class="avp-clients reveal">
-                    <figure class="avp-client-card avp-client--magenta">
-                        <div class="avp-client-mark" aria-hidden="true">&ldquo;</div>
-                        <blockquote class="avp-client-quote">Integral Ed has expertly designed and developed all of
-                            our asynchronous e-learning courses, significantly enhancing our capacity to serve
-                            educators flexibly and effectively. They worked kindly and effectively with our internal
-                            subject matter experts to ensure the content of the courses was accurate, clear, and
-                            compelling and would help users meet the objectives of each course. Their support was
-                            crucial as we selected and set up our online learning management system. They have been
-                            instrumental as we deployed online and blended courses through our sales catalog, enabling
-                            us to reach broader audiences with consistent, high-quality professional
-                            development.</blockquote>
-                        <figcaption class="avp-client-attribution"><strong>Dr. Lee Kappes</strong> · CEO, Danielson
-                            Group</figcaption>
-                    </figure>
+                    <div class="avp-quote-stage" data-quote-carousel role="group"
+                        aria-roledescription="carousel" aria-label="Client stories">
+                        <figure class="avp-client-card avp-client--magenta is-active">
+                            <div class="avp-client-mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote class="avp-client-quote">Integral Ed has expertly designed and developed all
+                                of our asynchronous e-learning courses, significantly enhancing our capacity to serve
+                                educators flexibly and effectively. They worked kindly and effectively with our
+                                internal subject matter experts to ensure the content of the courses was accurate,
+                                clear, and compelling and would help users meet the objectives of each course. Their
+                                support was crucial as we selected and set up our online learning management system.
+                                They have been instrumental as we deployed online and blended courses through our
+                                sales catalog, enabling us to reach broader audiences with consistent, high-quality
+                                professional development.</blockquote>
+                            <figcaption class="avp-client-attribution"><strong>Dr. Lee Kappes</strong> · CEO,
+                                Danielson Group</figcaption>
+                        </figure>
+                        <figure class="avp-client-card avp-client--teal">
+                            <div class="avp-client-mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote class="avp-client-quote">Integral Ed does an amazing job of understanding who
+                                we are as an organization. They thoughtfully translate our content into interactive
+                                courses that take our work to the next level.</blockquote>
+                            <figcaption class="avp-client-attribution"><strong>Heidi Black</strong> · VP of Training,
+                                StriveTogether</figcaption>
+                        </figure>
+                        <figure class="avp-client-card avp-client--yellow">
+                            <div class="avp-client-mark" aria-hidden="true">&ldquo;</div>
+                            <blockquote class="avp-client-quote">Integral Ed was extremely engaged with all
+                                stakeholders. They built creative solutions to meet our values and our goals, and
+                                delivered a beautiful and comprehensive final product that felt true to
+                                HOPE.</blockquote>
+                            <figcaption class="avp-client-attribution"><strong>Kelly LoBianco</strong> · The HOPE
+                                Organization</figcaption>
+                        </figure>
+                    </div>
+                    <div class="avp-quote-nav">
+                        <button type="button" class="avp-arrow" data-quote-prev aria-label="Previous client quote"><svg
+                                width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></button>
+                        <div class="avp-qdots" data-quote-dots></div>
+                        <button type="button" class="avp-arrow" data-quote-next aria-label="Next client quote"><svg
+                                width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></button>
+                    </div>
                 </div>
             </section>
 

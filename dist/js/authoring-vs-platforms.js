@@ -179,6 +179,48 @@
 
   showStep('q1');
 
+  /* ── Client quote carousel ──────────────────────────────── */
+  var quoteStage = root.querySelector('[data-quote-carousel]');
+  if (quoteStage) {
+    var quoteCards = Array.prototype.slice.call(
+      quoteStage.querySelectorAll('.avp-client-card'));
+    var qDotsWrap = root.querySelector('[data-quote-dots]');
+    var qDots = [];
+    var qIdx = 0;
+
+    var qGo = function (n) {
+      qIdx = (n + quoteCards.length) % quoteCards.length;
+      quoteCards.forEach(function (c, i) {
+        c.classList.toggle('is-active', i === qIdx);
+      });
+      qDots.forEach(function (d, i) {
+        d.classList.toggle('is-active', i === qIdx);
+        if (i === qIdx) {
+          d.setAttribute('aria-current', 'true');
+        } else {
+          d.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    if (qDotsWrap) {
+      quoteCards.forEach(function (_, n) {
+        var d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'avp-qdot';
+        d.setAttribute('aria-label', 'Go to client quote ' + (n + 1));
+        d.addEventListener('click', function () { qGo(n); });
+        qDotsWrap.appendChild(d);
+        qDots.push(d);
+      });
+    }
+    var qPrev = root.querySelector('[data-quote-prev]');
+    var qNext = root.querySelector('[data-quote-next]');
+    if (qPrev) qPrev.addEventListener('click', function () { qGo(qIdx - 1); });
+    if (qNext) qNext.addEventListener('click', function () { qGo(qIdx + 1); });
+    qGo(0);
+  }
+
   /* ── Checklist downloads (CTA + verdict worksheet links) ── */
   root.querySelectorAll('a[href$="platform-decision-checklist.pdf"]').forEach(function (link) {
     link.addEventListener('click', function () {
