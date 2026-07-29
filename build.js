@@ -123,14 +123,22 @@ htmlFiles.forEach(file => {
   }
 });
 
-// Generate the team-review twin of the explainer page: identical content at
-// a different URL, plus an @integral-ed.com email gate and per-section
-// feedback pills (WorkBase Tickets form). Generated from the built page so
-// the review copy can never drift from the live one.
-console.log('\n📝 Generating team-review page...');
-const avpDistPath = path.join(distDir, 'authoring-vs-platforms.html');
-if (fs.existsSync(avpDistPath)) {
-  let review = fs.readFileSync(avpDistPath, 'utf8');
+// Generate team-review twins: identical content at a different URL, plus an
+// @integral-ed.com email gate and per-section feedback pills (WorkBase
+// Tickets form). Generated from the built pages so the review copies can
+// never drift from the live ones.
+console.log('\n📝 Generating team-review pages...');
+const reviewPages = [
+  ['authoring-vs-platforms.html', 'authoring-vs-platforms-teamcomment.html'],
+  ['storyline-vs-rise.html', 'storyline-vs-rise-teamcomment.html'],
+];
+reviewPages.forEach(([srcName, outName]) => {
+  const srcPath = path.join(distDir, srcName);
+  if (!fs.existsSync(srcPath)) {
+    console.log(`  ⚠ ${srcName} not in dist; review page skipped`);
+    return;
+  }
+  let review = fs.readFileSync(srcPath, 'utf8');
 
   // Internal page: keep it out of search results (canonical already points
   // at the live URL)
@@ -155,11 +163,9 @@ if (fs.existsSync(avpDistPath)) {
     '<script src="/js/avp-teamreview.js"></script>\n' +
     review.slice(headClose);
 
-  fs.writeFileSync(path.join(distDir, 'authoring-vs-platforms-teamcomment.html'), review, 'utf8');
-  console.log('  ✓ authoring-vs-platforms-teamcomment.html (email gate + feedback pills)');
-} else {
-  console.log('  ⚠ authoring-vs-platforms.html not in dist; review page skipped');
-}
+  fs.writeFileSync(path.join(distDir, outName), review, 'utf8');
+  console.log(`  ✓ ${outName} (email gate + feedback pills)`);
+});
 
 // Copy CSS files
 console.log('\n🎨 Copying CSS files...');

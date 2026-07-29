@@ -33,10 +33,14 @@ sensitive use server-side / Netlify password protection instead.
 
 ## URLs
 
-| | URL |
+| Public page | Team review twin |
 |---|---|
-| Public page | `https://integralelearning.com/authoring-vs-platforms.html` |
-| Team review twin | `https://integralelearning.com/authoring-vs-platforms-teamcomment.html` |
+| `https://integralelearning.com/authoring-vs-platforms.html` | `…/authoring-vs-platforms-teamcomment.html` |
+| `https://integralelearning.com/storyline-vs-rise.html` | `…/storyline-vs-rise-teamcomment.html` |
+
+`build.js` generates the twins in a loop (`reviewPages`); to add a review twin
+for a new page, add a `[source, output]` pair there. The gate copy and pill
+code (`avp-teamreview.js`/`.css`) are page-agnostic and shared.
 
 The `.html` is optional — Netlify serves both at their extensionless paths
 (`…/authoring-vs-platforms-teamcomment` works too).

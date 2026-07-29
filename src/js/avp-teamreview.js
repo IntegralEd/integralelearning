@@ -51,10 +51,10 @@
     wrap.setAttribute('aria-labelledby', 'avp-gate-h');
     wrap.innerHTML =
       '<div class="avp-gate-card">' +
-      '  <div class="avp-gate-mark" aria-hidden="true">LMS?</div>' +
+      '  <div class="avp-gate-mark" aria-hidden="true">&#128172;</div>' +
       '  <h1 id="avp-gate-h">Team review</h1>' +
-      '  <p>This is the internal review copy of the Authoring vs. Platforms page. ' +
-      'Enter your Integral Ed email to view it and leave section-by-section comments.</p>' +
+      '  <p>This is an internal review copy. ' +
+      'Enter your Integral Ed email to view the page and leave section-by-section comments.</p>' +
       '  <form id="avp-gate-form" autocomplete="email">' +
       '    <input type="email" id="avp-gate-input" placeholder="you@integral-ed.com" ' +
       'aria-label="Your Integral Ed email" autocapitalize="off" spellcheck="false">' +
