@@ -82,7 +82,7 @@
               "name": "Is Storyline mobile responsive?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Storyline uses a fixed slide canvas that scales to fit the screen, so small screens shrink the whole slide. Rise reflows its content responsively and is the stronger choice for learners on phones."
+                "text": "Storyline's modern player adapts well to mobile screens by scaling slides for touch playback. Rise goes further: its content reflows to fit any screen, which makes it the stronger choice when most learners are on phones."
               }
             },
             {
@@ -90,7 +90,7 @@
               "name": "Does Rise report quiz answers to a Learning Management System (LMS)?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, from Quiz lessons: learner responses for choice, fill-in-the-blank, and matching questions are reported. Knowledge checks inside lessons show feedback to the learner but do not report to the LMS, and interactive blocks like flashcards and sorting activities send no tracking data."
+                "text": "Yes, from Quiz lessons: question-level responses for multiple choice, fill-in-the-blank, and matching (a drag-and-drop question type) are reported, with full question text when published for xAPI, SCORM 2004, or cmi5. Knowledge check interactions inside lessons show feedback to the learner but do not report to the LMS."
               }
             },
             {
@@ -217,7 +217,7 @@
                     <p class="avp-lede">Both tools come with one Articulate 360 license. Picking between them is a
                         per-course design decision, not a purchase decision, and the best courses often use each where
                         it is strongest.</p>
-                    <div class="avp-hero-cta"><a href="#matrix" class="avp-hero-btn">See what each can do ↓</a></div>
+                    <div class="avp-hero-cta"><a href="#rule" class="avp-hero-btn">Get the short answer ↓</a></div>
                 </div>
                 <a href="#rule" class="avp-scroll-cue" aria-label="Scroll to content">↓</a>
             </section>
@@ -232,18 +232,15 @@
                     <div class="svr-rule-cards reveal">
                         <div class="svr-rule-card svr-rule-card--rise">
                             <div class="svr-rule-title">Rise</div>
-                            <div class="svr-rule-body">For information that needs to read beautifully on any device.
-                                Scrolling, responsive, fast to build, and easy to update.</div>
+                            <div class="svr-rule-body">A website-like format that is responsive, fast to build, and
+                                easy to update.</div>
                         </div>
                         <div class="svr-rule-card svr-rule-card--sl">
                             <div class="svr-rule-title">Storyline</div>
-                            <div class="svr-rule-body">For experiences where the learner makes choices and sees
-                                consequences. Slides, triggers, branching, and simulation.</div>
+                            <div class="svr-rule-body">A customized learning experience with greater interactive
+                                capabilities.</div>
                         </div>
                     </div>
-                    <p class="svr-note reveal">A note on the wider market: Adobe Captivate plays in the same space.
-                        This page compares the two Articulate 360 tools because they ship together on one license and
-                        share one workflow, which is where most of our clients start.</p>
                 </div>
             </section>
 
@@ -272,7 +269,8 @@
                             <tr><td>Matching and fill-in-the-blank questions</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
                             <tr><td>Flashcards, sorting, and process interactions</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
                             <tr><td>Hotspot questions</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
-                            <tr><td>Drag-and-drop activities, graded</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Drag-and-drop activities</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Branching scenarios that respond to learner choices</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
                             <tr><td>Recorded voiceover synced to screens</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
                             <tr><td>Software simulations and practice environments</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
                         </tbody>
@@ -293,12 +291,13 @@
                             <tr><td>Module completion reported to the LMS</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
                             <tr><td>Block and lesson completion tracking</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
                             <tr><td>Pass/fail scoring</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
-                            <tr><td>Multiple-choice responses stored in your LMS</td><td class="svr-yes">✓*</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Question responses stored in your LMS (choice, matching, fill-in)</td><td class="svr-yes">✓*</td><td class="svr-yes">✓</td></tr>
                             <tr><td>Transmission of open-ended responses via the Experience API (xAPI)</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
                         </tbody>
                     </table>
-                    <p class="svr-foot">*Rise reports learner responses from Quiz lessons. Knowledge checks inside
-                        lessons show feedback to the learner but do not report to the LMS.</p>
+                    <p class="svr-foot">*Rise reports question-level responses, including the matching drag-and-drop
+                        type, from Quiz lessons published for xAPI, SCORM 2004, or cmi5. Knowledge check interactions
+                        inside lessons show feedback to the learner but do not report to the LMS.</p>
                 </div>
 
                 <div class="svr-group reveal">
@@ -312,11 +311,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Mobile-responsive layouts</td><td class="svr-yes">✓</td><td class="svr-no"></td></tr>
+                            <tr><td>Mobile-friendly playback</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Content reflows to fit any screen</td><td class="svr-yes">✓</td><td class="svr-no"></td></tr>
                             <tr><td>Scrollable, web-style reading experience</td><td class="svr-yes">✓</td><td class="svr-no"></td></tr>
                             <tr><td>Slide-by-slide experience, learners click Next</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
-                            <tr><td>Learners choose their own pathway from a menu or homepage cards</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
-                            <tr><td>Branching scenarios that respond to learner choices</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Learners choose their own pathway from a menu or homepage cards</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
                             <tr><td>Translation and localization export</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
                             <tr><td>Custom code blocks (JavaScript, embeds)</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
                             <tr><td>Storyline interactions embedded inside a Rise course</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
@@ -338,27 +337,26 @@
                 <div class="avp-section-head avp-section-head--center reveal">
                     <span class="avp-kicker">03 · Better together</span>
                     <h2>You don't have to choose</h2>
-                    <p class="avp-formats-intro">The last row of the matrix is the punchline: the two tools are built
-                        to combine, and the strongest courses usually do.</p>
+                    <p class="avp-formats-intro">This is the punchline: the two tools are built to work together.
+                        Blending them is one option among several, especially when budgets are focused. A fully Rise
+                        or fully Storyline course is often exactly right.</p>
                 </div>
                 <div class="svr-hy reveal">
                     <div class="svr-rule-card svr-rule-card--rise">
-                        <div class="svr-rule-title">Rise as the spine</div>
-                        <div class="svr-rule-body">Rise has supported Storyline blocks since 2017. Build the course
-                            structure, reading, and media in Rise, then drop in Storyline only where the learning
-                            calls for real interaction.</div>
+                        <div class="svr-rule-title">Rise as the foundation</div>
+                        <div class="svr-rule-body">Build the course structure, reading, and media in Rise. It
+                            publishes quickly and looks great everywhere.</div>
                     </div>
                     <div class="svr-rule-card svr-rule-card--sl">
-                        <div class="svr-rule-title">Storyline for the moments</div>
-                        <div class="svr-rule-body">Every Storyline block is designed, built, and tested individually,
-                            so spend them where they earn their keep: voiceover moments, custom interactions, and
-                            graded practice.</div>
+                        <div class="svr-rule-title">Storyline where it counts</div>
+                        <div class="svr-rule-body">Embed Storyline inside the Rise course for the moments that call
+                            for practice, simulation, or scenario choices. The extra design and build time goes
+                            exactly where it matters.</div>
                     </div>
                     <div class="svr-rule-card svr-rule-card--code">
-                        <div class="svr-rule-title">Custom code in both</div>
-                        <div class="svr-rule-body">Storyline has long supported JavaScript triggers, and Rise's Custom
-                            Code block became generally available in October 2025. The gap between the tools keeps
-                            shrinking; built interactions remain Storyline's strength.</div>
+                        <div class="svr-rule-title">Custom code when needed</div>
+                        <div class="svr-rule-body">Both tools accept custom code blocks; our team develops custom code
+                            where your project needs it.</div>
                     </div>
                 </div>
             </section>
@@ -389,9 +387,9 @@
                 <div class="avp-section-head avp-section-head--center reveal">
                     <span class="avp-kicker">05 · Next steps</span>
                     <h2>Bring us the course, we'll pick the tool</h2>
-                    <p class="avp-cta-intro">Tool choice is one decision inside a bigger one: what to build, for whom,
-                        and where it will live. If you're also weighing platforms, start with our guide to authoring
-                        tools, universal formats, and Learning Management Systems.</p>
+                    <p class="avp-cta-intro">Tool choice is one decision inside a bigger ecosystem: what to build, for
+                        whom, and where it will live. Learn more in <a href="/authoring-vs-platforms.html">our guide
+                            to authoring tools, universal formats, and Learning Management Systems</a>.</p>
                 </div>
                 <div class="avp-cta-btns reveal">
                     <a href="https://www.integral-ed.com/contact/" class="avp-cta-primary">Talk with our team</a>
