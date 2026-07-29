@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Storyline or Rise? Usually both. A capability matrix for nonprofits and L&D teams: what each Articulate 360 tool can do, what your LMS gets to see, and how the two work together in one course.">
+    <meta name="keywords"
+        content="Storyline vs Rise, Articulate 360, Rise 360, Storyline 360, authoring tools, eLearning development, xAPI, LMS reporting, Storyline block in Rise, Rise custom code">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Integral eLearning">
+    <link rel="canonical" href="https://integralelearning.com/storyline-vs-rise.html">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Storyline or Rise? Usually Both. | Integral eLearning">
+    <meta property="og:description"
+        content="A capability matrix for the two Articulate 360 tools: what each can do, what your LMS gets to see, and how they work together in one course.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://integralelearning.com/storyline-vs-rise.html">
+    <meta property="og:site_name" content="Integral eLearning">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://integralelearning.com/vendor/integralthemes/assets/brand/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Storyline or Rise? Usually Both.">
+    <meta name="twitter:description"
+        content="What each Articulate 360 tool can do, what your LMS gets to see, and how the two work together in one course.">
+
+    <title>Storyline vs Rise: What Each Tool Can Do | Integral eLearning</title>
+
+    <!-- Structured data: the questions teams ask when choosing between the
+         two Articulate 360 tools, answered with this page's own content. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://integralelearning.com/storyline-vs-rise.html",
+          "url": "https://integralelearning.com/storyline-vs-rise.html",
+          "name": "Storyline vs Rise: What Each Tool Can Do",
+          "description": "A capability matrix for the two Articulate 360 authoring tools: interactions and assessment, LMS tracking, and learner experience, plus how the tools combine in one course.",
+          "inLanguage": "en-US",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Nonprofit executive directors, heads of learning and development, and operations leaders"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Integral eLearning",
+            "url": "https://integralelearning.com",
+            "parentOrganization": {
+              "@type": "Organization",
+              "name": "Integral Ed Services",
+              "url": "https://www.integral-ed.com"
+            }
+          },
+          "significantLink": [
+            "https://integralelearning.com/authoring-vs-platforms.html"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Integral eLearning", "item": "https://integralelearning.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Storyline vs Rise", "item": "https://integralelearning.com/storyline-vs-rise.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can Rise embed Storyline content?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Rise has supported Storyline blocks since 2017. You can build the course spine in Rise and drop in Storyline only for the moments that need custom interaction."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Storyline mobile responsive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Storyline uses a fixed slide canvas that scales to fit the screen, so small screens shrink the whole slide. Rise reflows its content responsively and is the stronger choice for learners on phones."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Rise report quiz answers to a Learning Management System (LMS)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, from Quiz lessons: learner responses for choice, fill-in-the-blank, and matching questions are reported. Knowledge checks inside lessons show feedback to the learner but do not report to the LMS, and interactive blocks like flashcards and sorting activities send no tracking data."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Rise capture open-ended learner responses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Rise has no survey or text-entry block, so open-ended responses cannot be collected or transmitted. Storyline can capture text entries and send them to your LMS via the Experience API (xAPI)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do Storyline and Rise support custom code?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, both. Storyline has long supported JavaScript triggers, and Rise's Custom Code block became generally available in October 2025. Custom code extends both tools, though built interactions like simulations remain Storyline's strength."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I have to buy Storyline and Rise separately?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Both tools come with one Articulate 360 license. Choosing between them is a per-course design decision, not a purchase decision."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/vendor/integralthemes/assets/brand/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/vendor/integralthemes/assets/brand/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/vendor/integralthemes/assets/brand/apple-touch-icon.png">
+
+    <!-- Shared Theme -->
+    <link rel="stylesheet" href="/vendor/integralthemes/theme/theme.css">
+
+    <!-- Site Overrides -->
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Page design system (shared with the authoring-vs-platforms page)
+         plus this page's matrix styles -->
+    <link rel="stylesheet" href="/css/authoring-vs-platforms.css">
+    <link rel="stylesheet" href="/css/storyline-vs-rise.css">
+</head>
+
+<body>
+    <!-- Navigation (site standard) -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">Integral<span style="font-weight: 300;">eLearning</span></a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#services" class="nav-link">What We Do</a></li>
+                <li><a href="/#examples" class="nav-link">Examples</a></li>
+                <li><a href="https://www.integral-ed.com/" class="nav-link" target="_blank">About</a></li>
+                <li><a href="https://www.integral-ed.com/contact/" class="nav-link" target="_blank">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="avp is-home">
+    <div class="avp-layout">
+
+        <!-- ── Sticky left rail (scroll-spy section nav) ─────────── -->
+        <aside class="avp-rail" id="avp-rail" aria-label="Page sections">
+            <div class="avp-rail-inner">
+                <div class="avp-rail-top">
+                    <a href="#top" class="avp-rail-brand" aria-label="Storyline vs Rise, back to top">
+                        <span class="avp-rail-big">Tools?</span>
+                        <span class="avp-rail-sub">STORYLINE VS RISE</span>
+                    </a>
+                    <button type="button" class="avp-rail-toggle" id="avp-rail-toggle" aria-expanded="false"
+                        aria-controls="avp-rail-panel" aria-label="Open sections menu">
+                        <span class="avp-rail-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+                        <span class="avp-rail-toggle-lbl">Sections</span>
+                    </button>
+                </div>
+
+                <div class="avp-rail-panel" id="avp-rail-panel">
+                    <nav aria-label="Sections">
+                        <ol class="avp-rail-nav">
+                            <li><a href="#rule"><span class="num">01</span><span class="lbl">The short answer</span></a></li>
+                            <li><a href="#matrix"><span class="num">02</span><span class="lbl">What each can do</span></a></li>
+                            <li><a href="#hybrid"><span class="num">03</span><span class="lbl">Better together</span></a></li>
+                            <li><a href="#examples"><span class="num">04</span><span class="lbl">See one of each</span></a></li>
+                            <li><a href="#next"><span class="num">05</span><span class="lbl">Next steps</span></a></li>
+                        </ol>
+                    </nav>
+                    <div class="avp-rail-cta">
+                        <a href="https://www.integral-ed.com/contact/" target="_blank" rel="noopener noreferrer">Talk
+                            with our team &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ── Main content column ───────────────────────────────── -->
+        <main class="avp-main">
+
+            <!-- Hero (dark brand band, staged title reveal) -->
+            <section class="avp-hero" id="top">
+                <div class="avp-hero-bgfx" aria-hidden="true">
+                    <div class="avp-blob avp-blob--plum"></div>
+                    <div class="avp-blob avp-blob--magenta"></div>
+                    <div class="avp-blob avp-blob--teal"></div>
+                </div>
+                <div class="avp-hero-content">
+                    <p class="avp-eyebrow">Choosing Your Authoring Tool</p>
+                    <h1 class="avp-h1">
+                        <span class="avp-h1-l1">Storyline or Rise?</span>
+                        <span class="avp-h1-l2">Usually both.</span>
+                    </h1>
+                    <p class="avp-lede">Both tools come with one Articulate 360 license. Picking between them is a
+                        per-course design decision, not a purchase decision, and the best courses often use each where
+                        it is strongest.</p>
+                    <div class="avp-hero-cta"><a href="#matrix" class="avp-hero-btn">See what each can do ↓</a></div>
+                </div>
+                <a href="#rule" class="avp-scroll-cue" aria-label="Scroll to content">↓</a>
+            </section>
+
+            <!-- 01 · The short answer -->
+            <section class="avp-intro" id="rule">
+                <div class="avp-intro-inner">
+                    <span class="avp-kicker reveal">01 · The short answer</span>
+                    <div class="avp-section-head avp-section-head--center reveal">
+                        <h2>One sentence each</h2>
+                    </div>
+                    <div class="svr-rule-cards reveal">
+                        <div class="svr-rule-card svr-rule-card--rise">
+                            <div class="svr-rule-title">Rise</div>
+                            <div class="svr-rule-body">For information that needs to read beautifully on any device.
+                                Scrolling, responsive, fast to build, and easy to update.</div>
+                        </div>
+                        <div class="svr-rule-card svr-rule-card--sl">
+                            <div class="svr-rule-title">Storyline</div>
+                            <div class="svr-rule-body">For experiences where the learner makes choices and sees
+                                consequences. Slides, triggers, branching, and simulation.</div>
+                        </div>
+                    </div>
+                    <p class="svr-note reveal">A note on the wider market: Adobe Captivate plays in the same space.
+                        This page compares the two Articulate 360 tools because they ship together on one license and
+                        share one workflow, which is where most of our clients start.</p>
+                </div>
+            </section>
+
+            <!-- 02 · Capability matrix -->
+            <section class="avp-formats" id="matrix">
+                <div class="avp-section-head avp-section-head--center reveal">
+                    <span class="avp-kicker">02 · Capabilities</span>
+                    <h2>What each tool can do</h2>
+                    <p class="avp-formats-intro">This is not a versus. Most of what teams need is possible in both
+                        tools. The real differences are the learner experience and what your Learning Management
+                        System (LMS) gets to see.</p>
+                </div>
+
+                <div class="svr-group reveal">
+                    <h3>Interactions and assessment</h3>
+                    <table class="svr-matrix">
+                        <thead>
+                            <tr>
+                                <th scope="col">Capability</th>
+                                <th scope="col" class="svr-col">Rise</th>
+                                <th scope="col" class="svr-col">Storyline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>True/false and multiple-choice questions</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Matching and fill-in-the-blank questions</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Flashcards, sorting, and process interactions</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Hotspot questions</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Drag-and-drop activities, graded</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Recorded voiceover synced to screens</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Software simulations and practice environments</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="svr-group reveal">
+                    <h3>Tracking and your LMS</h3>
+                    <table class="svr-matrix">
+                        <thead>
+                            <tr>
+                                <th scope="col">Capability</th>
+                                <th scope="col" class="svr-col">Rise</th>
+                                <th scope="col" class="svr-col">Storyline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Module completion reported to the LMS</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Block and lesson completion tracking</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Pass/fail scoring</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Multiple-choice responses stored in your LMS</td><td class="svr-yes">✓*</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Transmission of open-ended responses via the Experience API (xAPI)</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="svr-foot">*Rise reports learner responses from Quiz lessons. Knowledge checks inside
+                        lessons show feedback to the learner but do not report to the LMS.</p>
+                </div>
+
+                <div class="svr-group reveal">
+                    <h3>Experience and delivery</h3>
+                    <table class="svr-matrix">
+                        <thead>
+                            <tr>
+                                <th scope="col">Capability</th>
+                                <th scope="col" class="svr-col">Rise</th>
+                                <th scope="col" class="svr-col">Storyline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Mobile-responsive layouts</td><td class="svr-yes">✓</td><td class="svr-no"></td></tr>
+                            <tr><td>Scrollable, web-style reading experience</td><td class="svr-yes">✓</td><td class="svr-no"></td></tr>
+                            <tr><td>Slide-by-slide experience, learners click Next</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Learners choose their own pathway from a menu or homepage cards</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Branching scenarios that respond to learner choices</td><td class="svr-no"></td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Translation and localization export</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Custom code blocks (JavaScript, embeds)</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                            <tr><td>Storyline interactions embedded inside a Rise course</td><td class="svr-yes">✓</td><td class="svr-yes">✓</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="svr-callout reveal">
+                    <div class="svr-callout-title">Doing vs. seeing</div>
+                    <p>The consultative question is not "can the learner do it." It is "can you see that they did it."
+                        In Rise, flashcards and sorting activities engage learners but stay invisible to your LMS. In
+                        Storyline, anything can report. When tracking matters, design the interaction in the tool that
+                        can tell you about it.</p>
+                </div>
+            </section>
+
+            <!-- 03 · Better together -->
+            <section class="avp-formats" id="hybrid">
+                <div class="avp-section-head avp-section-head--center reveal">
+                    <span class="avp-kicker">03 · Better together</span>
+                    <h2>You don't have to choose</h2>
+                    <p class="avp-formats-intro">The last row of the matrix is the punchline: the two tools are built
+                        to combine, and the strongest courses usually do.</p>
+                </div>
+                <div class="svr-hy reveal">
+                    <div class="svr-rule-card svr-rule-card--rise">
+                        <div class="svr-rule-title">Rise as the spine</div>
+                        <div class="svr-rule-body">Rise has supported Storyline blocks since 2017. Build the course
+                            structure, reading, and media in Rise, then drop in Storyline only where the learning
+                            calls for real interaction.</div>
+                    </div>
+                    <div class="svr-rule-card svr-rule-card--sl">
+                        <div class="svr-rule-title">Storyline for the moments</div>
+                        <div class="svr-rule-body">Every Storyline block is designed, built, and tested individually,
+                            so spend them where they earn their keep: voiceover moments, custom interactions, and
+                            graded practice.</div>
+                    </div>
+                    <div class="svr-rule-card svr-rule-card--code">
+                        <div class="svr-rule-title">Custom code in both</div>
+                        <div class="svr-rule-body">Storyline has long supported JavaScript triggers, and Rise's Custom
+                            Code block became generally available in October 2025. The gap between the tools keeps
+                            shrinking; built interactions remain Storyline's strength.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04 · See one of each -->
+            <section class="avp-formats" id="examples">
+                <div class="avp-section-head avp-section-head--center reveal">
+                    <span class="avp-kicker">04 · See one of each</span>
+                    <h2>Real examples in each tool</h2>
+                    <p class="avp-formats-intro">Side-by-side evidence from our portfolio. As you click through,
+                        notice where the polish comes from in Rise (pace, media, layout) versus what only Storyline
+                        can do (respond to a learner's choices).</p>
+                </div>
+                <div class="avp-dest-cards reveal">
+                    <a class="avp-dest svr-ex" href="/#examples">
+                        <div class="avp-dest-title">Responsive Accessible PL</div>
+                        <div class="avp-dest-sub">built in Rise</div>
+                    </a>
+                    <a class="avp-dest svr-ex" href="/#examples">
+                        <div class="avp-dest-title">Value Proposition AI Coach</div>
+                        <div class="avp-dest-sub">built in Storyline</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 05 · Next steps -->
+            <section class="avp-cta" id="next">
+                <div class="avp-section-head avp-section-head--center reveal">
+                    <span class="avp-kicker">05 · Next steps</span>
+                    <h2>Bring us the course, we'll pick the tool</h2>
+                    <p class="avp-cta-intro">Tool choice is one decision inside a bigger one: what to build, for whom,
+                        and where it will live. If you're also weighing platforms, start with our guide to authoring
+                        tools, universal formats, and Learning Management Systems.</p>
+                </div>
+                <div class="avp-cta-btns reveal">
+                    <a href="https://www.integral-ed.com/contact/" class="avp-cta-primary">Talk with our team</a>
+                    <a href="/authoring-vs-platforms.html" class="avp-cta-secondary">Read: Do you need an LMS?</a>
+                </div>
+                <p class="avp-fineprint">Integral eLearning is a division of Integral Ed Services, an educator-led
+                    learning and media design firm for mission-driven organizations.</p>
+            </section>
+
+        </main>
+    </div>
+</div><!-- /.avp -->
+
+<!-- FOOTER_INJECT -->
+
+<script type="module" src="/js/main.js"></script>
+<script src="/js/authoring-vs-platforms.js"></script>
+</body>
+
+</html>

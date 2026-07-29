@@ -92,7 +92,7 @@ if (fs.existsSync(footerTemplatePath) && pkg.footer) {
 
 // Copy HTML files and inject widget
 console.log('📄 Copying HTML files...');
-const htmlFiles = ['index.html', 'authoring-vs-platforms.html'];
+const htmlFiles = ['index.html', 'authoring-vs-platforms.html', 'storyline-vs-rise.html'];
 htmlFiles.forEach(file => {
   const srcPath = path.join(__dirname, 'src', file);
   const destPath = path.join(distDir, file);

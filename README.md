@@ -32,6 +32,7 @@ Netlify runs `npm run build` and publishes `dist/`.
 |---|---|
 | `/` | `src/index.html` |
 | `/authoring-vs-platforms.html` | `src/authoring-vs-platforms.html` — "Do You Need an LMS?" interactive explainer (authoring tools vs. platforms) |
+| `/storyline-vs-rise.html` | `src/storyline-vs-rise.html` — capability matrix for the two Articulate 360 tools; reuses the explainer's design system |
 
 ### "Do You Need an LMS?" explainer
 

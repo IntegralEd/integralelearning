@@ -689,6 +689,9 @@
   color: var(--accent-magenta);
 }
 
+.avp-stage-link { font-size: 0.9rem; }
+.avp-stage-link a { font-weight: 600; }
+
 /* Paired stages */
 .avp-pair {
   display: grid;
