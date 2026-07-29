@@ -254,3 +254,73 @@
     padding: 0.75rem 1.75rem;
     border-radius: 50px;
 }
+
+/* ─── Nav dropdown (Learn About) — mirrors integral-ed-main-site ────────── */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    list-style: none;
+    min-width: 220px;
+    padding: var(--spacing-xs) 0;
+    padding-top: 8px;
+    z-index: 100;
+    margin-top: 0;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+}
+
+.nav-dropdown-menu li a {
+    display: block;
+    padding: 0.5rem var(--spacing-md);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu li a:hover {
+    background: var(--bg-accent);
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    /* Submenu shows inline inside the mobile panel rather than as a
+       hover flyout, which doesn't work on touch. */
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        display: block;
+        box-shadow: none;
+        border: 0;
+        background: transparent;
+        min-width: 0;
+        padding: 0.25rem 0 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-dropdown-menu li a {
+        font-size: 1rem;
+        padding: 0.35rem 0;
+    }
+}
+
+/* Links inside the plum photo band need to stay readable */
+.photo-background-section a {
+    color: #fff;
+    text-decoration: underline;
+}

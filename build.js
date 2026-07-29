@@ -123,6 +123,26 @@ htmlFiles.forEach(file => {
   }
 });
 
+// Generate sitemap.xml + robots.txt. Public pages only: the team-review
+// twins are noindex and deliberately excluded. They stay crawlable in
+// robots.txt (not Disallowed) so search engines can actually see the
+// noindex meta.
+console.log('\n🗺️  Generating sitemap + robots...');
+const SITE_URL = 'https://integralelearning.com';
+const lastmod = new Date().toISOString().slice(0, 10);
+const sitemapUrls = htmlFiles.map(f => (f === 'index.html' ? `${SITE_URL}/` : `${SITE_URL}/${f}`));
+const sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  sitemapUrls.map(u => `  <url>\n    <loc>${u}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`).join('\n') +
+  '\n</urlset>\n';
+fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf8');
+fs.writeFileSync(
+  path.join(distDir, 'robots.txt'),
+  `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+  'utf8'
+);
+console.log(`  ✓ sitemap.xml (${sitemapUrls.length} urls)  ✓ robots.txt`);
+
 // Generate team-review twins: identical content at a different URL, plus an
 // @integral-ed.com email gate and per-section feedback pills (WorkBase
 // Tickets form). Generated from the built pages so the review copies can
