@@ -157,10 +157,13 @@ reviewPages.forEach(([srcName, outName]) => {
   // before first paint. Anchor on the LAST </head>: the injected analytics
   // snippet's comment block contains a literal "</head>" in its docs, and
   // replacing the first occurrence buries these tags inside that comment.
+  // Version query busts stale browser caches of the shared gate assets on
+  // every deploy (a stale cached js next to new html looks like a dead gate)
+  const gateV = Date.now().toString(36);
   const headClose = review.lastIndexOf('</head>');
   review = review.slice(0, headClose) +
-    '<link rel="stylesheet" href="/css/avp-teamreview.css">\n' +
-    '<script src="/js/avp-teamreview.js"></script>\n' +
+    `<link rel="stylesheet" href="/css/avp-teamreview.css?v=${gateV}">\n` +
+    `<script src="/js/avp-teamreview.js?v=${gateV}"></script>\n` +
     review.slice(headClose);
 
   fs.writeFileSync(path.join(distDir, outName), review, 'utf8');

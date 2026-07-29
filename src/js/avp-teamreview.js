@@ -55,7 +55,7 @@
       '  <h1 id="avp-gate-h">Team review</h1>' +
       '  <p>This is an internal review copy. ' +
       'Enter your Integral Ed email to view the page and leave section-by-section comments.</p>' +
-      '  <form id="avp-gate-form" autocomplete="email">' +
+      '  <form id="avp-gate-form" autocomplete="email" novalidate>' +
       '    <input type="email" id="avp-gate-input" placeholder="you@integral-ed.com" ' +
       'aria-label="Your Integral Ed email" autocapitalize="off" spellcheck="false">' +
       '    <button type="submit">Enter &rarr;</button>' +
@@ -70,13 +70,19 @@
     var err = document.getElementById('avp-gate-err');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var v = (input.value || '').trim();
-      if (DOMAIN.test(v)) {
-        if (err) err.hidden = true;
-        unlock(v.toLowerCase());
-      } else {
+      // Whatever happens, the reviewer gets visible feedback: either the
+      // page unlocks or the error line shows.
+      try {
+        var v = (input.value || '').trim();
+        if (DOMAIN.test(v)) {
+          if (err) err.hidden = true;
+          unlock(v.toLowerCase());
+        } else {
+          if (err) err.hidden = false;
+          input.focus();
+        }
+      } catch (ex) {
         if (err) err.hidden = false;
-        input.focus();
       }
     });
     input.focus();
