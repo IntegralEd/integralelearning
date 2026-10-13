@@ -44,15 +44,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # integralthemes is a private repo: an anonymous clone fails in CI. Use THEME_READ_TOKEN
+      # (a fine-grained PAT with read-only Contents on IntegralEd/integralthemes) when it is set;
+      # otherwise skip the comparison with a warning rather than failing every PR.
       - name: Clone upstream integralthemes
-        run: git clone --depth 1 https://github.com/IntegralEd/integralthemes.git /tmp/upstream
+        id: clone
+        env:
+          THEME_READ_TOKEN: ${{ secrets.THEME_READ_TOKEN }}
+        run: |
+          if [ -n "$THEME_READ_TOKEN" ]; then
+            url="https://x-access-token:${THEME_READ_TOKEN}@github.com/IntegralEd/integralthemes.git"
+          else
+            url="https://github.com/IntegralEd/integralthemes.git"
+          fi
+          if git clone --quiet --depth 1 "$url" /tmp/upstream 2>/tmp/clone.err; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Could not clone IntegralEd/integralthemes (private repo, no THEME_READ_TOKEN secret). Drift check skipped."
+            {
+              echo "## Drift check skipped"
+              echo ""
+              echo "CI could not read [IntegralEd/integralthemes](https://github.com/IntegralEd/integralthemes) (private). Add a repository secret \`THEME_READ_TOKEN\` (fine-grained PAT, read-only Contents on integralthemes) to enable the comparison."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Strip non-theme files from upstream
+        if: steps.clone.outputs.ok == 'true'
         run: rm -rf /tmp/upstream/.git /tmp/upstream/.github
 
       - name: Diff vendor/integralthemes against upstream main
+        if: steps.clone.outputs.ok == 'true'
         run: |
-          if diff -rq /tmp/upstream vendor/integralthemes > /tmp/drift.txt; then
+          if diff -rq -x .git -x .github /tmp/upstream vendor/integralthemes > /tmp/drift.txt; then
             echo "vendor/integralthemes is in sync with integralthemes@main"
           else
             {
